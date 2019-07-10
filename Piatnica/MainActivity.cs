@@ -31,7 +31,7 @@ namespace Piatnica
             var _dbFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var _fileName = "Piatnica.db";
             var _dbFullPath = Path.Combine(_dbFolder, _fileName);
-            //var db = new PiatnicaContext(dbFullPath);
+            //var db = new PiatnicaContext(_dbFullPath);
             try
             {
                 using (var db = new PiatnicaContext(_dbFullPath))
@@ -40,7 +40,9 @@ namespace Piatnica
                     await db.Database.MigrateAsync(); //We need to ensure the latest Migration was added. This is different than EnsureDatabaseCreated.
 
                     //Delay catGary = new Delay() { 1 , 1, "2019-12-12" };
-                    
+                    db.Set<Order>().Add(new Order() { number = "fghfg" });
+                    await db.SaveChangesAsync();
+                    var check = await db.Set<Order>().ToListAsync();
 
                     //List catsInTheHat = new List() { catGary, catJack, catLuna };
                     ///asdsadsadasdsadsadsad

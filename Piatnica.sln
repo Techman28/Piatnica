@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piatnica", "Piatnica\Piatni
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piatnica.Dal", "Piatnica.Dal\Piatnica.Dal.csproj", "{FD674784-535C-49ED-B2F5-FD1F83FB430B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Dal", "ITMCode.Piatnica.Dal\ITMCode.Piatnica.Dal.csproj", "{852310F3-F585-4712-8C54-E02A014AB01B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Dal.ConsoleApp", "ITMCode.Piatnica.Dal.ConsoleApp\ITMCode.Piatnica.Dal.ConsoleApp.csproj", "{18FE4F3B-34A3-4427-A706-A843D35B6BDD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +27,14 @@ Global
 		{FD674784-535C-49ED-B2F5-FD1F83FB430B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD674784-535C-49ED-B2F5-FD1F83FB430B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD674784-535C-49ED-B2F5-FD1F83FB430B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{852310F3-F585-4712-8C54-E02A014AB01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{852310F3-F585-4712-8C54-E02A014AB01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{852310F3-F585-4712-8C54-E02A014AB01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{852310F3-F585-4712-8C54-E02A014AB01B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18FE4F3B-34A3-4427-A706-A843D35B6BDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18FE4F3B-34A3-4427-A706-A843D35B6BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18FE4F3B-34A3-4427-A706-A843D35B6BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18FE4F3B-34A3-4427-A706-A843D35B6BDD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
