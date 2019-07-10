@@ -52,13 +52,12 @@
     <Compile Include="Models\DistanceHistory.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\EventHistory.cs" />
+    <Compile Include="Repository\EventHistoryRepository.cs" />
     <Compile Include="Models\LocationHistory.cs" />
     <Compile Include="Models\Order.cs" />
     <Compile Include="Models\OrderEntry.cs" />
     <Compile Include="Models\OrderState.cs" />
     <Compile Include="Repository\DelayRepository.cs" />
-    <Compile Include="Repository\OrderEntryRepository.cs" />
-    <Compile Include="Repository\OrderStateRepository.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
