@@ -3,19 +3,45 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-
 using Piatnica.Dal.Models;
+using Piatnica.Dal;
+using Microsoft.EntityFrameworkCore;
 
 namespace Piatnica.Dal.Repository
 {
-   public class OrderStateRepository
+    public class OrderStateRepository : IOrderStateRepository
     {
+        private readonly PiatnicaContext _context;
         public OrderStateRepository() { }
-        public void addorderState(int id, string state, String date)
+        public OrderStateRepository(PiatnicaContext context)
         {
-            DateTime dt = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            OrderState orderState = new OrderState() { id = id, state = state, date = dt};
-
+            _context = context;
+        }
+        public IEnumerable<OrderState> GetAll()
+        {
+            return _context.OrdersStatesContext.ToList();
+        }
+        public OrderState GetById(int orderStateId)
+        {
+            return _context.OrdersStatesContext.Find(orderStateId);
+        }
+        public void Insert(OrderState orderState)
+        {
+            _context.OrdersStatesContext.Add(orderState);
+            
+        }
+        public void Update(OrderState orderState)
+        {
+            _context.Entry(orderState).State = EntityState.Modified;
+        }
+        public void Delete(int orderStateId)
+        {
+            OrderState orderState = _context.OrdersStatesContext.Find(orderStateId);
+            _context.OrdersStatesContext.Remove(orderState);
+        }
+        public void Save()
+        {
+            _context.SaveChanges();
         }
     }
 }

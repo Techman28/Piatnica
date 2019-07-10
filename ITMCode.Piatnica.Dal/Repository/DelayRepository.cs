@@ -1,22 +1,46 @@
-﻿using Piatnica.Dal.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-
-
+using Piatnica.Dal.Models;
+using Piatnica.Dal;
+using Microsoft.EntityFrameworkCore;
 
 namespace Piatnica.Dal.Repository
 {
-    public class DelayRepository
+    public class DelayRepository : IDelayRepository
     {
+        private readonly PiatnicaContext _context;
         public DelayRepository() { }
-        public void addDelay(int id, int delayOrder, String date)
+        public DelayRepository(PiatnicaContext context)
         {
-            DateTime dt = DateTime.ParseExact(date, "yyyy-MM-dd", CultureInfo.InvariantCulture);
-            Delay delay = new Delay() { id= id, delayOrder= delayOrder, date=dt };
-
+            _context = context;
+        }
+        public IEnumerable<Delay> GetAll()
+        {
+            return _context.DelaysContext.ToList();
+        }
+        public Delay GetById(int delayID)
+        {
+            return _context.DelaysContext.Find(delayID);
+        }
+        public void Insert(Delay delay)
+        {
+            _context.DelaysContext.Add(delay);
+        }
+        public void Update(Delay delay)
+        {
+            _context.Entry(delay).State = EntityState.Modified;
+        }
+        public void Delete(int delayID)
+        {
+            Delay delay = _context.DelaysContext.Find(delayID);
+            _context.DelaysContext.Remove(delay);
+        }
+        public void Save()
+        {
+            _context.SaveChanges();
         }
     }
 }
