@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Piatnica.Dal.Models;
+using ITMCode.Piatnica.Dal.Models;
 
-namespace Piatnica.Dal.Repository
+namespace ITMCode.Piatnica.Dal.Repository
 {
     public interface IEventRepository
     {

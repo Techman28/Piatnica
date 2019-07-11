@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using Piatnica.Dal.Models;
+using ITMCode.Piatnica.Dal.Models;
 
-namespace Piatnica.Dal
+namespace ITMCode.Piatnica.Dal
 {
     public class PiatnicaContext : DbContext
     {

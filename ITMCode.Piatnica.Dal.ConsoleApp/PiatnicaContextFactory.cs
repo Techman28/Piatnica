@@ -1,4 +1,4 @@
-﻿using Piatnica.Dal;
+﻿using ITMCode.Piatnica.Dal;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Design;
 using Microsoft.EntityFrameworkCore.Infrastructure;

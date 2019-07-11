@@ -5,7 +5,7 @@ using System.Text;
 
 
 
-namespace Piatnica.Dal.Models
+namespace ITMCode.Piatnica.Dal.Models
 {
     public class Delay 
     {

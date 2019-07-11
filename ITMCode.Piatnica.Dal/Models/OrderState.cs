@@ -6,7 +6,7 @@ using System.ComponentModel.DataAnnotations;
 
 
 
-namespace Piatnica.Dal.Models
+namespace ITMCode.Piatnica.Dal.Models
 {
    public  class OrderState 
     {

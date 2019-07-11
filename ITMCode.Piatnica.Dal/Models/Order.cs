@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 
 
-namespace Piatnica.Dal.Models
+namespace ITMCode.Piatnica.Dal.Models
 {
     public class Order 
     {

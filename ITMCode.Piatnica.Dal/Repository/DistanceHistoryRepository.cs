@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Text;
-using Piatnica.Dal.Models;
-using Piatnica.Dal;
+using ITMCode.Piatnica.Dal.Models;
+using ITMCode.Piatnica.Dal;
 using Microsoft.EntityFrameworkCore;
 
-namespace Piatnica.Dal.Repository
+namespace ITMCode.Piatnica.Dal.Repository
 {
     public class DistanceHistoryRepository : IDistanceHistoryRepository
     {

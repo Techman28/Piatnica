@@ -8,9 +8,10 @@ using Android.Support.Design.Widget;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
-using Piatnica.Dal;
-using Piatnica.Dal.Models;
+using ITMCode.Piatnica.Dal;
+using ITMCode.Piatnica.Dal.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace Piatnica
 {
@@ -36,12 +37,12 @@ namespace Piatnica
             {
                 using (var db = new PiatnicaContext(_dbFullPath))
                 {
-                     
-                    await db.Database.MigrateAsync(); //We need to ensure the latest Migration was added. This is different than EnsureDatabaseCreated.
 
+
+                    await db.Database.MigrateAsync(); //We need to ensure the latest Migration was added. This is different than EnsureDatabaseCreated.
+                    await Initialize(db);
                     //Delay catGary = new Delay() { 1 , 1, "2019-12-12" };
-                    db.Set<Order>().Add(new Order() { number = "fghfg" });
-                    await db.SaveChangesAsync();
+
                     var check = await db.Set<Order>().ToListAsync();
 
                     //List catsInTheHat = new List() { catGary, catJack, catLuna };
@@ -56,17 +57,30 @@ namespace Piatnica
             {
                 System.Diagnostics.Debug.WriteLine(ex.ToString());
             }
-        
-        //var dbFolder =Get
-        //  var dd = new PiatnicaContext();
-    }
-        
+
+            //var dbFolder =Get
+            //  var dd = new PiatnicaContext();
+        }
+
+        private async Task Initialize(PiatnicaContext db)
+        {
+            if (await db.Set<Order>().AnyAsync())
+                return;
+
+            for (int i = 0; i < 10; i++)
+            {
+                db.Set<Order>().Add(new Order() { number = "fghfg" });
+            }
+
+            await db.SaveChangesAsync();
+        }
+
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
-        
+
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
@@ -80,10 +94,10 @@ namespace Piatnica
 
         private void FabOnClick(object sender, EventArgs eventArgs)
         {
-            View view = (View) sender;
+            View view = (View)sender;
             Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
                 .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
         }
-	}
+    }
 }
 
