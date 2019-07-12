@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piatnica.Dal", "Piatnica.Da
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Dal", "ITMCode.Piatnica.Dal\ITMCode.Piatnica.Dal.csproj", "{852310F3-F585-4712-8C54-E02A014AB01B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Dal.ConsoleApp", "ITMCode.Piatnica.Dal.ConsoleApp\ITMCode.Piatnica.Dal.ConsoleApp.csproj", "{18FE4F3B-34A3-4427-A706-A843D35B6BDD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Dal.ConsoleApp", "ITMCode.Piatnica.Dal.ConsoleApp\ITMCode.Piatnica.Dal.ConsoleApp.csproj", "{18FE4F3B-34A3-4427-A706-A843D35B6BDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Desktop", "ITMCode.Piatnica.Desktop\ITMCode.Piatnica.Desktop.csproj", "{5B3A8FD7-FCC0-4779-9505-053AABC31904}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,6 +37,10 @@ Global
 		{18FE4F3B-34A3-4427-A706-A843D35B6BDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18FE4F3B-34A3-4427-A706-A843D35B6BDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18FE4F3B-34A3-4427-A706-A843D35B6BDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B3A8FD7-FCC0-4779-9505-053AABC31904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B3A8FD7-FCC0-4779-9505-053AABC31904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B3A8FD7-FCC0-4779-9505-053AABC31904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B3A8FD7-FCC0-4779-9505-053AABC31904}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
