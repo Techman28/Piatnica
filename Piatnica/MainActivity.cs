@@ -9,9 +9,12 @@ using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
 using ITMCode.Piatnica.Dal;
+using ITMCode.Piatnica.Dal.Repository;
+using ITMCode.Piatnica.Dal.UnitOfWork;
+//using ITMCode.Piatnica.Dal.Controllers;
 using ITMCode.Piatnica.Dal.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Threading.Tasks;
+//using System.Threading.Tasks;
 
 namespace Piatnica
 {
@@ -32,23 +35,19 @@ namespace Piatnica
             var _dbFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var _fileName = "Piatnica.db";
             var _dbFullPath = Path.Combine(_dbFolder, _fileName);
+            GenericUnitOfWork Uof;
             //var db = new PiatnicaContext(_dbFullPath);
             try
             {
-                using (var db = new PiatnicaContext(_dbFullPath))
+                using (PiatnicaContext db = new PiatnicaContext(_dbFullPath))
                 {
 
 
                     await db.Database.MigrateAsync(); //We need to ensure the latest Migration was added. This is different than EnsureDatabaseCreated.
-                    await Initialize(db);
-                    //Delay catGary = new Delay() { 1 , 1, "2019-12-12" };
+                    Uof = new GenericUnitOfWork(db);
+                    //await Initialize(Uof);
 
-                    var check = await db.Set<Order>().ToListAsync();
-
-                    //List catsInTheHat = new List() { catGary, catJack, catLuna };
-                    ///asdsadsadasdsadsadsad
-                    ///asdsadsadsad
-                    /////asdsa
+                    //var check = await db.Set<Order>().ToListAsync();
 
                 }
 
@@ -62,18 +61,23 @@ namespace Piatnica
             //  var dd = new PiatnicaContext();
         }
 
-        private async Task Initialize(PiatnicaContext db)
+        /*private async Task Initialize(GenericUnitOfWork Uof)
         {
-            if (await db.Set<Order>().AnyAsync())
-                return;
+            //if (await uof.Set<Order>().AnyAsync())
+              //  return;
 
             for (int i = 0; i < 10; i++)
             {
-                db.Set<Order>().Add(new Order() { number = "fghfg" });
+                //db.Set<Order>().Add(new Order() { number = "fghfg" });
+                
             }
+            Uof.GetRepoInstance<Order>().Insert(new Order() { number ="num"});
+            var check = Uof.GetRepoInstance<Order>().GetAll();
+            //EventRepository eventRepository = new EventRepository();
+            //eventRepository.Insert(new Event() { name = "Załadunek" });
 
-            await db.SaveChangesAsync();
-        }
+            await Uof.saveAsync();
+        }*/
 
         public override bool OnCreateOptionsMenu(IMenu menu)
         {
