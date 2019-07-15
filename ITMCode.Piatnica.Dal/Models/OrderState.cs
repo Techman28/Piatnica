@@ -13,10 +13,10 @@ namespace ITMCode.Piatnica.Dal.Models
         public OrderState() { }
 
         [Key]
-        public string state { get; set; }
-        public DateTime date { get; set; }
+        public string State { get; set; }
+        public TimeSpan Date { get; set; }
 
-       public virtual Order order { get; set; }
+       public virtual Order Order { get; set; }
 
         public int Id { get; set; }
 

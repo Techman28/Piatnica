@@ -13,8 +13,8 @@ namespace ITMCode.Piatnica.Dal.Models
         public Delay() {  }
         [Key]
  
-        public int delayOrder { get; set; }
-        public DateTime date { get; set; }
+        public int DelayOrder { get; set; }
+        public TimeSpan Date { get; set; }
 
         public virtual OrderEntry OrderEntry { get; set; }
         public int Id { get; set; }

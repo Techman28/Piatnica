@@ -11,11 +11,10 @@ namespace ITMCode.Piatnica.Dal.Models
     {
         public EventHistory() { }
         [Key]
-        public DateTime date {get; set;}
-
+        public TimeSpan Date {get; set;}
+        public float Distance { get; set; }
         //public int eventId { get; set; }
 
-        public virtual Event Event { get; set; }
         public virtual OrderEntry OrderEntry { get; set; }
 
         public int Id { get; set; }
