@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Dampak.Api</name>
+    </assembly>
+    <members>
+        <member name="M:Dampak.Api.Controllers.EquipmentController.Get(System.Int32)">
+            <summary>
+            IsBroken:
+            0 - working
+            1 - broken
+            2 - in repair
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dampak.Api.Controllers.EquipmentController.SetOnlyBroken(System.Int32)">
+            <summary>
+            amienia tylko flage dla equipment na broken
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dampak.Api.Controllers.EquipmentController.GetCategories">
+            <summary>
+             07-01-2019
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Dampak.Api.Controllers.RepairsController.CreateRepairs(Dampak.Api.DTOs.AddRepairsDto)">
+            <summary>
+             07-01-2019
+            </summary>
+            <param name="model"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Dampak.Api.Controllers.RepairsController.GetAll(System.Int32)">
+            <summary>
+             07-01-2019
+            </summary>
+            <param name="equipmentId"></param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

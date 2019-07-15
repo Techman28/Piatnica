@@ -16,9 +16,12 @@ namespace ITMCode.Piatnica.Api.Controllers
     public class OrderEntryController : ControllerBase
     {
         UnitOfWork _unitOfWork;
-        public OrderEntryController()
+
+        public IUnitOfWork UnitOfWork { get; }
+
+        public OrderEntryController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork();
+            UnitOfWork = unitOfWork;
         }
         public OrderEntryController(UnitOfWork UoW)
         {
@@ -28,7 +31,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _orderEntry = _unitOfWork.GetRepoInstance<OrderEntry>().GetAll();
+            var _orderEntry = _unitOfWork.OrderEntryRepository.GetAll();
             return Ok(_orderEntry);
         }
 
@@ -40,7 +43,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             {
 
                 // pobranie z bazdy
-                return Ok(_unitOfWork.GetRepoInstance<OrderEntry>().GetById(id));
+                return Ok(_unitOfWork.OrderEntryRepository.Find(s => s.Id == id));
             }
             catch (Exception e)
             {
@@ -56,7 +59,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpPost]
         public void Post([FromBody] OrderEntry _orderEntry)
         {
-            _unitOfWork.GetRepoInstance<OrderEntry>().Insert(_orderEntry);
+            _unitOfWork.OrderEntryRepository.Add(_orderEntry);
             _unitOfWork.SaveChanges();
         }
 
@@ -65,25 +68,25 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Put(int id, [FromBody] OrderEntry _orderEntry)
         {
 
-            var entity = _unitOfWork.GetRepoInstance<OrderEntry>().GetById(id);
+            var entity = _unitOfWork.OrderEntryRepository.Find(s => s.Id == id);
             if (entity == null)
             {
                 return;
             }
-            entity.orderType = _orderEntry.orderType;
-            entity.location = _orderEntry.location;
-            entity.date = _orderEntry.date;
-            entity.fromTime = _orderEntry.fromTime;
-            entity.toTime = _orderEntry.toTime;
-            entity.cargo = _orderEntry.cargo;
-            entity.comments = _orderEntry.comments;
-            entity.status = _orderEntry.status;
-            entity.order = _orderEntry.order;
-            entity.delays = _orderEntry.delays;
-            entity.status = _orderEntry.status;
+            entity.OrderType = _orderEntry.OrderType;
+            entity.Location = _orderEntry.Location;
+            entity.Date = _orderEntry.Date;
+            entity.FromTime = _orderEntry.FromTime;
+            entity.ToTime = _orderEntry.ToTime;
+            entity.Cargo = _orderEntry.Cargo;
+            entity.Comments = _orderEntry.Comments;
+            entity.Status = _orderEntry.Status;
+            entity.Order = _orderEntry.Order;
+            entity.Delays = _orderEntry.Delays;
+            entity.Status = _orderEntry.Status;
 
 
-            _unitOfWork.GetRepoInstance<OrderEntry>().Update(entity);
+            _unitOfWork.OrderEntryRepository.Update(entity);
             _unitOfWork.SaveChanges();
         }
 
@@ -91,7 +94,9 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _unitOfWork.GetRepoInstance<OrderEntry>().Delete(id);
+            var entity = _unitOfWork.OrderEntryRepository.Find(s => s.Id == id);
+
+            _unitOfWork.OrderEntryRepository.Delete(entity);
             _unitOfWork.SaveChanges();
         }
     }

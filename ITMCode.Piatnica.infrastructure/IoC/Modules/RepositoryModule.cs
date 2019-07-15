@@ -8,7 +8,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessToBusiness.Infrastucture.IoC.Modules
+namespace ITMCode.Piatnica.Infrastructure.IoC.Modules
 {
 
     public class RepositoryModule : Autofac.Module

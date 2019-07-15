@@ -9,8 +9,6 @@ namespace ITMCode.Piatnica.Dal
     public class PiatnicaContext : DbContext
     {
         public DbSet<Delay> DelaysContext { get; set; }
-        public DbSet<DistanceHistory> DistancesHistoryContext { get; set; }
-        public DbSet<Event> EventsContext { get; set; }
         public DbSet<EventHistory> EventsHistoriesContext { get; set; }
         public DbSet<LocationHistory> LocationsHistoriesContext { get; set; }
         public DbSet<Order> OrdersContext { get; set; }
@@ -34,42 +32,35 @@ namespace ITMCode.Piatnica.Dal
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=KOMP11\\SQLEXPRESS;Database=Piatnica;Trusted_Connection=True;");
+          //  optionsBuilder.UseSqlServer("server=KOMP11\\SQLEXPRESS;Database=Piatnica;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<EventHistory>()
-                .HasOne<Event>(s => s.Event)
-                .WithMany(g => g.EventHistories);
 
             modelBuilder.Entity<EventHistory>()
                 .HasOne<OrderEntry>(s => s.OrderEntry)
-                .WithMany(s => s.eventHistories);
+                .WithMany(s => s.EventHistories);
 
-            modelBuilder.Entity<DistanceHistory>()
-                .HasOne<Event>(s => s.Event)
-                .WithMany(s => s.DistanceHistories);
+            //modelBuilder.Entity<DistanceHistory>()
+              //  .HasOne<Event>(s => s.Event)
+                //.WithMany(s => s.DistanceHistories);
 
             modelBuilder.Entity<Delay>()
                 .HasOne<OrderEntry>(s => s.OrderEntry)
-                .WithMany(s => s.delays);
+                .WithMany(s => s.Delays);
 
             modelBuilder.Entity<OrderState>()
-              .HasOne<Order>(s => s.order)
-              .WithMany(s => s.orderState);
+              .HasOne<Order>(s => s.Order)
+              .WithMany(s => s.OrderState);
 
             modelBuilder.Entity<LocationHistory>()
-              .HasOne<Order>(s => s.order)
-              .WithMany(s => s.locationHistories);
-
-            modelBuilder.Entity<DistanceHistory>()
-              .HasOne<Order>(s => s.order)
-              .WithMany(s => s.distanceHistories);
+              .HasOne<Order>(s => s.OrderId)
+              .WithMany(s => s.LocationHistories);
 
             modelBuilder.Entity<OrderEntry>()
-              .HasOne<Order>(s => s.order)
-              .WithMany(s => s.orderEntries);
+              .HasOne<Order>(s => s.Order)
+              .WithMany(s => s.OrderEntries);
 
 
 

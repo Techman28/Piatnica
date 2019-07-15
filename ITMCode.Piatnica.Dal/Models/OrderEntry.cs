@@ -11,19 +11,19 @@ namespace ITMCode.Piatnica.Dal.Models
     {
         public OrderEntry() { }
         [Key]
-        public string orderType { get; set; }
-        public string location { get; set; }
-        public DateTime date { get; set; }
-        public DateTime fromTime { get; set; }
-        public DateTime toTime { get; set; }
-        public string cargo { get; set; }
-        public string comments { get; set; }
-        public int status { get; set; }
+        public string OrderType { get; set; }
+        public string Location { get; set; }
+        public TimeSpan Date { get; set; }
+        public TimeSpan FromTime { get; set; }
+        public TimeSpan ToTime { get; set; }
+        public string Cargo { get; set; }
+        public string Comments { get; set; }
+        public int Status { get; set; }
 
 
-        public virtual Order order { get; set; }
-        public ICollection<Delay> delays { get; set; }
-        public ICollection<EventHistory> eventHistories { get; set; }
+        public virtual Order Order { get; set; }
+        public ICollection<Delay> Delays { get; set; }
+        public ICollection<EventHistory> EventHistories { get; set; }
 
         public int Id { get; set; }
     }
