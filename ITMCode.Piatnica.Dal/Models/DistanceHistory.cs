@@ -13,7 +13,7 @@ namespace ITMCode.Piatnica.Dal.Models
         public double distance { get; set; }
         public DateTime date { get; set; }
 
-        public virtual Event Event { get; set; }
+        //public virtual Event Event { get; set; }
         public virtual Order order { get; set; }
     }
 }
