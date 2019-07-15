@@ -10,7 +10,7 @@ namespace ITMCode.Piatnica.Dal.Models
 {
    public  class OrderState 
     {
-        
+        [Key]
         public int id { get; set; }
         public string state { get; set; }
         public DateTime date { get; set; }

@@ -34,7 +34,7 @@ namespace ITMCode.Piatnica.Dal
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite($"Filename={DatabasePath}");
+            optionsBuilder.UseSqlServer("server=KOMP11\\SQLEXPRESS;Database=Piatnica;Trusted_Connection=True;");
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)

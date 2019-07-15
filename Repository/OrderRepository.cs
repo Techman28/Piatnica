@@ -7,7 +7,7 @@ using ITMCode.Piatnica.Dal.Models;
 using ITMCode.Piatnica.Dal;
 using Microsoft.EntityFrameworkCore;
 
-namespace Piatnica.Dal.Repository
+namespace ITMCode.Piatnica.Dal.Repository
 {
     public class OrderRepository : IOrderRepository
     {
