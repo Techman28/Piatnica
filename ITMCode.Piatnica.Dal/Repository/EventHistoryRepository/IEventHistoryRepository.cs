@@ -6,7 +6,8 @@ using ITMCode.Piatnica.Dal.Repository;
 
 namespace ITMCode.Piatnica.Dal.Repository.EventHistoryRepository
 {
-    interface IEventHistoryRepository : IBaseRepository<EventHistory>, IRepository
+    public interface IEventHistoryRepository : IBaseRepository<EventHistory>, IRepository
     {
+
     }
 }

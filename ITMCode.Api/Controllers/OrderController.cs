@@ -15,9 +15,12 @@ namespace ITMCode.Piatnica.Api.Controllers
     public class OrderController : ControllerBase
     {
         UnitOfWork _unitOfWork;
-        public OrderController()
+
+        public IUnitOfWork UnitOfWork { get; }
+
+        public OrderController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork();
+            UnitOfWork = unitOfWork;
         }
         public OrderController(UnitOfWork UoW)
         {
@@ -27,7 +30,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _order = _unitOfWork.GetRepoInstance<Order>().GetAll();
+            var _order = _unitOfWork.OrderRepository.GetAll();
             return Ok(_order);
         }
 
@@ -39,7 +42,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             {
 
                 // pobranie z bazdy
-                return Ok(_unitOfWork.GetRepoInstance<Order>().GetById(id));
+                return Ok(_unitOfWork.OrderRepository.Find(s => s.Id == id));
             }
             catch (Exception e)
             {
@@ -55,7 +58,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpPost]
         public void Post([FromBody] Order _order)
         {
-            _unitOfWork.GetRepoInstance<Order>().Insert(_order);
+            _unitOfWork.OrderRepository.Add(_order);
             _unitOfWork.SaveChanges();
         }
 
@@ -64,7 +67,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Put(int id, [FromBody] Order _order)
         {
 
-            var entity = _unitOfWork.GetRepoInstance<Order>().GetById(id);
+            var entity = _unitOfWork.OrderRepository.Find(s => s.Id == id);
             if (entity == null)
             {
                 return;
@@ -74,7 +77,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             entity.orderEntries = _order.orderEntries;
             entity.orderState = _order.orderState;
 
-            _unitOfWork.GetRepoInstance<Order>().Update(entity);
+            _unitOfWork.OrderRepository.Update(entity);
             _unitOfWork.SaveChanges();
         }
 
@@ -82,7 +85,10 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _unitOfWork.GetRepoInstance<Order>().Delete(id);
+
+            var entity = _unitOfWork.OrderRepository.Find(s => s.Id == id);
+
+            _unitOfWork.OrderRepository.Delete(entity);
             _unitOfWork.SaveChanges();
         }
     }
