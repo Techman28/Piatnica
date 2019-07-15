@@ -14,12 +14,12 @@ namespace ITMCode.Piatnica.Api.Controllers
     [ApiController]
     public class DelayController : ControllerBase
     {
-        GenericUnitOfWork _unitOfWork;
+        UnitOfWork _unitOfWork;
         public DelayController()
         {
-            _unitOfWork = new GenericUnitOfWork();
+            _unitOfWork = new UnitOfWork();
         }
-        public DelayController(GenericUnitOfWork UoW)
+        public DelayController(UnitOfWork UoW)
         {
             _unitOfWork = UoW;
         }
@@ -56,7 +56,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Post([FromBody] Delay delay)
         {
             _unitOfWork.GetRepoInstance<Delay>().Insert(delay);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // PUT api/values/5
@@ -75,7 +75,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             entity.OrderEntry = delay.OrderEntry;
 
             _unitOfWork.GetRepoInstance<Delay>().Update(entity);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // DELETE api/values/5
@@ -83,7 +83,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Delete(int id)
         {
             _unitOfWork.GetRepoInstance<Delay>().Delete(id);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
     }
 }

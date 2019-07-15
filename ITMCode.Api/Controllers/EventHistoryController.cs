@@ -14,12 +14,12 @@ namespace ITMCode.Piatnica.Api.Controllers
     [ApiController]
     public class EventHistoryController : ControllerBase
     {
-        GenericUnitOfWork _unitOfWork;
+        UnitOfWork _unitOfWork;
         public EventHistoryController()
         {
-            _unitOfWork = new GenericUnitOfWork();
+            _unitOfWork = new UnitOfWork();
         }
-        public EventHistoryController(GenericUnitOfWork UoW)
+        public EventHistoryController(UnitOfWork UoW)
         {
             _unitOfWork = UoW;
         }
@@ -56,7 +56,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Post([FromBody] EventHistory _eventHistory)
         {
             _unitOfWork.GetRepoInstance<EventHistory>().Insert(_eventHistory);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // PUT api/values/5
@@ -74,7 +74,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             entity.OrderEntry = _eventHistory.OrderEntry;
 
             _unitOfWork.GetRepoInstance<EventHistory>().Update(entity);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // DELETE api/values/5
@@ -82,7 +82,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Delete(int id)
         {
             _unitOfWork.GetRepoInstance<EventHistory>().Delete(id);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
     }
 }

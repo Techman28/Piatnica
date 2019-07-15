@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28917.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piatnica", "Piatnica\Piatnica.csproj", "{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piatnica.Dal", "Piatnica.Dal\Piatnica.Dal.csproj", "{FD674784-535C-49ED-B2F5-FD1F83FB430B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Dal", "ITMCode.Piatnica.Dal\ITMCode.Piatnica.Dal.csproj", "{852310F3-F585-4712-8C54-E02A014AB01B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Dal.ConsoleApp", "ITMCode.Piatnica.Dal.ConsoleApp\ITMCode.Piatnica.Dal.ConsoleApp.csproj", "{18FE4F3B-34A3-4427-A706-A843D35B6BDD}"
@@ -21,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Api.Models
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Api.DTOs", "ITMCode.Piatnica.Api.DTOs\ITMCode.Piatnica.Api.DTOs.csproj", "{B8A036EA-A821-4822-8816-81948D8DF78C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Infrastructure", "ITMCode.Piatnica.infrastructure\ITMCode.Piatnica.Infrastructure.csproj", "{800E256C-DDF3-48C1-B089-D52EE4E89509}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Bll.Models", "ITMCode.Piatnica.Bll.Models\ITMCode.Piatnica.Bll.Models.csproj", "{0B2AFA18-FA76-4F42-9601-55AAC5E78383}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,10 +35,6 @@ Global
 		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{FD674784-535C-49ED-B2F5-FD1F83FB430B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FD674784-535C-49ED-B2F5-FD1F83FB430B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FD674784-535C-49ED-B2F5-FD1F83FB430B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FD674784-535C-49ED-B2F5-FD1F83FB430B}.Release|Any CPU.Build.0 = Release|Any CPU
 		{852310F3-F585-4712-8C54-E02A014AB01B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{852310F3-F585-4712-8C54-E02A014AB01B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{852310F3-F585-4712-8C54-E02A014AB01B}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -65,6 +63,14 @@ Global
 		{B8A036EA-A821-4822-8816-81948D8DF78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A036EA-A821-4822-8816-81948D8DF78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A036EA-A821-4822-8816-81948D8DF78C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{800E256C-DDF3-48C1-B089-D52EE4E89509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{800E256C-DDF3-48C1-B089-D52EE4E89509}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{800E256C-DDF3-48C1-B089-D52EE4E89509}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{800E256C-DDF3-48C1-B089-D52EE4E89509}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B2AFA18-FA76-4F42-9601-55AAC5E78383}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B2AFA18-FA76-4F42-9601-55AAC5E78383}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B2AFA18-FA76-4F42-9601-55AAC5E78383}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B2AFA18-FA76-4F42-9601-55AAC5E78383}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

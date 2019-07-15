@@ -7,7 +7,7 @@ using System.Text;
 
 namespace ITMCode.Piatnica.Dal.Repository.DelaysRepository
 {
-    interface IDelayRepository : IBaseRepository<Delay>, IRepository
+   public interface IDelayRepository : IBaseRepository<Delay>, IRepository
     {
     }
 }

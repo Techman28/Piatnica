@@ -13,12 +13,12 @@ namespace ITMCode.Piatnica.Api.Controllers
     [ApiController]
     public class OrderStateController : ControllerBase
     {
-        GenericUnitOfWork _unitOfWork;
+        UnitOfWork _unitOfWork;
         public OrderStateController()
         {
-            _unitOfWork = new GenericUnitOfWork();
+            _unitOfWork = new UnitOfWork();
         }
-        public OrderStateController(GenericUnitOfWork UoW)
+        public OrderStateController(UnitOfWork UoW)
         {
             _unitOfWork = UoW;
         }
@@ -55,7 +55,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Post([FromBody] OrderState _orderEntry)
         {
             _unitOfWork.GetRepoInstance<OrderState>().Insert(_orderEntry);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // PUT api/values/5
@@ -74,7 +74,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             entity.order = _orderEntry.order;
 
             _unitOfWork.GetRepoInstance<OrderState>().Update(entity);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // DELETE api/values/5
@@ -82,7 +82,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Delete(int id)
         {
             _unitOfWork.GetRepoInstance<OrderState>().Delete(id);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
     }
 }

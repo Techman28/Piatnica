@@ -7,11 +7,11 @@ using System.Text;
 
 namespace ITMCode.Piatnica.Dal.Models
 {
-    public class Order 
+    public class Order : IEntity
     {
         public Order() { }
         [Key]
-        public int id { get; set; }
+        public int Id { get; set; }
         public string number { get; set; }
 
         public ICollection<OrderState> orderState { get; set; }
