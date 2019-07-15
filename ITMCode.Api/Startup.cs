@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace ITMCode.Api
+namespace ITMCode.Patnica.Api
 {
     public class Startup
     {

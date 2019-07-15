@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ITMCode.Piatnica.Dal
+namespace ITMCode.Piatnica.Api.Models
 {
     public class Class1
     {

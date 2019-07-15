@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.489
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28917.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Piatnica", "Piatnica\Piatnica.csproj", "{3BC0AC7E-3B3B-4D3F-9CC0-B2BDECC460A6}"
 EndProject
@@ -11,7 +11,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Dal", "ITM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Dal.ConsoleApp", "ITMCode.Piatnica.Dal.ConsoleApp\ITMCode.Piatnica.Dal.ConsoleApp.csproj", "{18FE4F3B-34A3-4427-A706-A843D35B6BDD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Api", "ITMCode.Api\ITMCode.Api.csproj", "{AF5263AC-D9E2-4411-A696-8AAD2D2BFDAF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Api", "ITMCode.Api\ITMCode.Piatnica.Api.csproj", "{AF5263AC-D9E2-4411-A696-8AAD2D2BFDAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Web", "ITMCode.Piatnica.Web\ITMCode.Piatnica.Web.csproj", "{74011F47-4717-438A-8884-1A132943CCF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Bll", "ITMCode.Piatnica.Bll\ITMCode.Piatnica.Bll.csproj", "{3ADB122E-D7C1-4663-A1D4-C95224557963}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Api.Models", "ITMCode.Piatnica.Api.Models\ITMCode.Piatnica.Api.Models.csproj", "{DC5D813A-87E8-43B9-9010-2D77DE010B3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Api.DTOs", "ITMCode.Piatnica.Api.DTOs\ITMCode.Piatnica.Api.DTOs.csproj", "{B8A036EA-A821-4822-8816-81948D8DF78C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,6 +49,22 @@ Global
 		{AF5263AC-D9E2-4411-A696-8AAD2D2BFDAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AF5263AC-D9E2-4411-A696-8AAD2D2BFDAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AF5263AC-D9E2-4411-A696-8AAD2D2BFDAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74011F47-4717-438A-8884-1A132943CCF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74011F47-4717-438A-8884-1A132943CCF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74011F47-4717-438A-8884-1A132943CCF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74011F47-4717-438A-8884-1A132943CCF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3ADB122E-D7C1-4663-A1D4-C95224557963}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3ADB122E-D7C1-4663-A1D4-C95224557963}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3ADB122E-D7C1-4663-A1D4-C95224557963}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3ADB122E-D7C1-4663-A1D4-C95224557963}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC5D813A-87E8-43B9-9010-2D77DE010B3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC5D813A-87E8-43B9-9010-2D77DE010B3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC5D813A-87E8-43B9-9010-2D77DE010B3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC5D813A-87E8-43B9-9010-2D77DE010B3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8A036EA-A821-4822-8816-81948D8DF78C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8A036EA-A821-4822-8816-81948D8DF78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8A036EA-A821-4822-8816-81948D8DF78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8A036EA-A821-4822-8816-81948D8DF78C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
