@@ -8,19 +8,19 @@ using ITMCode.Piatnica.Dal.Models;
 
 
     
-namespace ITMCode.Api.Controllers
+namespace ITMCode.Piatnica.Api.Controllers
 {
 
     [Route("api/[controller]")]
     [ApiController]
     public class OrderEntryController : ControllerBase
     {
-        GenericUnitOfWork _unitOfWork;
+        UnitOfWork _unitOfWork;
         public OrderEntryController()
         {
-            _unitOfWork = new GenericUnitOfWork();
+            _unitOfWork = new UnitOfWork();
         }
-        public OrderEntryController(GenericUnitOfWork UoW)
+        public OrderEntryController(UnitOfWork UoW)
         {
             _unitOfWork = UoW;
         }
@@ -57,7 +57,7 @@ namespace ITMCode.Api.Controllers
         public void Post([FromBody] OrderEntry _orderEntry)
         {
             _unitOfWork.GetRepoInstance<OrderEntry>().Insert(_orderEntry);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // PUT api/values/5
@@ -84,7 +84,7 @@ namespace ITMCode.Api.Controllers
 
 
             _unitOfWork.GetRepoInstance<OrderEntry>().Update(entity);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // DELETE api/values/5
@@ -92,7 +92,7 @@ namespace ITMCode.Api.Controllers
         public void Delete(int id)
         {
             _unitOfWork.GetRepoInstance<OrderEntry>().Delete(id);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
     }
 }

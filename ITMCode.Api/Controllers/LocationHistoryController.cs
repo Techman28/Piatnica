@@ -7,19 +7,19 @@ using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
 
 
-namespace ITMCode.Api.Controllers
+namespace ITMCode.Piatnica.Api.Controllers
 {
 
     [Route("api/[controller]")]
     [ApiController]
     public class LocationHistoryController : ControllerBase
     {
-        GenericUnitOfWork _unitOfWork;
+        UnitOfWork _unitOfWork;
         public LocationHistoryController()
         {
-            _unitOfWork = new GenericUnitOfWork();
+            _unitOfWork = new UnitOfWork();
         }
-        public LocationHistoryController(GenericUnitOfWork UoW)
+        public LocationHistoryController(UnitOfWork UoW)
         {
             _unitOfWork = UoW;
         }
@@ -56,7 +56,7 @@ namespace ITMCode.Api.Controllers
         public void Post([FromBody] LocationHistory _locationHistory)
         {
             _unitOfWork.GetRepoInstance<LocationHistory>().Insert(_locationHistory);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // PUT api/values/5
@@ -76,7 +76,7 @@ namespace ITMCode.Api.Controllers
             entity.order = _locationHistory.order;
 
             _unitOfWork.GetRepoInstance<LocationHistory>().Update(entity);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // DELETE api/values/5
@@ -84,7 +84,7 @@ namespace ITMCode.Api.Controllers
         public void Delete(int id)
         {
             _unitOfWork.GetRepoInstance<LocationHistory>().Delete(id);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
     }
 }

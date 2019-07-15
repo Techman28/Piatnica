@@ -13,7 +13,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 
-namespace ITMCode.Api
+namespace ITMCode.Patnica.Api
 {
     public class Startup
     {
@@ -28,8 +28,8 @@ namespace ITMCode.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<PiatnicaContext>();
-            services.AddScoped<IGenericUnitOfWork, GenericUnitOfWork>();
-             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

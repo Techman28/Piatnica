@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.1" />
+    <PackageReference Include="Autofac.Extras.NLog" Version="1.3.0" />
+    <PackageReference Include="AutoMapper" Version="7.0.1" />
+    <PackageReference Include="morelinq" Version="3.0.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ITMCode.Piatnica.Api.Models\ITMCode.Piatnica.Api.Models.csproj" />
+    <ProjectReference Include="..\ITMCode.Piatnica.Bll\ITMCode.Piatnica.Bll.csproj" />
+    <ProjectReference Include="..\ITMCode.Piatnica.Dal\ITMCode.Piatnica.Dal.csproj" />
+  </ItemGroup>
+</Project>

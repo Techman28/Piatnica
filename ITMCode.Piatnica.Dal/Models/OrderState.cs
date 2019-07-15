@@ -8,14 +8,17 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ITMCode.Piatnica.Dal.Models
 {
-   public  class OrderState 
+   public  class OrderState : IEntity
     {
+        public OrderState() { }
+
         [Key]
-        public int id { get; set; }
         public string state { get; set; }
         public DateTime date { get; set; }
 
        public virtual Order order { get; set; }
+
+        public int Id { get; set; }
 
     }
 }

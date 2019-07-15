@@ -8,7 +8,7 @@ using ITMCode.Piatnica.Dal.Models;
 
 
 
-namespace ITMCode.Api.Controllers
+namespace ITMCode.Piatnica.Api.Controllers
 {
 
     [Route("api/[controller]")]
@@ -16,9 +16,9 @@ namespace ITMCode.Api.Controllers
     public class DistanceHistoryController : ControllerBase
     {
  
-        public IGenericUnitOfWork _unitOfWork { get; }
+        public IUnitOfWork _unitOfWork { get; }
 
-        public DistanceHistoryController(IGenericUnitOfWork guw)
+        public DistanceHistoryController(IUnitOfWork guw)
         {
             _unitOfWork = guw;
             //if (UoW == null)
@@ -73,7 +73,7 @@ namespace ITMCode.Api.Controllers
         public void Post([FromBody] DistanceHistory _distanceHistory)
         {
             _unitOfWork.GetRepoInstance<DistanceHistory>().Insert(_distanceHistory);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // PUT api/values/5
@@ -93,7 +93,7 @@ namespace ITMCode.Api.Controllers
             entity.order = _distanceHistory.order;
 
             _unitOfWork.GetRepoInstance<DistanceHistory>().Update(entity);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // DELETE api/values/5
@@ -101,7 +101,7 @@ namespace ITMCode.Api.Controllers
         public void Delete(int id)
         {
             _unitOfWork.GetRepoInstance<DistanceHistory>().Delete(id);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
     }
 }

@@ -7,19 +7,19 @@ using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
 
 
-namespace ITMCode.Api.Controllers
+namespace ITMCode.Piatnica.Api.Controllers
 {
 
     [Route("api/[controller]")]
     [ApiController]
     public class EventController : ControllerBase
     {
-        GenericUnitOfWork _unitOfWork;
+        UnitOfWork _unitOfWork;
         public EventController()
         {
-            _unitOfWork = new GenericUnitOfWork();
+            _unitOfWork = new UnitOfWork();
         }
-        public EventController(GenericUnitOfWork UoW)
+        public EventController(UnitOfWork UoW)
         {
             _unitOfWork = UoW;
         }
@@ -56,7 +56,7 @@ namespace ITMCode.Api.Controllers
         public void Post([FromBody] Event _event)
         {
             _unitOfWork.GetRepoInstance<Event>().Insert(_event);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // PUT api/values/5
@@ -75,7 +75,7 @@ namespace ITMCode.Api.Controllers
             entity.DistanceHistories = _event.DistanceHistories;
 
             _unitOfWork.GetRepoInstance<Event>().Update(entity);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
 
         // DELETE api/values/5
@@ -83,7 +83,7 @@ namespace ITMCode.Api.Controllers
         public void Delete(int id)
         {
             _unitOfWork.GetRepoInstance<Event>().Delete(id);
-            _unitOfWork.saveChanges();
+            _unitOfWork.SaveChanges();
         }
     }
 }

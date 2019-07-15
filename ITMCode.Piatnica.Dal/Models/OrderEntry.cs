@@ -7,10 +7,10 @@ using System.Text;
 
 namespace ITMCode.Piatnica.Dal.Models
 {
-    public class OrderEntry
+    public class OrderEntry : IEntity
     {
+        public OrderEntry() { }
         [Key]
-        public int Id { get; set; }
         public string orderType { get; set; }
         public string location { get; set; }
         public DateTime date { get; set; }
@@ -25,5 +25,6 @@ namespace ITMCode.Piatnica.Dal.Models
         public ICollection<Delay> delays { get; set; }
         public ICollection<EventHistory> eventHistories { get; set; }
 
+        public int Id { get; set; }
     }
 }
