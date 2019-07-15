@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessToBusiness.Dal
-{
+namespace ITMCode.Piatnica.Dal.Repository { 
     //markup interface
     public interface IRepository
     {

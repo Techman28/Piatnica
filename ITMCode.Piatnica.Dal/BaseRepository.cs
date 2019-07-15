@@ -1,5 +1,5 @@
-﻿using BusinessToBusiness.Dal;
- using BusinessToBusiness.Dal.Repositories;
+﻿
+using ITMCode.Piatnica.Dal.Repository;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;

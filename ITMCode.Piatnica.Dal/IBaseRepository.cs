@@ -6,7 +6,7 @@ using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessToBusiness.Dal.Repositories
+namespace ITMCode.Piatnica.Dal.Repository
 {
     public interface IBaseRepository<TObject> where TObject : class, IEntity
     {

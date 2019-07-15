@@ -15,9 +15,12 @@ namespace ITMCode.Piatnica.Api.Controllers
     public class DelayController : ControllerBase
     {
         UnitOfWork _unitOfWork;
-        public DelayController()
+
+        public IUnitOfWork UnitOfWork { get; }
+
+        public DelayController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork();
+            UnitOfWork = unitOfWork;
         }
         public DelayController(UnitOfWork UoW)
         {
@@ -27,63 +30,63 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _delay = _unitOfWork.GetRepoInstance<Delay>().GetAll();
+            var _delay = _unitOfWork.DelayRepository.GetAll();  
             return Ok(_delay);
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
-        {
-            try
-            {
+        //[HttpGet("{id}")]
+        //public ActionResult<string> Get(int id)
+        //{
+        //    try
+        //    {
 
-                // pobranie z bazdy
-                return Ok(_unitOfWork.GetRepoInstance<Delay>().GetById(id));
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
+        //        // pobranie z bazdy
+        //        return Ok(_unitOfWork.GetRepoInstance<Delay>().GetById(id));
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        return BadRequest(e.Message);
 
-            }
+        //    }
 
 
 
-        }
+        //}
 
-        // POST api/values
-        [HttpPost]
-        public void Post([FromBody] Delay delay)
-        {
-            _unitOfWork.GetRepoInstance<Delay>().Insert(delay);
-            _unitOfWork.SaveChanges();
-        }
+        //// POST api/values
+        //[HttpPost]
+        //public void Post([FromBody] Delay delay)
+        //{
+        //    _unitOfWork.GetRepoInstance<Delay>().Insert(delay);
+        //    _unitOfWork.SaveChanges();
+        //}
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Delay delay)
-        {
+        //// PUT api/values/5
+        //[HttpPut("{id}")]
+        //public void Put(int id, [FromBody] Delay delay)
+        //{
 
-            var entity = _unitOfWork.GetRepoInstance<Delay>().GetById(id);
-            if (entity == null)
-            {
-                return;
-            }
+        //    var entity = _unitOfWork.GetRepoInstance<Delay>().GetById(id);
+        //    if (entity == null)
+        //    {
+        //        return;
+        //    }
 
-            entity.date = delay.date;
-            entity.delayOrder = delay.delayOrder;
-            entity.OrderEntry = delay.OrderEntry;
+        //    entity.date = delay.date;
+        //    entity.delayOrder = delay.delayOrder;
+        //    entity.OrderEntry = delay.OrderEntry;
 
-            _unitOfWork.GetRepoInstance<Delay>().Update(entity);
-            _unitOfWork.SaveChanges();
-        }
+        //    _unitOfWork.GetRepoInstance<Delay>().Update(entity);
+        //    _unitOfWork.SaveChanges();
+        //}
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
-            _unitOfWork.GetRepoInstance<Delay>().Delete(id);
-            _unitOfWork.SaveChanges();
-        }
+        //// DELETE api/values/5
+        //[HttpDelete("{id}")]
+        //public void Delete(int id)
+        //{
+        //    _unitOfWork.GetRepoInstance<Delay>().Delete(id);
+        //    _unitOfWork.SaveChanges();
+        //}
     }
 }

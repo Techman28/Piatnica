@@ -19,5 +19,5 @@ namespace ITMCode.Piatnica.Dal.Models
         public ICollection<DistanceHistory> distanceHistories { get; set; }
         public ICollection<OrderEntry> orderEntries { get; set; }
 
-    }
+     }
 }

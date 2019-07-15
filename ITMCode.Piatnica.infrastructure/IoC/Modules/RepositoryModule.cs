@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using BusinessToBusiness.Dal;
+ using ITMCode.Piatnica.Dal.Repository;
 using ITMCode.Piatnica.Dal.UnitOfWork;
 using System;
 using System.Collections.Generic;
