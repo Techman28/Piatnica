@@ -6,24 +6,28 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">Lista aktualnycvh zleceń</h1>
+    <h1 class="display-4">Lista aktualnych zleceń</h1>
 
     <table class="table table-bordered">
         <thead>
             <tr>
                 <th scope="col"><a class="btn btn-success text-white">Dodaj zlecenie</a></th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Dane kontrahenta</th>
+                <th scope="col">Dane kontaktowe</th>
+                <th scope="col">Ładunki</th>
+                <th scope="col">Załadunek</th>
+                <th scope="col">Rozładunek</th>
             </tr>
         </thead>
         <tbody>
             @for (int i = 0; i < 10; i++)
             {
             <tr>
-                <th scope="col"><a class="btn btn-primary text-white">Szczegóły</a></th>
+                <th scope="col"><a asp-controller="Order" asp-action="DetailOrder" class="btn btn-primary text-white">Szczegóły</a></th>
                 <td>Mark</td>
                 <td>Otto</td>
+                <td></td>
+                <td></td>
                 <td></td>
             </tr>
             }

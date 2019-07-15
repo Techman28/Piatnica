@@ -12,9 +12,14 @@ namespace ITMCode.Piatnica.Web.Controllers
         {
             return View("OrderList");
         }
+
         public IActionResult AddOrder()
         {
             return View();
+        }
+        public IActionResult DetailOrder()
+        {
+            return View("DetailOrder");
         }
 
     }
