@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessToBusiness.Infrastucture.Mapping
+namespace ITMCode.Piatnica.Infrastucture.Mapping
 {
     public class Mapper : Profile
     {

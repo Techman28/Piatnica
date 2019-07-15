@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BusinessToBusiness.Infrastucture.IoC.Modules
+namespace ITMCode.Piatnica.Infrastructure.IoC.Modules
 {
     public class CommonModule : Autofac.Module
     {
@@ -15,7 +15,7 @@ namespace BusinessToBusiness.Infrastucture.IoC.Modules
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.AddProfile<Infrastucture.Mapping.Mapper>();
+                cfg.AddProfile<ITMCode.Piatnica.Infrastucture.Mapping.Mapper>();
              });
             builder.RegisterInstance(config.CreateMapper()).As<IMapper>();
         }
