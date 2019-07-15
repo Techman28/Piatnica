@@ -73,8 +73,8 @@ namespace ITMCode.Piatnica.Api.Controllers
                 return;
             }
 
-            entity.date = delay.date;
-            entity.delayOrder = delay.delayOrder;
+            entity.Date = delay.Date;
+            entity.DelayOrder = delay.DelayOrder;
             entity.OrderEntry = delay.OrderEntry;
 
             _unitOfWork.DelayRepository.Update(entity);

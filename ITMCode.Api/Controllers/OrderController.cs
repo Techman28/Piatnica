@@ -72,10 +72,10 @@ namespace ITMCode.Piatnica.Api.Controllers
             {
                 return;
             }
-            entity.number = _order.number;
-            entity.locationHistories = _order.locationHistories;
-            entity.orderEntries = _order.orderEntries;
-            entity.orderState = _order.orderState;
+            entity.Number = _order.Number;
+            entity.LocationHistories = _order.LocationHistories;
+            entity.OrderEntries = _order.OrderEntries;
+            entity.OrderState = _order.OrderState;
 
             _unitOfWork.OrderRepository.Update(entity);
             _unitOfWork.SaveChanges();

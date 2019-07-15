@@ -72,8 +72,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             {
                 return;
             }
-            entity.date = _eventHistory.date;
-            entity.Event = _eventHistory.Event;
+            entity.Date = _eventHistory.Date;
             entity.OrderEntry = _eventHistory.OrderEntry;
 
             _unitOfWork.EventHistoryRepository.Update(entity);

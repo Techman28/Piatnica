@@ -73,10 +73,10 @@ namespace ITMCode.Piatnica.Api.Controllers
                 return;
             }
 
-            entity.date = _locationHistory.date;
-            entity.latitudeL = _locationHistory.latitudeL;
-            entity.longitude = _locationHistory.longitude;
-            entity.order = _locationHistory.order;
+            entity.Date = _locationHistory.Date;
+            entity.LatitudeL = _locationHistory.LatitudeL;
+            entity.Longitude = _locationHistory.Longitude;
+            entity.OrderId = _locationHistory.OrderId;
 
             _unitOfWork.LocationHistoryRepository.Update(entity);
             _unitOfWork.SaveChanges();

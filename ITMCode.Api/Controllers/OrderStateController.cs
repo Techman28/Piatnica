@@ -71,9 +71,9 @@ namespace ITMCode.Piatnica.Api.Controllers
                 return;
             }
            
-            entity.date = _orderEntry.date;
-            entity.state = _orderEntry.state;
-            entity.order = _orderEntry.order;
+            entity.Date = _orderEntry.Date;
+            entity.State = _orderEntry.State;
+            entity.Order = _orderEntry.Order;
 
             _unitOfWork.OrderStateRepository.Update(entity);
             _unitOfWork.SaveChanges();

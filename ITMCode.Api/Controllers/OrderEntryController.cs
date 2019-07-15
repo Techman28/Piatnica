@@ -73,17 +73,17 @@ namespace ITMCode.Piatnica.Api.Controllers
             {
                 return;
             }
-            entity.orderType = _orderEntry.orderType;
-            entity.location = _orderEntry.location;
-            entity.date = _orderEntry.date;
-            entity.fromTime = _orderEntry.fromTime;
-            entity.toTime = _orderEntry.toTime;
-            entity.cargo = _orderEntry.cargo;
-            entity.comments = _orderEntry.comments;
-            entity.status = _orderEntry.status;
-            entity.order = _orderEntry.order;
-            entity.delays = _orderEntry.delays;
-            entity.status = _orderEntry.status;
+            entity.OrderType = _orderEntry.OrderType;
+            entity.Location = _orderEntry.Location;
+            entity.Date = _orderEntry.Date;
+            entity.FromTime = _orderEntry.FromTime;
+            entity.ToTime = _orderEntry.ToTime;
+            entity.Cargo = _orderEntry.Cargo;
+            entity.Comments = _orderEntry.Comments;
+            entity.Status = _orderEntry.Status;
+            entity.Order = _orderEntry.Order;
+            entity.Delays = _orderEntry.Delays;
+            entity.Status = _orderEntry.Status;
 
 
             _unitOfWork.OrderEntryRepository.Update(entity);
