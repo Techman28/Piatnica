@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
-
+using ITMCode.Piatnica.Bll.Services;
 
 namespace ITMCode.Piatnica.Api.Controllers
 { 
@@ -14,23 +14,19 @@ namespace ITMCode.Piatnica.Api.Controllers
     [ApiController]
     public class DelayController : ControllerBase
     {
-        UnitOfWork _unitOfWork;
+         private readonly IServiceFactory _serviceFactory;
 
-        public IUnitOfWork UnitOfWork { get; }
-
-        public DelayController(IUnitOfWork unitOfWork)
+ 
+        public DelayController(IServiceFactory serviceFactory)
         {
-            UnitOfWork = unitOfWork;
+            this._serviceFactory = serviceFactory;
         }
-        public DelayController(UnitOfWork UoW)
-        {
-            _unitOfWork = UoW;
-        }
+  
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _delay = _unitOfWork.DelayRepository.GetAll();  
+            var _delay = _serviceFactory.
             return Ok(_delay);
         }
 

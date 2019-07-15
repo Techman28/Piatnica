@@ -5,53 +5,43 @@ using System.Linq;
 using System.Threading.Tasks;
 using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
-
+using ITMCode.Piatnica.Bll.Services;
+using AutoMapper;
+using ITMCode.Piatnica.Api.Models;
 
 namespace ITMCode.Piatnica.Api.Controllers
 {
 
     [Route("api/[controller]")]
     [ApiController]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    [ProducesResponseType(403)]
     public class OrderController : ControllerBase
     {
-        UnitOfWork _unitOfWork;
-
-        public IUnitOfWork UnitOfWork { get; }
-
-        public OrderController(IUnitOfWork unitOfWork)
+        private readonly IMapper _mapper;
+        private readonly IServiceFactory _serviceFactory;
+ 
+        public OrderController(IServiceFactory  serviceFactory)
         {
-            UnitOfWork = unitOfWork;
+            _serviceFactory = serviceFactory;
         }
-        public OrderController(UnitOfWork UoW)
-        {
-            _unitOfWork = UoW;
-        }
+         
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _order = _unitOfWork.OrderRepository.GetAll();
-            return Ok(_order);
+           // var _order = _serviceFactory.OrderService.
+            return Ok("");
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public  async Task<ActionResult<string>> Get(int id)
         {
-            try
-            {
-
-                // pobranie z bazdy
-                return Ok(_unitOfWork.OrderRepository.Find(s => s.Id == id));
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-
-            }
-
-
-
+                var order =await _serviceFactory.OrderService.GetAsync(id);
+                return Ok(_mapper.Map<OrderApiModel>(order));
         }
 
         // POST api/values
