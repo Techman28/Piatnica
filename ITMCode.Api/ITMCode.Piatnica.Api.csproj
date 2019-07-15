@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <AssemblyName>ITMCode.Piatnica.Api</AssemblyName>
+    <RootNamespace>ITMCode.Piatnica.Api</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

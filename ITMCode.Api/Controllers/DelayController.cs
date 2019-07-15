@@ -7,8 +7,8 @@ using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
 
 
-namespace ITMCode.Api.Controllers
-{
+namespace ITMCode.Piatnica.Api.Controllers
+{ 
 
     [Route("api/[controller]")]
     [ApiController]

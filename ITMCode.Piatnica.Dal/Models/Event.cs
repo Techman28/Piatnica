@@ -6,15 +6,18 @@ using System.Text;
 
 namespace ITMCode.Piatnica.Dal.Models
 {
-    public class Event 
+    public class Event :IEntity
     {
+        public Event() { }
+
         [Key]
-        public int id { get; set; }
         public string name { get; set; }
 
 
         public ICollection<EventHistory> EventHistories { get; set; }
         public ICollection<DistanceHistory> DistanceHistories { get; set; }
-        
+
+        public int Id { get; set; }
+
     }
 }
