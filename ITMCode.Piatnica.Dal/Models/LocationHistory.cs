@@ -12,11 +12,11 @@ namespace ITMCode.Piatnica.Dal.Models
         public LocationHistory() { }
 
         [Key]
-        public double longitude { get; set; }
-        public double latitudeL { get; set; }
-        public DateTime date { get; set; }
+        public double Longitude { get; set; }
+        public double LatitudeL { get; set; }
+        public TimeSpan Date { get; set; }
 
-        public virtual Order order { get; set; }
+        public virtual Order OrderId { get; set; }
 
         public int Id { get; set; }
 
