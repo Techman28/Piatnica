@@ -15,9 +15,12 @@ namespace ITMCode.Piatnica.Api.Controllers
     public class EventHistoryController : ControllerBase
     {
         UnitOfWork _unitOfWork;
-        public EventHistoryController()
+
+        public IUnitOfWork UnitOfWork { get; }
+
+        public EventHistoryController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork();
+            UnitOfWork = unitOfWork;
         }
         public EventHistoryController(UnitOfWork UoW)
         {
@@ -27,7 +30,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _eventHistory = _unitOfWork.GetRepoInstance<EventHistory>().GetAll();
+            var _eventHistory = _unitOfWork.EventHistoryRepository.GetAll();
             return Ok(_eventHistory);
         }
 
@@ -39,7 +42,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             {
 
                 // pobranie z bazdy
-                return Ok(_unitOfWork.GetRepoInstance<EventHistory>().GetById(id));
+                return Ok(_unitOfWork.EventHistoryRepository.Find(s => s.Id == id));
             }
             catch (Exception e)
             {
@@ -55,7 +58,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpPost]
         public void Post([FromBody] EventHistory _eventHistory)
         {
-            _unitOfWork.GetRepoInstance<EventHistory>().Insert(_eventHistory);
+            _unitOfWork.EventHistoryRepository.Add(_eventHistory);
             _unitOfWork.SaveChanges();
         }
 
@@ -64,16 +67,15 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Put(int id, [FromBody] EventHistory _eventHistory)
         {
 
-            var entity = _unitOfWork.GetRepoInstance<EventHistory>().GetById(id);
+            var entity = _unitOfWork.EventHistoryRepository.Find(s => s.Id == id);
             if (entity == null)
             {
                 return;
             }
-            entity.date = _eventHistory.date;
-            entity.Event = _eventHistory.Event;
+            entity.Date = _eventHistory.Date;
             entity.OrderEntry = _eventHistory.OrderEntry;
 
-            _unitOfWork.GetRepoInstance<EventHistory>().Update(entity);
+            _unitOfWork.EventHistoryRepository.Update(entity);
             _unitOfWork.SaveChanges();
         }
 
@@ -81,7 +83,8 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _unitOfWork.GetRepoInstance<EventHistory>().Delete(id);
+            var entity = _unitOfWork.EventHistoryRepository.Find(s => s.Id == id);
+            _unitOfWork.EventHistoryRepository.Delete(entity);
             _unitOfWork.SaveChanges();
         }
     }

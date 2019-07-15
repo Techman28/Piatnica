@@ -15,9 +15,12 @@ namespace ITMCode.Piatnica.Api.Controllers
     public class LocationHistoryController : ControllerBase
     {
         UnitOfWork _unitOfWork;
-        public LocationHistoryController()
+
+        public IUnitOfWork UnitOfWork { get; }
+
+        public LocationHistoryController(IUnitOfWork unitOfWork)
         {
-            _unitOfWork = new UnitOfWork();
+            UnitOfWork = unitOfWork;
         }
         public LocationHistoryController(UnitOfWork UoW)
         {
@@ -27,7 +30,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _locationHistory = _unitOfWork.GetRepoInstance<LocationHistory>().GetAll();
+            var _locationHistory = _unitOfWork.LocationHistoryRepository.GetAll();
             return Ok(_locationHistory);
         }
 
@@ -39,7 +42,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             {
 
                 // pobranie z bazdy
-                return Ok(_unitOfWork.GetRepoInstance<LocationHistory>().GetById(id));
+                return Ok(_unitOfWork.LocationHistoryRepository.Find(s => s.Id == id));
             }
             catch (Exception e)
             {
@@ -55,7 +58,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpPost]
         public void Post([FromBody] LocationHistory _locationHistory)
         {
-            _unitOfWork.GetRepoInstance<LocationHistory>().Insert(_locationHistory);
+            _unitOfWork.LocationHistoryRepository.Add(_locationHistory);
             _unitOfWork.SaveChanges();
         }
 
@@ -64,18 +67,18 @@ namespace ITMCode.Piatnica.Api.Controllers
         public void Put(int id, [FromBody] LocationHistory _locationHistory)
         {
 
-            var entity = _unitOfWork.GetRepoInstance<LocationHistory>().GetById(id);
+            var entity = _unitOfWork.LocationHistoryRepository.Find(s => s.Id == id);
             if (entity == null)
             {
                 return;
             }
 
-            entity.date = _locationHistory.date;
-            entity.latitudeL = _locationHistory.latitudeL;
-            entity.longitude = _locationHistory.longitude;
-            entity.order = _locationHistory.order;
+            entity.Date = _locationHistory.Date;
+            entity.LatitudeL = _locationHistory.LatitudeL;
+            entity.Longitude = _locationHistory.Longitude;
+            entity.OrderId = _locationHistory.OrderId;
 
-            _unitOfWork.GetRepoInstance<LocationHistory>().Update(entity);
+            _unitOfWork.LocationHistoryRepository.Update(entity);
             _unitOfWork.SaveChanges();
         }
 
@@ -83,7 +86,8 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
-            _unitOfWork.GetRepoInstance<LocationHistory>().Delete(id);
+            var entity = _unitOfWork.LocationHistoryRepository.Find(s => s.Id == id);
+            _unitOfWork.LocationHistoryRepository.Delete(entity);
             _unitOfWork.SaveChanges();
         }
     }
