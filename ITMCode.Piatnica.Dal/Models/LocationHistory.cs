@@ -14,7 +14,7 @@ namespace ITMCode.Piatnica.Dal.Models
         [Key]
         public double Longitude { get; set; }
         public double LatitudeL { get; set; }
-        public TimeSpan Date { get; set; }
+        public DateTime Date { get; set; }
 
         public virtual Order OrderId { get; set; }
 
