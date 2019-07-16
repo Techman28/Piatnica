@@ -11,10 +11,10 @@ namespace ITMCode.Piatnica.Dal.Models
     public class Delay : IEntity
     {
         public Delay() {  }
-        [Key]
+      
  
         public int DelayOrder { get; set; }
-        public TimeSpan Date { get; set; }
+        public DateTime Date { get; set; }
 
         public virtual OrderEntry OrderEntry { get; set; }
         public int Id { get; set; }
