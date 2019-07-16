@@ -5,36 +5,41 @@
 }
 
 
-<div class="text-center">
-    <h1 class="display-4">Lista aktualnych zleceń</h1>
+    <div class="text-center">
+        <h1 class="display-4">Lista aktualnych zleceń</h1>
+        <div id="example-table"></div>
+        @*<table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col"><a class="btn btn-success text-white">Dodaj zlecenie</a></th>
+                    <th scope="col">Dane kontrahenta</th>
+                    <th scope="col">Dane kontaktowe</th>
+                    <th scope="col">Ładunki</th>
+                    <th scope="col">Załadunek</th>
+                    <th scope="col">Rozładunek</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < 10; i++)
+                {
+                <tr>
+                    <th scope="col"><a asp-controller="Order" asp-action="DetailOrder" class="btn btn-primary text-white">Szczegóły</a></th>
+                    <td>Mark</td>
+                    <td>Otto</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                }
 
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th scope="col"><a class="btn btn-success text-white">Dodaj zlecenie</a></th>
-                <th scope="col">Dane kontrahenta</th>
-                <th scope="col">Dane kontaktowe</th>
-                <th scope="col">Ładunki</th>
-                <th scope="col">Załadunek</th>
-                <th scope="col">Rozładunek</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for (int i = 0; i < 10; i++)
-            {
-            <tr>
-                <th scope="col"><a asp-controller="Order" asp-action="DetailOrder" class="btn btn-primary text-white">Szczegóły</a></th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td></td>
-                <td></td>
-                <td></td>
-            </tr>
-            }
-           
-        </tbody>
-    </table>
+            </tbody>
+        </table>*@
 
 
 
-</div>
+    </div>
+
+@section  scripts{ 
+    <script src="~/js/orderList.js"></script>
+
+}
