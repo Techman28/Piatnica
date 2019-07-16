@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ITMCode.Piatnica.Api.DTOs;
 using ITMCode.Piatnica.Api.Models;
 using ITMCode.Piatnica.Bll.Models;
 using ITMCode.Piatnica.Dal.Models;
@@ -22,6 +23,12 @@ namespace ITMCode.Piatnica.Infrastucture.Mapping
             #region From Bll to ApiModels
 
             CreateMap<OrderBllModel, OrderApiModel>().ReverseMap();
+
+            CreateMap<UpdateDelayDto, OrderBllModel>().ReverseMap();
+            CreateMap<OrderEntryDto, OrderEntryBllModel>().ReverseMap();
+            CreateMap<OrderStateDto, OrderStateBllModel>().ReverseMap();
+            CreateMap<LocationHistoryDto, LocationHistoryBllModel>().ReverseMap();
+
             #endregion
 
 

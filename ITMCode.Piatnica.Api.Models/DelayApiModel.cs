@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITMCode.Piatnica.Api.DTOs
+namespace ITMCode.Piatnica.Api.Models
 {
-    public class AddOrderDto : IValidatable
+    public class DelayApiModel
     {
+        public int Id { get; set; }
         public string Number { get; set; }
-
-
     }
 }

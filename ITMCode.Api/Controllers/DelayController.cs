@@ -6,6 +6,12 @@ using System.Threading.Tasks;
 using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
 using ITMCode.Piatnica.Bll.Services;
+using ITMCode.Piatnica.Api.Models;
+using AutoMapper;
+using ITMCode.Piatnica.Api.DTOs;
+using ITMCode.Piatnica.Api.Validators;
+using Dampak.Api.Validators;
+using ITMCode.Piatnica.Bll.Models;
 
 namespace ITMCode.Piatnica.Api.Controllers
 { 
@@ -15,8 +21,9 @@ namespace ITMCode.Piatnica.Api.Controllers
     public class DelayController : ControllerBase
     {
          private readonly IServiceFactory _serviceFactory;
+         private readonly IMapper _mapper;
 
- 
+
         public DelayController(IServiceFactory serviceFactory)
         {
             this._serviceFactory = serviceFactory;
@@ -26,65 +33,48 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _delay = _serviceFactory.
-            return Ok(_delay);
+            
+            return Ok();
         }
 
        // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<ActionResult<string>> GetAsync(int id)
         {
-            try
-            {
-
-                // pobranie z bazdy
-                return Ok(_unitOfWork.DelayRepository.Find(s=> s.Id == id));
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-
-            }
-
-
-
+            var order = await _serviceFactory.DelayService.GetAsync(id);
+            return Ok(_mapper.Map<DelayApiModel>(order));
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Delay delay)
+        public async Task<ActionResult> Post([FromBody] AddDelayDto delay)
         {
-            _unitOfWork.DelayRepository.Add(delay);
-            _unitOfWork.SaveChanges();
+            delay.Validate<AddDelayDtoValidator, AddDelayDto>();
+            var delayResult = await _serviceFactory.DelayService.AddAsync(delay.Number);
+
+            return Ok(delayResult);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Delay delay)
+        public async Task<ActionResult> Put(int id, [FromBody] UpdateDelayDto delay)
         {
+            delay.Validate<UpdateDelayDtoValidator, UpdateDelayDto>();
+            var delayBll = _mapper.Map<DelayBllModel>(delay);
+            await _serviceFactory.DelayService.UpdateAsync(id, delayBll);
 
-            var entity = _unitOfWork.DelayRepository.Find(s => s.Id == id);
-            if (entity == null)
-            {
-                return;
-            }
-
-            entity.Date = delay.Date;
-            entity.DelayOrder = delay.DelayOrder;
-            entity.OrderEntry = delay.OrderEntry;
-
-            _unitOfWork.DelayRepository.Update(entity);
-            _unitOfWork.SaveChanges();
+            return Ok("");
+            
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var entity = _unitOfWork.DelayRepository.Find(s => s.Id == id);
-            _unitOfWork.DelayRepository.Delete(entity);
+            _serviceFactory.DelayService.DeleteAsync(id);
 
-            _unitOfWork.SaveChanges();
+            return Ok("");
+
         }
     }
 }

@@ -8,6 +8,10 @@ using ITMCode.Piatnica.Dal.Models;
 using ITMCode.Piatnica.Bll.Services;
 using AutoMapper;
 using ITMCode.Piatnica.Api.Models;
+using ITMCode.Piatnica.Api.DTOs;
+using ITMCode.Piatnica.Bll.Models;
+using ITMCode.Piatnica.Api.Validators;
+using Dampak.Api.Validators;
 
 namespace ITMCode.Piatnica.Api.Controllers
 {
@@ -46,40 +50,35 @@ namespace ITMCode.Piatnica.Api.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] Order _order)
+        public async Task<ActionResult> Post([FromBody] AddOrderDto order)
         {
-            _unitOfWork.OrderRepository.Add(_order);
-            _unitOfWork.SaveChanges();
+            order.Validate<AddOrderDtoValidator, AddOrderDto>();
+            var orderResult = await _serviceFactory.OrderService.AddAsync(order.Number);
+
+            return Ok(orderResult);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Order _order)
+        public async Task<ActionResult> Put(int id, [FromBody] UpdateDelayDto order)
         {
+            //potrzebne do walidacji danych
+            order.Validate<UpdateOrderDtoValidator, UpdateDelayDto>();
+            var orderBll = _mapper.Map<OrderBllModel>(order);
+            await _serviceFactory.OrderService.UpdateAsync(id,orderBll);
 
-            var entity = _unitOfWork.OrderRepository.Find(s => s.Id == id);
-            if (entity == null)
-            {
-                return;
-            }
-            entity.Number = _order.Number;
-            entity.LocationHistories = _order.LocationHistories;
-            entity.OrderEntries = _order.OrderEntries;
-            entity.OrderState = _order.OrderState;
-
-            _unitOfWork.OrderRepository.Update(entity);
-            _unitOfWork.SaveChanges();
+            return Ok("");
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
+            await _serviceFactory.OrderService.DeleteAsync(id);
 
-            var entity = _unitOfWork.OrderRepository.Find(s => s.Id == id);
-
-            _unitOfWork.OrderRepository.Delete(entity);
-            _unitOfWork.SaveChanges();
+            return Ok("");
+           
+            
         }
     }
 }

@@ -10,6 +10,7 @@
     <PackageReference Include="morelinq" Version="3.1.1" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ITMCode.Piatnica.Api.DTOs\ITMCode.Piatnica.Api.DTOs.csproj" />
     <ProjectReference Include="..\ITMCode.Piatnica.Api.Models\ITMCode.Piatnica.Api.Models.csproj" />
     <ProjectReference Include="..\ITMCode.Piatnica.Bll\ITMCode.Piatnica.Bll.csproj" />
     <ProjectReference Include="..\ITMCode.Piatnica.Dal\ITMCode.Piatnica.Dal.csproj" />
