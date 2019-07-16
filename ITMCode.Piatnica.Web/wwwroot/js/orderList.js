@@ -25,8 +25,10 @@
             { column: "name", dir: "asc" },
         ],
         columns: [                 //define the table columns
+            { title: "Dane kontrahenta", field: "name", editor: "input", headerFilter: "input" },
             { title: "Nazwa kontrahenta", field: "name", editor: "input", headerFilter: "input" },
-            { title: "Task Progress", field: "progress", align: "left", formatter: "progress", editor: true, headerFilter: "input" },
+
+            //{ title: "Task Progress", field: "progress", align: "left", formatter: "progress", editor: true, headerFilter: "input" },
             { title: "Gender", field: "gender", width: 95, editor: "select", editorParams: { values: ["male", "female"] }, headerFilter: "input"},
             { title: "Rating", field: "rating", formatter: "star", align: "center", width: 100, editor: true, headerFilter: "input"},
             { title: "Color", field: "col", width: 130, editor: "input", headerFilter: "input" },
