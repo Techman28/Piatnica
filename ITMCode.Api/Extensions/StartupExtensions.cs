@@ -23,7 +23,7 @@ namespace ITMCode.Piatnica.Api
         public static void ConfigureDbContext(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddDbContext<PiatnicaContext>(options =>
-                   options.UseSqlServer(configuration.GetConnectionString("Piatnica")), ServiceLifetime.Scoped);
+                   options.UseSqlServer(configuration.GetConnectionString("Piatnica"), x => x.MigrationsAssembly("ITMCode.Piatnica.Api")), ServiceLifetime.Scoped);
             //services.AddDbContext<ApplicationIdentityDbContext>(options =>
             //       options.UseSqlServer(configuration.GetConnectionString("DampakIdentity")), ServiceLifetime.Scoped);
         }

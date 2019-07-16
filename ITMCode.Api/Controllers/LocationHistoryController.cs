@@ -9,8 +9,7 @@ using ITMCode.Piatnica.Dal.Models;
 
 namespace ITMCode.Piatnica.Api.Controllers
 {
-
-    [Route("api/[controller]")]
+        [Route("api/[controller]")]
     [ApiController]
     public class LocationHistoryController : ControllerBase
     {
@@ -76,7 +75,7 @@ namespace ITMCode.Piatnica.Api.Controllers
             entity.Date = _locationHistory.Date;
             entity.LatitudeL = _locationHistory.LatitudeL;
             entity.Longitude = _locationHistory.Longitude;
-            entity.OrderId = _locationHistory.OrderId;
+            entity.Order= _locationHistory.Order;
 
             _unitOfWork.LocationHistoryRepository.Update(entity);
             _unitOfWork.SaveChanges();
