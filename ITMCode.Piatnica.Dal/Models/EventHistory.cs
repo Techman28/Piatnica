@@ -13,6 +13,7 @@ namespace ITMCode.Piatnica.Dal.Models
         [Key]
         public TimeSpan Date {get; set;}
         public float Distance { get; set; }
+        public string Name { get; set;  }
         //public int eventId { get; set; }
 
         public virtual OrderEntry OrderEntry { get; set; }
