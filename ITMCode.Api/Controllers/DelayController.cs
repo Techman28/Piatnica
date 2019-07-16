@@ -71,7 +71,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> Delete(int id)
         {
-            _serviceFactory.DelayService.DeleteAsync(id);
+            await _serviceFactory.DelayService.DeleteAsync(id);
 
             return Ok("");
 
