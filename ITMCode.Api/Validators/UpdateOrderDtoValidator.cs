@@ -11,7 +11,7 @@ namespace ITMCode.Piatnica.Api.Validators
     {
         public UpdateOrderDtoValidator()
         {
-            RuleFor(s => s.Number)
+            RuleFor(s => s.DelayOrder)
                 .NotEmpty();
         }
     }

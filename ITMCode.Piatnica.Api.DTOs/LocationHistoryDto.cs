@@ -8,6 +8,6 @@ namespace ITMCode.Piatnica.Api.DTOs
     {
         public double Longitude { get; set; }
         public double LatitudeL { get; set; }
-        public TimeSpan Date { get; set; }
+        public DateTime Date { get; set; }
     }
 }

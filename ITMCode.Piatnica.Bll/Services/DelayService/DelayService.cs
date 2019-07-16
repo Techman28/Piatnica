@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace ITMCode.Piatnica.Bll.Services.DelayService
 {
-    public class DelayService : IService
+    public class DelayService : IDelayService
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
