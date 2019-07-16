@@ -11,7 +11,7 @@ namespace ITMCode.Piatnica.Dal.Models
     {
         public EventHistory() { }
         [Key]
-        public TimeSpan Date {get; set;}
+        public DateTime Date {get; set;}
         public float Distance { get; set; }
         public string Name { get; set;  }
         //public int eventId { get; set; }

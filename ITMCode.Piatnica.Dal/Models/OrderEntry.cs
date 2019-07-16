@@ -13,9 +13,9 @@ namespace ITMCode.Piatnica.Dal.Models
         [Key]
         public string OrderType { get; set; }
         public string Location { get; set; }
-        public TimeSpan Date { get; set; }
-        public TimeSpan FromTime { get; set; }
-        public TimeSpan ToTime { get; set; }
+        public DateTime Date { get; set; }
+        public DateTime FromTime { get; set; }
+        public DateTime ToTime { get; set; }
         public string Cargo { get; set; }
         public string Comments { get; set; }
         public int Status { get; set; }
