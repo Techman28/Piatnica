@@ -18,16 +18,26 @@ namespace ITMCode.Piatnica.Infrastucture.Mapping
             #region From Dal to Bll
 
             CreateMap<Order, OrderBllModel>().ReverseMap();
+            CreateMap<LocationHistory, LocationHistoryBllModel>().ReverseMap();
+            CreateMap<OrderState, OrderStateBllModel>().ReverseMap();
+            CreateMap<OrderEntry, OrderEntryBllModel>().ReverseMap();
+
             #endregion
 
             #region From Bll to ApiModels
 
             CreateMap<OrderBllModel, OrderApiModel>().ReverseMap();
+            CreateMap<LocationHistoryBllModel, LocationHistoryApiModel>().ReverseMap();
+            CreateMap<OrderEntryBllModel, OrderEntryApiModel>().ReverseMap();
+            CreateMap<OrderStateBllModel, OrderStateApiModel>().ReverseMap();
 
             CreateMap<UpdateDelayDto, OrderBllModel>().ReverseMap();
             CreateMap<OrderEntryDto, OrderEntryBllModel>().ReverseMap();
             CreateMap<OrderStateDto, OrderStateBllModel>().ReverseMap();
             CreateMap<LocationHistoryDto, LocationHistoryBllModel>().ReverseMap();
+
+
+
 
             #endregion
 

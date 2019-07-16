@@ -27,9 +27,10 @@ namespace ITMCode.Piatnica.Api.Controllers
         private readonly IMapper _mapper;
         private readonly IServiceFactory _serviceFactory;
  
-        public OrderController(IServiceFactory  serviceFactory)
+        public OrderController(IServiceFactory  serviceFactory, IMapper mapper)
         {
             _serviceFactory = serviceFactory;
+            _mapper = mapper;
         }
          
         // GET api/values
@@ -42,7 +43,7 @@ namespace ITMCode.Piatnica.Api.Controllers
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public  async Task<ActionResult<string>> Get(int id)
+        public  async Task<ActionResult<OrderApiModel>> Get(int id)
         {
                 var order =await _serviceFactory.OrderService.GetAsync(id);
                 return Ok(_mapper.Map<OrderApiModel>(order));
