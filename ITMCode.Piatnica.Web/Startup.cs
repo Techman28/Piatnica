@@ -30,7 +30,11 @@ namespace ITMCode.Piatnica.Web
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
+            services.AddHttpClient("PiatnicaApi", c =>
+            {
+                c.BaseAddress = new Uri(Configuration.GetValue<string>("ApiUrl"));
+                c.DefaultRequestHeaders.Add("User-Agent", "HttpClientFactory-Sample");
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }

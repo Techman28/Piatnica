@@ -55,7 +55,7 @@ namespace ITMCode.Piatnica.Dal
               .WithMany(s => s.OrderState);
 
             modelBuilder.Entity<LocationHistory>()
-              .HasOne<Order>(s => s.OrderId)
+              .HasOne<Order>(s => s.Order)
               .WithMany(s => s.LocationHistories);
 
             modelBuilder.Entity<OrderEntry>()

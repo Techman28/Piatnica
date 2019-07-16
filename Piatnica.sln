@@ -19,8 +19,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Api.Models
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Api.DTOs", "ITMCode.Piatnica.Api.DTOs\ITMCode.Piatnica.Api.DTOs.csproj", "{B8A036EA-A821-4822-8816-81948D8DF78C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ITMCode.Piatnica.Desktop", "ITMCode.Piatnica.Desktop\ITMCode.Piatnica.Desktop.csproj", "{5B3A8FD7-FCC0-4779-9505-053AABC31904}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Infrastructure", "ITMCode.Piatnica.Infrastructure\ITMCode.Piatnica.Infrastructure.csproj", "{800E256C-DDF3-48C1-B089-D52EE4E89509}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ITMCode.Piatnica.Bll.Models", "ITMCode.Piatnica.Bll.Models\ITMCode.Piatnica.Bll.Models.csproj", "{0B2AFA18-FA76-4F42-9601-55AAC5E78383}"
@@ -65,10 +63,6 @@ Global
 		{B8A036EA-A821-4822-8816-81948D8DF78C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8A036EA-A821-4822-8816-81948D8DF78C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8A036EA-A821-4822-8816-81948D8DF78C}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5B3A8FD7-FCC0-4779-9505-053AABC31904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5B3A8FD7-FCC0-4779-9505-053AABC31904}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5B3A8FD7-FCC0-4779-9505-053AABC31904}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5B3A8FD7-FCC0-4779-9505-053AABC31904}.Release|Any CPU.Build.0 = Release|Any CPU
 		{800E256C-DDF3-48C1-B089-D52EE4E89509}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{800E256C-DDF3-48C1-B089-D52EE4E89509}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{800E256C-DDF3-48C1-B089-D52EE4E89509}.Release|Any CPU.ActiveCfg = Release|Any CPU

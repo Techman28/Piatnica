@@ -45,41 +45,41 @@ namespace ITMCode.Piatnica.Api.Controllers
         }
 
         // POST api/values
-        [HttpPost]
-        public void Post([FromBody] Order _order)
-        {
-            _unitOfWork.OrderRepository.Add(_order);
-            _unitOfWork.SaveChanges();
-        }
+    //    [HttpPost]
+    //    public void Post([FromBody] Order _order)
+    //    {
+    //        _unitOfWork.OrderRepository.Add(_order);
+    //        _unitOfWork.SaveChanges();
+    //    }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] Order _order)
-        {
+    //    // PUT api/values/5
+    //    [HttpPut("{id}")]
+    //    public void Put(int id, [FromBody] Order _order)
+    //    {
 
-            var entity = _unitOfWork.OrderRepository.Find(s => s.Id == id);
-            if (entity == null)
-            {
-                return;
-            }
-            entity.Number = _order.Number;
-            entity.LocationHistories = _order.LocationHistories;
-            entity.OrderEntries = _order.OrderEntries;
-            entity.OrderState = _order.OrderState;
+    //        var entity = _unitOfWork.OrderRepository.Find(s => s.Id == id);
+    //        if (entity == null)
+    //        {
+    //            return;
+    //        }
+    //        entity.Number = _order.Number;
+    //        entity.LocationHistories = _order.LocationHistories;
+    //        entity.OrderEntries = _order.OrderEntries;
+    //        entity.OrderState = _order.OrderState;
 
-            _unitOfWork.OrderRepository.Update(entity);
-            _unitOfWork.SaveChanges();
-        }
+    //        _unitOfWork.OrderRepository.Update(entity);
+    //        _unitOfWork.SaveChanges();
+    //    }
 
-        // DELETE api/values/5
-        [HttpDelete("{id}")]
-        public void Delete(int id)
-        {
+    //    // DELETE api/values/5
+    //    [HttpDelete("{id}")]
+    //    public void Delete(int id)
+    //    {
 
-            var entity = _unitOfWork.OrderRepository.Find(s => s.Id == id);
+    //        var entity = _unitOfWork.OrderRepository.Find(s => s.Id == id);
 
-            _unitOfWork.OrderRepository.Delete(entity);
-            _unitOfWork.SaveChanges();
-        }
+    //        _unitOfWork.OrderRepository.Delete(entity);
+    //        _unitOfWork.SaveChanges();
+    //    }
     }
 }
