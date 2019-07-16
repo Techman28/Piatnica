@@ -11,7 +11,6 @@ namespace ITMCode.Piatnica.Dal.Models
     {
         public LocationHistory() { }
 
-        [Key]
         public double Longitude { get; set; }
         public double LatitudeL { get; set; }
         public DateTime Date { get; set; }

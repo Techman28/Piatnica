@@ -11,7 +11,7 @@ namespace ITMCode.Piatnica.Dal.Models
     public class Delay : IEntity
     {
         public Delay() {  }
-        [Key]
+      
  
         public int DelayOrder { get; set; }
         public DateTime Date { get; set; }

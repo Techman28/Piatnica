@@ -10,7 +10,6 @@ namespace ITMCode.Piatnica.Dal.Models
     public class EventHistory :IEntity
     {
         public EventHistory() { }
-        [Key]
         public DateTime Date {get; set;}
         public float Distance { get; set; }
         public string Name { get; set;  }

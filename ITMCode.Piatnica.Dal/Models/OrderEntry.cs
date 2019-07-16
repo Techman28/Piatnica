@@ -10,7 +10,6 @@ namespace ITMCode.Piatnica.Dal.Models
     public class OrderEntry : IEntity
     {
         public OrderEntry() { }
-        [Key]
         public string OrderType { get; set; }
         public string Location { get; set; }
         public DateTime Date { get; set; }

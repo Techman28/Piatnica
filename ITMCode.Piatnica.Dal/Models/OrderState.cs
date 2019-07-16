@@ -12,7 +12,6 @@ namespace ITMCode.Piatnica.Dal.Models
     {
         public OrderState() { }
 
-        [Key]
         public string State { get; set; }
         public DateTime Date { get; set; }
 
