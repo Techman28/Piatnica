@@ -21,55 +21,61 @@ namespace ITMCode.Piatnica.Api.Migrations
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.Delay", b =>
                 {
-                    b.Property<int>("DelayOrder")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<TimeSpan>("Date");
+                    b.Property<DateTime>("Date");
 
-                    b.Property<int>("Id");
+                    b.Property<int>("DelayOrder");
 
-                    b.Property<string>("OrderEntryOrderType");
+                    b.Property<int?>("OrderEntryId");
 
-                    b.HasKey("DelayOrder");
+                    b.HasKey("Id");
 
-                    b.HasIndex("OrderEntryOrderType");
+                    b.HasIndex("OrderEntryId");
 
                     b.ToTable("DelaysContext");
                 });
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.EventHistory", b =>
                 {
-                    b.Property<TimeSpan>("Date");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("Date");
 
                     b.Property<float>("Distance");
 
-                    b.Property<int>("Id");
-
                     b.Property<string>("Name");
 
-                    b.Property<string>("OrderEntryOrderType");
+                    b.Property<int?>("OrderEntryId");
 
-                    b.HasKey("Date");
+                    b.HasKey("Id");
 
-                    b.HasIndex("OrderEntryOrderType");
+                    b.HasIndex("OrderEntryId");
 
                     b.ToTable("EventsHistoriesContext");
                 });
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.LocationHistory", b =>
                 {
-                    b.Property<double>("Longitude");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<TimeSpan>("Date");
-
-                    b.Property<int>("Id");
+                    b.Property<DateTime>("Date");
 
                     b.Property<double>("LatitudeL");
 
-                    b.HasKey("Longitude");
+                    b.Property<double>("Longitude");
 
-                    b.HasIndex("Id");
+                    b.Property<int?>("OrderId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
 
                     b.ToTable("LocationsHistoriesContext");
                 });
@@ -89,44 +95,50 @@ namespace ITMCode.Piatnica.Api.Migrations
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.OrderEntry", b =>
                 {
-                    b.Property<string>("OrderType")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Cargo");
 
                     b.Property<string>("Comments");
 
-                    b.Property<TimeSpan>("Date");
+                    b.Property<DateTime>("Date");
 
-                    b.Property<TimeSpan>("FromTime");
-
-                    b.Property<int>("Id");
+                    b.Property<DateTime>("FromTime");
 
                     b.Property<string>("Location");
 
+                    b.Property<int?>("OrderId");
+
+                    b.Property<string>("OrderType");
+
                     b.Property<int>("Status");
 
-                    b.Property<TimeSpan>("ToTime");
+                    b.Property<DateTime>("ToTime");
 
-                    b.HasKey("OrderType");
+                    b.HasKey("Id");
 
-                    b.HasIndex("Id");
+                    b.HasIndex("OrderId");
 
                     b.ToTable("OrdersEntriesContext");
                 });
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.OrderState", b =>
                 {
-                    b.Property<string>("State")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<TimeSpan>("Date");
+                    b.Property<DateTime>("Date");
 
-                    b.Property<int>("Id");
+                    b.Property<int?>("OrderId");
 
-                    b.HasKey("State");
+                    b.Property<string>("State");
 
-                    b.HasIndex("Id");
+                    b.HasKey("Id");
+
+                    b.HasIndex("OrderId");
 
                     b.ToTable("OrdersStatesContext");
                 });
@@ -135,38 +147,35 @@ namespace ITMCode.Piatnica.Api.Migrations
                 {
                     b.HasOne("ITMCode.Piatnica.Dal.Models.OrderEntry", "OrderEntry")
                         .WithMany("Delays")
-                        .HasForeignKey("OrderEntryOrderType");
+                        .HasForeignKey("OrderEntryId");
                 });
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.EventHistory", b =>
                 {
                     b.HasOne("ITMCode.Piatnica.Dal.Models.OrderEntry", "OrderEntry")
                         .WithMany("EventHistories")
-                        .HasForeignKey("OrderEntryOrderType");
+                        .HasForeignKey("OrderEntryId");
                 });
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.LocationHistory", b =>
                 {
                     b.HasOne("ITMCode.Piatnica.Dal.Models.Order", "Order")
                         .WithMany("LocationHistories")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.OrderEntry", b =>
                 {
                     b.HasOne("ITMCode.Piatnica.Dal.Models.Order", "Order")
                         .WithMany("OrderEntries")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.OrderState", b =>
                 {
                     b.HasOne("ITMCode.Piatnica.Dal.Models.Order", "Order")
                         .WithMany("OrderState")
-                        .HasForeignKey("Id")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("OrderId");
                 });
 #pragma warning restore 612, 618
         }

@@ -25,6 +25,12 @@
             { column: "name", dir: "asc" },
         ],
         columns: [                 //define the table columns
+
+            {
+                title: "<button class='btn btn-success btn-sm'  id='add-row'>Dodaj</button>", width: 60, headerSort: false, align: "center", formatter: function (cell, formatterParams, onRendered) {
+                    return '<a class="btn btn-primary btn-sm" href="/Order/DetailOrder" >Szczegóły</a>';
+                }
+            },
             { title: "Dane kontrahenta", field: "name", editor: "input", headerFilter: "input" },
             { title: "Nazwa kontrahenta", field: "name", editor: "input", headerFilter: "input" },
 
