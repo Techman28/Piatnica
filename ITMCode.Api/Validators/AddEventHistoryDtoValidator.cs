@@ -12,6 +12,8 @@ namespace ITMCode.Piatnica.Api.DTOs
                 .NotEmpty();
             RuleFor(s => s.Distance)
                 .NotEmpty();
+            RuleFor(s => s.Name)
+                .NotEmpty();
         }
     }
 }

@@ -24,9 +24,10 @@ namespace ITMCode.Piatnica.Api.Controllers
          private readonly IMapper _mapper;
 
 
-        public DelayController(IServiceFactory serviceFactory)
+        public DelayController(IServiceFactory serviceFactory, IMapper mapper)
         {
             this._serviceFactory = serviceFactory;
+            this._mapper = mapper;
         }
   
         // GET api/values

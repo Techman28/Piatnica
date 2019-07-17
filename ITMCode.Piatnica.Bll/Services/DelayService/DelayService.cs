@@ -23,7 +23,7 @@ namespace ITMCode.Piatnica.Bll.Services.DelayService
 
         public async Task<DelayBllModel> GetAsync(int id)
         {
-            var _delay = await _unitOfWork.DelayRepository.FindAsyncDefault(id, i => i.Include(d => d.OrderEntry));
+            var _delay = await _unitOfWork.DelayRepository.FindAsyncDefault(id);
             return _mapper.Map<DelayBllModel>(_delay);
         }
 
