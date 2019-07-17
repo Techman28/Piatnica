@@ -20,6 +20,12 @@ namespace ITMCode.Piatnica.Web.Controllers
         {
             return View("List");
         }
+        public IActionResult AddCommision()
+        {
+            return View("AddCommision");
+        }
+
+
 
         
     }
