@@ -21,6 +21,7 @@ namespace ITMCode.Piatnica.Infrastucture.Mapping
             CreateMap<LocationHistory, LocationHistoryBllModel>().ReverseMap();
             CreateMap<OrderState, OrderStateBllModel>().ReverseMap();
             CreateMap<OrderEntry, OrderEntryBllModel>().ReverseMap();
+            CreateMap<EventHistory, EventHistoryBllModel>().ReverseMap();
 
             #endregion
 
@@ -30,11 +31,13 @@ namespace ITMCode.Piatnica.Infrastucture.Mapping
             CreateMap<LocationHistoryBllModel, LocationHistoryApiModel>().ReverseMap();
             CreateMap<OrderEntryBllModel, OrderEntryApiModel>().ReverseMap();
             CreateMap<OrderStateBllModel, OrderStateApiModel>().ReverseMap();
+            CreateMap<EventHistoryBllModel, EventHistoryApiModel>().ReverseMap();
 
             CreateMap<UpdateDelayDto, OrderBllModel>().ReverseMap();
             CreateMap<OrderEntryDto, OrderEntryBllModel>().ReverseMap();
             CreateMap<OrderStateDto, OrderStateBllModel>().ReverseMap();
             CreateMap<LocationHistoryDto, LocationHistoryBllModel>().ReverseMap();
+            CreateMap<EventHistoryDto, EventHistoryBllModel>().ReverseMap();
 
 
 

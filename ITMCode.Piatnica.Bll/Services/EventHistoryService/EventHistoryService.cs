@@ -20,16 +20,24 @@ namespace ITMCode.Piatnica.Bll.Services.EventHistoryService
             this._mapper = mapper;
         }
 
-
+        public async Task<List<EventHistoryBllModel>> GetPlacesAsync()
+        {
+            var eventHistoriesList = await _unitOfWork.EventHistoryRepository.GetAllAsync();
+            return _mapper.Map<List<EventHistoryBllModel>>(eventHistoriesList);
+        }
         public async Task<EventHistoryBllModel> GetAsync(int id)
         {
             var _evntHistory = await _unitOfWork.EventHistoryRepository.FindAsyncDefault(id, i => i.Include(d => d.OrderEntry));
             return _mapper.Map<EventHistoryBllModel>(_evntHistory);
         }
 
-        public async Task<EventHistoryBllModel> AddAsync(float distance, DateTime date, string name)
+        public async Task<EventHistoryBllModel> AddAsync(double distance, DateTime date, string name)
         {
             var newEventHistory = new EventHistoryBllModel();
+            newEventHistory.Distance = distance;
+            newEventHistory.Name = name;
+            newEventHistory.Date = date;
+
             await _unitOfWork.EventHistoryRepository.AddAsync(_mapper.Map<EventHistory>(newEventHistory));
             await _unitOfWork.SaveChangesAsync();
 

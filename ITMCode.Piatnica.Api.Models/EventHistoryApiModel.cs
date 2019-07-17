@@ -7,8 +7,8 @@ namespace ITMCode.Piatnica.Api.Models
     public class EventHistoryApiModel
     {
         public DateTime Date { get; set; }
-        public float Distance { get; set; }
+        public double Distance { get; set; }
         public string Name { get; set; }
-        public int Id { get; set; }
+        
     }
 }
