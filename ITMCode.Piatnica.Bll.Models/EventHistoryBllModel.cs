@@ -7,7 +7,7 @@ namespace ITMCode.Piatnica.Bll.Models
     public class EventHistoryBllModel
     {
         public DateTime Date { get; set; }
-        public float Distance { get; set; }
-        public int Id { get; set; }
+        public double Distance { get; set; }
+        public string Name { get; set; }
     }
 }

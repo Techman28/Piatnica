@@ -5,6 +5,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
+using ITMCode.Piatnica.Bll.Services;
+using AutoMapper;
+using ITMCode.Piatnica.Api.Models;
+using ITMCode.Piatnica.Api.DTOs;
+using ITMCode.Piatnica.Bll.Models;
+using ITMCode.Piatnica.Api.Validators;
 
 
 namespace ITMCode.Piatnica.Api.Controllers
@@ -12,80 +18,68 @@ namespace ITMCode.Piatnica.Api.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    [ProducesResponseType(403)]
     public class EventHistoryController : ControllerBase
     {
-        UnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
+        private readonly IServiceFactory _serviceFactory;
 
-        public IUnitOfWork UnitOfWork { get; }
+        public EventHistoryController(IServiceFactory serviceFactory, IMapper mapper)
+        {
+            _serviceFactory = serviceFactory;
+            _mapper = mapper;
+        }
 
-        public EventHistoryController(IUnitOfWork unitOfWork)
-        {
-            UnitOfWork = unitOfWork;
-        }
-        public EventHistoryController(UnitOfWork UoW)
-        {
-            _unitOfWork = UoW;
-        }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _eventHistory = _unitOfWork.EventHistoryRepository.GetAll();
-            return Ok(_eventHistory);
+            // var _order = _serviceFactory.OrderService.
+            return Ok("");
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<ActionResult<EventHistoryApiModel>> Get(int id)
         {
-            try
-            {
-
-                // pobranie z bazdy
-                return Ok(_unitOfWork.EventHistoryRepository.Find(s => s.Id == id));
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-
-            }
-
-
-
+            var eventHistory = await _serviceFactory.EventHistoryService.GetAsync(id);
+            return Ok(_mapper.Map<EventHistoryApiModel>(eventHistory));
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] EventHistory _eventHistory)
+        public async Task<ActionResult> Post([FromBody] AddEventHistoryDto eventHistory)
         {
-            _unitOfWork.EventHistoryRepository.Add(_eventHistory);
-            _unitOfWork.SaveChanges();
+            eventHistory.Validate<AddEventHistoryDtoValidator, AddEventHistoryDto>();
+            var eventHistoryResult = await _serviceFactory.EventHistoryService.AddAsync(eventHistory.Distance, eventHistory.Date, eventHistory.Name);
+
+            return Ok(eventHistoryResult);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] EventHistory _eventHistory)
+        public async Task<ActionResult> Put(int id, [FromBody] UpdateEventHistoryDto eventHistory)
         {
+            //potrzebne do walidacji danych
+            eventHistory.Validate<UpdateEventHistoryDtoValidator, UpdateEventHistoryDto>();
+            var eventHistoryBll = _mapper.Map<EventHistoryBllModel>(eventHistory);
+            await _serviceFactory.EventHistoryService.UpdateAsync(id, eventHistoryBll);
 
-            var entity = _unitOfWork.EventHistoryRepository.Find(s => s.Id == id);
-            if (entity == null)
-            {
-                return;
-            }
-            entity.Date = _eventHistory.Date;
-            entity.OrderEntry = _eventHistory.OrderEntry;
-
-            _unitOfWork.EventHistoryRepository.Update(entity);
-            _unitOfWork.SaveChanges();
+            return Ok("");
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var entity = _unitOfWork.EventHistoryRepository.Find(s => s.Id == id);
-            _unitOfWork.EventHistoryRepository.Delete(entity);
-            _unitOfWork.SaveChanges();
+            await _serviceFactory.EventHistoryService.DeleteAsync(id);
+
+            return Ok("");
+
+
         }
     }
 }
