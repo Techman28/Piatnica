@@ -4,10 +4,8 @@ using System.Text;
 
 namespace ITMCode.Piatnica.Api.DTOs
 {
-    public class AddOrderDto : IValidatable
+    public class AddDelayDto : IValidatable
     {
         public string Number { get; set; }
-
-
     }
 }

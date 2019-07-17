@@ -1,14 +1,15 @@
-﻿ using FluentValidation;
+﻿using FluentValidation;
 using ITMCode.Piatnica.Api.DTOs;
 
 namespace Dampak.Api.Validators
 {
-    public class AddOrderDtoValidator : AbstractValidator<AddOrderDto>
+    public class AddDelayDtoValidator : AbstractValidator<AddDelayDto>
     {
-        public AddOrderDtoValidator()
+        public AddDelayDtoValidator()
         {
             RuleFor(s => s.Number)
                 .NotEmpty();
         }
     }
 }
+

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITMCode.Piatnica.Bll.Models
+namespace ITMCode.Piatnica.Api.Models
 {
-    public  class OrderEntryBllModel
+    public class OrderEntryApiModel
     {
         public string OrderType { get; set; }
         public string Location { get; set; }
