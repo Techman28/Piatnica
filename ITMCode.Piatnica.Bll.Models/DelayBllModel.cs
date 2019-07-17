@@ -8,6 +8,6 @@ namespace ITMCode.Piatnica.Bll.Models
     {
         public int DelayOrder { get; set; }
         public DateTime Date { get; set; }
-        public int Id { get; set; }
+       
     }
 }

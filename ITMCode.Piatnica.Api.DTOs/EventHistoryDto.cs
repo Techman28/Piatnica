@@ -4,9 +4,11 @@ using System.Text;
 
 namespace ITMCode.Piatnica.Api.DTOs
 {
-    public class AddDelayDto : IValidatable
+    public class EventHistoryDto
     {
-        public int DelayOrder { get; set; }
         public DateTime Date { get; set; }
+        public float Distance { get; set; }
+        public string Name { get; set; }
+        //public int eventId { get; set; }
     }
 }

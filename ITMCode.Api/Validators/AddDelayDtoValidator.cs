@@ -7,7 +7,7 @@ namespace Dampak.Api.Validators
     {
         public AddDelayDtoValidator()
         {
-            RuleFor(s => s.Number)
+            RuleFor(s => s.DelayOrder)
                 .NotEmpty();
         }
     }

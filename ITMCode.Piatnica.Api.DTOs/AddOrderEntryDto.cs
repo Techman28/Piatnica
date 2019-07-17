@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITMCode.Piatnica.Bll.Models
+namespace ITMCode.Piatnica.Api.DTOs
 {
-    public  class OrderEntryBllModel
+    public class AddOrderEntryDto : IValidatable
     {
         public string OrderType { get; set; }
         public string Location { get; set; }
@@ -14,9 +14,6 @@ namespace ITMCode.Piatnica.Bll.Models
         public string Cargo { get; set; }
         public string Comments { get; set; }
         public int Status { get; set; }
-        public int Id { get; set; }
-
-        public ICollection<DelayBllModel> Delays { get; set; }
-        public ICollection<EventHistoryBllModel> EventHistories { get; set; }
+      
     }
 }

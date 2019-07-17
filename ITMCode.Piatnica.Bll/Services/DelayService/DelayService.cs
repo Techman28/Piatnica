@@ -27,7 +27,7 @@ namespace ITMCode.Piatnica.Bll.Services.DelayService
             return _mapper.Map<DelayBllModel>(_delay);
         }
 
-        public async Task<DelayBllModel> AddAsync(string number)
+        public async Task<DelayBllModel> AddAsync(int delayOrder)
         {
             var newDelay = new DelayBllModel();
             await _unitOfWork.DelayRepository.AddAsync(_mapper.Map<Delay>(newDelay));
