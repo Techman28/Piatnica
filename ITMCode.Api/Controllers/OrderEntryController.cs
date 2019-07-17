@@ -30,12 +30,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         }
 
         // GET api/values
-        [HttpGet]
-        public ActionResult<IEnumerable<string>> Get()
-        {
 
-            return Ok();
-        }
         // GET api/values
         [HttpGet]
         public async Task<OrderEntryApiModel> GetOrderEntryAsync()
