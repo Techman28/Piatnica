@@ -4,12 +4,10 @@ using System.Text;
 
 namespace ITMCode.Piatnica.Bll.Models
 {
-   public class LocationHistoryBllModel
+    public class EventHistoryBllModel
     {
-        public double Longitude { get; set; }
-        public double LatitudeL { get; set; }
         public DateTime Date { get; set; }
-
+        public float Distance { get; set; }
         public int Id { get; set; }
     }
 }
