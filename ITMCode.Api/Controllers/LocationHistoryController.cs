@@ -5,89 +5,81 @@ using System.Linq;
 using System.Threading.Tasks;
 using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
+using ITMCode.Piatnica.Bll.Services;
+using AutoMapper;
+using ITMCode.Piatnica.Api.Models;
+using ITMCode.Piatnica.Api.DTOs;
+using ITMCode.Piatnica.Bll.Models;
+using ITMCode.Piatnica.Api.Validators;
 
 
 namespace ITMCode.Piatnica.Api.Controllers
 {
-        [Route("api/[controller]")]
+
+    [Route("api/[controller]")]
     [ApiController]
+    [ProducesResponseType(201)]
+    [ProducesResponseType(400)]
+    [ProducesResponseType(401)]
+    [ProducesResponseType(403)]
     public class LocationHistoryController : ControllerBase
     {
-        UnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
+        private readonly IServiceFactory _serviceFactory;
 
-        public IUnitOfWork UnitOfWork { get; }
+        public LocationHistoryController(IServiceFactory serviceFactory, IMapper mapper)
+        {
+            _serviceFactory = serviceFactory;
+            _mapper = mapper;
+        }
 
-        public LocationHistoryController(IUnitOfWork unitOfWork)
-        {
-            UnitOfWork = unitOfWork;
-        }
-        public LocationHistoryController(UnitOfWork UoW)
-        {
-            _unitOfWork = UoW;
-        }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _locationHistory = _unitOfWork.LocationHistoryRepository.GetAll();
-            return Ok(_locationHistory);
+            // var _order = _serviceFactory.OrderService.
+            return Ok("");
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<ActionResult<LocationHistoryApiModel>> Get(int id)
         {
-            try
-            {
-
-                // pobranie z bazdy
-                return Ok(_unitOfWork.LocationHistoryRepository.Find(s => s.Id == id));
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-
-            }
-
-
-
+            var locationHistory = await _serviceFactory.LocationHistoryService.GetAsync(id);
+            return Ok(_mapper.Map<LocationHistoryApiModel>(locationHistory));
         }
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] LocationHistory _locationHistory)
+        public async Task<ActionResult> Post([FromBody] AddLocationHistoryDto locationHistory)
         {
-            _unitOfWork.LocationHistoryRepository.Add(_locationHistory);
-            _unitOfWork.SaveChanges();
+            locationHistory.Validate<AddLocationHistoryValidator, AddLocationHistoryDto>();
+            var locationHistoryResult = await _serviceFactory.LocationHistoryService.AddAsync(locationHistory.LatitudeL, locationHistory.Longitude, locationHistory.Date);
+
+            return Ok(locationHistoryResult);
         }
 
         // PUT api/values/5
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody] LocationHistory _locationHistory)
+        public async Task<ActionResult> Put(int id, [FromBody] UpdateLocationHistoryDto locationHistory)
         {
+            //potrzebne do walidacji danych
+            locationHistory.Validate<UpdateLocationHistoryValidator, UpdateLocationHistoryDto>();
+            var locationHistoryBll = _mapper.Map<LocationHistoryBllModel>(locationHistory);
+            await _serviceFactory.LocationHistoryService.UpdateAsync(id, locationHistoryBll);
 
-            var entity = _unitOfWork.LocationHistoryRepository.Find(s => s.Id == id);
-            if (entity == null)
-            {
-                return;
-            }
-
-            entity.Date = _locationHistory.Date;
-            entity.LatitudeL = _locationHistory.LatitudeL;
-            entity.Longitude = _locationHistory.Longitude;
-            entity.Order= _locationHistory.Order;
-
-            _unitOfWork.LocationHistoryRepository.Update(entity);
-            _unitOfWork.SaveChanges();
+            return Ok("");
         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var entity = _unitOfWork.LocationHistoryRepository.Find(s => s.Id == id);
-            _unitOfWork.LocationHistoryRepository.Delete(entity);
-            _unitOfWork.SaveChanges();
+            await _serviceFactory.LocationHistoryService.DeleteAsync(id);
+
+            return Ok("");
+
+
         }
     }
 }

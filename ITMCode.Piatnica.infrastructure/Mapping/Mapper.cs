@@ -23,6 +23,7 @@ namespace ITMCode.Piatnica.Infrastucture.Mapping
             CreateMap<OrderEntry, OrderEntryBllModel>().ReverseMap();
             CreateMap<EventHistory, EventHistoryBllModel>().ReverseMap();
 
+
             #endregion
 
             #region From Bll to ApiModels
