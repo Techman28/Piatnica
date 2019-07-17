@@ -9,7 +9,7 @@ namespace ITMCode.Piatnica.Bll.Services.DelayService
     public interface IDelayService : IService
     {
         Task<DelayBllModel> GetAsync(int id);
-        Task<DelayBllModel> AddAsync(string number);
+        Task<DelayBllModel> AddAsync(int delayOrder);
         Task UpdateAsync(int id, DelayBllModel delay);
         Task DeleteAsync(int id);
     }

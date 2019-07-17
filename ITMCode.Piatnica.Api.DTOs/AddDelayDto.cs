@@ -6,6 +6,7 @@ namespace ITMCode.Piatnica.Api.DTOs
 {
     public class AddDelayDto : IValidatable
     {
-        public string Number { get; set; }
+        public int DelayOrder { get; set; }
+        public DateTime Date { get; set; }
     }
 }

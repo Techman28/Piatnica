@@ -13,5 +13,10 @@ namespace ITMCode.Piatnica.Bll.Services
         Task UpdateAsync(int id, OrderBllModel order);
         Task<OrderBllModel> AddAsync(OrderBllModel order);
         Task DeleteAsync(int id);
+        Task<OrderEntryBllModel> GetOrderEntryAsync();
+        Task<OrderEntryBllModel> GetOrderEntryAsync(int id);
+        Task<OrderEntryBllModel> AddOrderEntryAsync(OrderEntryBllModel orderEntry);
+        Task<OrderEntryBllModel> UpdateOrderEntryAsync(int id, OrderEntryBllModel orderEntry);
+        Task DeleteOrderEntryAsync(int id);
     }
 }

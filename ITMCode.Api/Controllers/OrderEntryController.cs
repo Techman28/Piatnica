@@ -5,9 +5,14 @@ using System.Linq;
 using System.Threading.Tasks;
 using ITMCode.Piatnica.Dal.UnitOfWork;
 using ITMCode.Piatnica.Dal.Models;
+using ITMCode.Piatnica.Bll.Services;
+using AutoMapper;
+using ITMCode.Piatnica.Bll.Models;
+using ITMCode.Piatnica.Api.Models;
+using Dampak.Api.Validators;
+using ITMCode.Piatnica.Api.DTOs;
+using ITMCode.Piatnica.Api.Validators;
 
-
-    
 namespace ITMCode.Piatnica.Api.Controllers
 {
 
@@ -15,89 +20,70 @@ namespace ITMCode.Piatnica.Api.Controllers
     [ApiController]
     public class OrderEntryController : ControllerBase
     {
-        UnitOfWork _unitOfWork;
+        private readonly IMapper _mapper;
+        private readonly IServiceFactory _serviceFactory;
 
-        public IUnitOfWork UnitOfWork { get; }
+        public OrderEntryController(IServiceFactory serviceFactory, IMapper mapper)
+        {
+            _serviceFactory = serviceFactory;
+            _mapper = mapper;
+        }
 
-        public OrderEntryController(IUnitOfWork unitOfWork)
-        {
-            UnitOfWork = unitOfWork;
-        }
-        public OrderEntryController(UnitOfWork UoW)
-        {
-            _unitOfWork = UoW;
-        }
         // GET api/values
         [HttpGet]
         public ActionResult<IEnumerable<string>> Get()
         {
-            var _orderEntry = _unitOfWork.OrderEntryRepository.GetAll();
-            return Ok(_orderEntry);
+
+            return Ok();
+        }
+        // GET api/values
+        [HttpGet]
+        public async Task<OrderEntryApiModel> GetOrderEntryAsync()
+        {
+            var orderEntries = await _serviceFactory.OrderService.GetOrderEntryAsync();
+            return _mapper.Map<OrderEntryApiModel>(orderEntries);
         }
 
         // GET api/values/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public async Task<ActionResult<OrderApiModel>> Get(int id)
         {
-            try
-            {
-
-                // pobranie z bazdy
-                return Ok(_unitOfWork.OrderEntryRepository.Find(s => s.Id == id));
-            }
-            catch (Exception e)
-            {
-                return BadRequest(e.Message);
-
-            }
-
-
-
+                var orderEntry = await _serviceFactory.OrderService.GetOrderEntryAsync(id);
+                return Ok(_mapper.Map<OrderEntryApiModel>(orderEntry));
         }
+
+
+
+        
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody] OrderEntry _orderEntry)
+        public async Task<ActionResult> Post([FromBody] AddOrderEntryDto orderEntry)
         {
-            _unitOfWork.OrderEntryRepository.Add(_orderEntry);
-            _unitOfWork.SaveChanges();
+            orderEntry.Validate<AddOrderEntryDtoValidator, AddOrderEntryDto>();
+            var orderEntryResult = await _serviceFactory.OrderService.AddOrderEntryAsync(_mapper.Map<OrderEntryBllModel>(orderEntry));
+
+            return Ok(orderEntryResult);
         }
 
-        // PUT api/values/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] OrderEntry _orderEntry)
+    // PUT api/values/5
+    [HttpPut("{id}")]
+        public async Task<ActionResult> Put(int id, [FromBody] UpdateOrderEntryDto orderEntry)
         {
+            orderEntry.Validate<UpdateOrderEntryDtoValidator, UpdateOrderEntryDto>();
+            var orderEntryBll = _mapper.Map<OrderEntryBllModel>(orderEntry);
+            await _serviceFactory.OrderService.UpdateOrderEntryAsync(id, orderEntryBll);
 
-            var entity = _unitOfWork.OrderEntryRepository.Find(s => s.Id == id);
-            if (entity == null)
-            {
-                return;
-            }
-            entity.OrderType = _orderEntry.OrderType;
-            entity.Location = _orderEntry.Location;
-            entity.Date = _orderEntry.Date;
-            entity.FromTime = _orderEntry.FromTime;
-            entity.ToTime = _orderEntry.ToTime;
-            entity.Cargo = _orderEntry.Cargo;
-            entity.Comments = _orderEntry.Comments;
-            entity.Status = _orderEntry.Status;
-            entity.Order = _orderEntry.Order;
-            entity.Delays = _orderEntry.Delays;
-            entity.Status = _orderEntry.Status;
-
-
-            _unitOfWork.OrderEntryRepository.Update(entity);
-            _unitOfWork.SaveChanges();
-        }
+            return Ok("");
+         }
 
         // DELETE api/values/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public async Task<ActionResult> Delete(int id)
         {
-            var entity = _unitOfWork.OrderEntryRepository.Find(s => s.Id == id);
+           await _serviceFactory.OrderService.DeleteAsync(id);
 
-            _unitOfWork.OrderEntryRepository.Delete(entity);
-            _unitOfWork.SaveChanges();
+            return Ok("");
         }
     }
 }

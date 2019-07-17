@@ -26,8 +26,8 @@ namespace ITMCode.Piatnica.Api.Controllers
 
         public DelayController(IServiceFactory serviceFactory, IMapper mapper)
         {
-            this._serviceFactory = serviceFactory;
-            this._mapper = mapper;
+            _serviceFactory = serviceFactory;
+            _mapper = mapper;
         }
   
         // GET api/values
@@ -42,8 +42,8 @@ namespace ITMCode.Piatnica.Api.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<string>> GetAsync(int id)
         {
-            var order = await _serviceFactory.DelayService.GetAsync(id);
-            return Ok(_mapper.Map<DelayApiModel>(order));
+            var delay = await _serviceFactory.DelayService.GetAsync(id);
+            return Ok(_mapper.Map<DelayApiModel>(delay));
         }
 
         // POST api/values
@@ -51,7 +51,7 @@ namespace ITMCode.Piatnica.Api.Controllers
         public async Task<ActionResult> Post([FromBody] AddDelayDto delay)
         {
             delay.Validate<AddDelayDtoValidator, AddDelayDto>();
-            var delayResult = await _serviceFactory.DelayService.AddAsync(delay.Number);
+            var delayResult = await _serviceFactory.DelayService.AddAsync(delay.DelayOrder);
 
             return Ok(delayResult);
         }

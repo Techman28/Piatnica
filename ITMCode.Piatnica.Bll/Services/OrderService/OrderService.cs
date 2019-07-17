@@ -81,5 +81,62 @@ namespace  ITMCode.Piatnica.Bll.Services
             _unitOfWork.SaveChanges();
 
         }
+
+        /// <summary>
+        /// ORDER ENTRY LOGIC
+        /// </summary>
+        /// <returns></returns>
+        public  async Task<OrderEntryBllModel> GetOrderEntryAsync()
+        {
+            var _orderEntries = await _unitOfWork.OrderEntryRepository.GetAllAsync();
+            return _mapper.Map<OrderEntryBllModel>(_orderEntries);
+        }
+        public async Task<OrderEntryBllModel> GetOrderEntryAsync(int id)
+        {
+            var orderEntry = await _unitOfWork.OrderEntryRepository.FindAsyncDefault(id);
+            return _mapper.Map<OrderEntryBllModel>(orderEntry);
+        }
+
+        public async Task<OrderEntryBllModel> AddOrderEntryAsync(OrderEntryBllModel orderEntry)
+        {
+            var newOrder = _mapper.Map<Order>(orderEntry);
+            await _unitOfWork.OrderRepository.AddAsync(newOrder);
+            await _unitOfWork.SaveChangesAsync();
+
+            return _mapper.Map<OrderEntryBllModel>(newOrder);
+        }
+
+        public async Task<OrderEntryBllModel> UpdateOrderEntryAsync(int id, OrderEntryBllModel orderEntry)
+        {
+            var entity = await _unitOfWork.OrderEntryRepository.FindAsyncDefault(s => s.Id == id);
+         
+            entity.OrderType = orderEntry.OrderType;
+            entity.Location = orderEntry.Location;
+            entity.Date = orderEntry.Date;
+            entity.FromTime = orderEntry.FromTime;
+            entity.ToTime = orderEntry.ToTime;
+            entity.Cargo = orderEntry.Cargo;
+            entity.Comments = orderEntry.Comments;
+            entity.Status = orderEntry.Status;
+            entity.Delays = _mapper.Map<List<Delay>>(orderEntry.Delays);
+            entity.EventHistories = _mapper.Map<List<EventHistory>>(orderEntry.EventHistories);
+
+            _unitOfWork.OrderEntryRepository.Update(entity);
+           await  _unitOfWork.SaveChangesAsync();
+
+            return _mapper.Map<OrderEntryBllModel>(orderEntry);
+        }
+
+        public async Task DeleteOrderEntryAsync(int id)
+        {
+
+            var entity = await _unitOfWork.OrderEntryRepository.FindAsyncDefault(id, i => i.Include(d => d.Order).Include(d=> d.Delays).Include(d=> d.EventHistories));
+
+            _unitOfWork.OrderEntryRepository.Delete(entity);
+            _unitOfWork.SaveChanges();
+
+        }
     }
+
+   
 }
