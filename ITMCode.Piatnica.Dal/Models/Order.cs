@@ -10,6 +10,9 @@ namespace ITMCode.Piatnica.Dal.Models
     public class Order : IEntity
     {
         public Order() { }
+
+
+        [Key]
         public int Id { get; set; }
         public string Number { get; set; }
 
@@ -17,5 +20,5 @@ namespace ITMCode.Piatnica.Dal.Models
         public ICollection<LocationHistory> LocationHistories { get; set; }
         public ICollection<OrderEntry> OrderEntries { get; set; }
 
-     }
+    }
 }

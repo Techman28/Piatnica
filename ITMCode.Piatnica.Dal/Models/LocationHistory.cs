@@ -16,7 +16,7 @@ namespace ITMCode.Piatnica.Dal.Models
         public DateTime Date { get; set; }
 
         public virtual Order Order { get; set; }
-
+        [Key]
         public int Id { get; set; }
 
     }
