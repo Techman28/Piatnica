@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ITMCode.Piatnica.Api.Migrations
 {
     [DbContext(typeof(PiatnicaContext))]
-    [Migration("20190716112552_changed")]
+    [Migration("20190716135338_changed")]
     partial class changed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
