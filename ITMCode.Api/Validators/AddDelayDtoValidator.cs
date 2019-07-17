@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using ITMCode.Piatnica.Api.DTOs;
 
-namespace Dampak.Api.Validators
+namespace ITMCode.Piatnica.Api.Validators
 {
     public class AddDelayDtoValidator : AbstractValidator<AddDelayDto>
     {

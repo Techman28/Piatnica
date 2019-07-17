@@ -8,6 +8,7 @@ namespace ITMCode.Piatnica.Api.Models
     {
         public DateTime Date { get; set; }
         public float Distance { get; set; }
+        public string Name { get; set; }
         public int Id { get; set; }
     }
 }

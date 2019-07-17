@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ITMCode.Piatnica.Bll.Models
+namespace ITMCode.Piatnica.Api.DTOs
 {
-    public class EventHistoryBllModel
+    public class UpdateEventHistoryDto : IValidatable
     {
         public DateTime Date { get; set; }
         public float Distance { get; set; }
