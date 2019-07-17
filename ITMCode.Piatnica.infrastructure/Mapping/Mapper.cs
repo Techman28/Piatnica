@@ -24,6 +24,7 @@ namespace ITMCode.Piatnica.Infrastucture.Mapping
             CreateMap<Delay, DelayBllModel>().ReverseMap();
             CreateMap<EventHistory, EventHistoryBllModel>().ReverseMap();
 
+
             #endregion
 
             #region From Bll to ApiModels
