@@ -24,6 +24,9 @@ namespace ITMCode.Piatnica.Dal.Models
         public ICollection<Delay> Delays { get; set; }
         public ICollection<EventHistory> EventHistories { get; set; }
 
+
+
+        [Key]
         public int Id { get; set; }
     }
 }

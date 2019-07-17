@@ -17,6 +17,7 @@ namespace ITMCode.Piatnica.Dal.Models
 
         public virtual OrderEntry OrderEntry { get; set; }
 
+        [Key]
         public int Id { get; set; }
 
     }
