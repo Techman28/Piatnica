@@ -54,14 +54,14 @@
                 "searchable": true,
                 "title": "Dodaj",
                 "data": null,
-                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-success'>Dodaj</a>"
+                "defaultContent": "<button type= 'addbtn'>Dodaj</button>"
             },
             {
                 "orderable": false,
                 "searchable": true,
                 "title": "Usuń",
                 "data": null,
-                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-danger'>Usuń</a>"
+                "defaultContent": "<butto type= 'rmvbtn'>Usuń</button>"
             }
         ]
     });
@@ -89,5 +89,10 @@
         alert('You clicked on Like button');
     });
 
+    $('#datatables tbody').on('click', '.rmvbtn', function () {
+        var data = table.row($tr).data();
+        table.row($tr).remove().draw();
+        alert('Dodano do zlecenia');
+    });
 });
 
