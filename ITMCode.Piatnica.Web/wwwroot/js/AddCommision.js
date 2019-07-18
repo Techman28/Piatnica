@@ -54,22 +54,22 @@
                 "searchable": true,
                 "title": "Dodaj",
                 "data": null,
-<<<<<<< HEAD
-                "defaultContent": "<button type= 'addbtn'>Dodaj</button>"
-=======
+
+                
+
                 "defaultContent": "<a href='/order/DetailOrder' class='btn darkgreen'>Dodaj</a>"
->>>>>>> 3bc39936ecac3cee1a8480283f1159de78d30155
+
             },
             {
                 "orderable": false,
                 "searchable": true,
                 "title": "Usuń",
                 "data": null,
-<<<<<<< HEAD
-                "defaultContent": "<butto type= 'rmvbtn'>Usuń</button>"
-=======
+
+                
+
                 "defaultContent": "<a href='/order/DetailOrder' class='btn darkred'>Usuń</a>"
->>>>>>> 3bc39936ecac3cee1a8480283f1159de78d30155
+
             }
         ]
     });

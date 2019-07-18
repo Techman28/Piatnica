@@ -100,7 +100,7 @@
                 "searchable": true,
                 "title": "Szczegóły", 
                 "data": null,
-<<<<<<< HEAD
+
                 "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary'>Szczegóły</a>"
             },
             {
@@ -108,10 +108,10 @@
                 "searchable": true,
                 "title": "Dodaj do zlecenia",
                 "data": null,
-                "defaultContent": "<button class='btn btn-primary add-to-order'>Dodaj do zlecenia</button>"
-=======
-                "defaultContent": "<a href='/order/DetailOrder' class='btn darkblue'> Szczegóły</a>"
->>>>>>> 18e540ec5080985ee29fc83299f18a867717074f
+                "defaultContent": "<button class='btn btn-primary add-to-order darkgreen'>Dodaj do zlecenia</button>"
+
+                
+
             }
         ]
     });
