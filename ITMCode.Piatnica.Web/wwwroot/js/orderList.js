@@ -101,7 +101,7 @@
                 "title": "Szczegóły", 
                 "data": null,
 
-                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary'>Szczegóły</a>"
+                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary darkblue'>Szczegóły</a>"
             },
             {
                 "orderable": false,
@@ -109,8 +109,6 @@
                 "title": "Dodaj do zlecenia",
                 "data": null,
                 "defaultContent": "<button class='btn btn-primary add-to-order darkgreen'>Dodaj do zlecenia</button>"
-
-                
 
             }
         ]

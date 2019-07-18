@@ -55,18 +55,13 @@
                 "title": "Dodaj",
                 "data": null,
 
-                
-
                 "defaultContent": "<a href='/order/DetailOrder' class='btn darkgreen'>Dodaj</a>"
-
             },
             {
                 "orderable": false,
                 "searchable": true,
                 "title": "Usuń",
                 "data": null,
-
-                
 
                 "defaultContent": "<a href='/order/DetailOrder' class='btn darkred'>Usuń</a>"
 
