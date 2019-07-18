@@ -101,11 +101,28 @@
                 "title": "Szczegóły", 
                 "data": null,
                 "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary'>Szczegóły</a>"
+            },
+            {
+                "orderable": false,
+                "searchable": true,
+                "title": "Dodaj do zlecenia",
+                "data": null,
+                "defaultContent": "<button class='btn btn-primary add-to-order'>Dodaj do zlecenia</button>"
             }
         ]
     });
 
-     
+
+    $('#datatables tbody').on('click', '.add-to-order', function () {
+        var data = table.row($(this).parents('tr')).data();
+        swal({
+            title: "Dodano!",
+            text: `Zamówienie od kontrahenta ${data[1]} zostało dodane`,
+            buttonsStyling: false,
+            confirmButtonClass: "btn btn-success",
+            type: "success"
+        }).catch(swal.noop)
+    });
 
 
 

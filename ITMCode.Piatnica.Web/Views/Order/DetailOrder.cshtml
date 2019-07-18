@@ -23,9 +23,9 @@
                                             <h4 class="card-title">Kontrahent</h4>
                                         </div>
                                     </div>
-                                    <div class="card-body">
-                                        <b>Betony Sp. z o. o. NIP 111 222 33 44</b>
-                                        <p>ul. Betonowa 11, 80-240 Gdańsk, Polska</p>
+                                    <div class="card-body" id="contractor-info">
+                                        <b id="contractor-name">Betony Sp. z o. o. NIP 111 222 33 44</b>
+                                        <p id="contractor-adress">ul. Betonowa 11, 80-240 Gdańsk, Polska</p>
                                     </div>
                                 </div>
                             </div>
@@ -278,8 +278,9 @@
                             <div class="col-md-12">
                                 <div class="card">                                 
                                         <div class="card-text text-right">
-                                            <a asp-controller="Order" asp-action="OrderList" class='btn btn-primary'>Dodaj zlecenie</a>
+                                            <a id="add-to-order" class='btn btn-primary'>Dodaj do zlecenia</a>
                                     </div>
+
                                 </div>
                             </div>
                         </div>
@@ -292,3 +293,4 @@
             <!-- end row -->
         </div>
     </div>
+ @section  scripts {<script src="~/js/DetailOrder.js"></script> }
