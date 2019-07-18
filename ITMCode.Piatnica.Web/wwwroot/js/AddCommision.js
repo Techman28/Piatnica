@@ -54,28 +54,41 @@
                 "searchable": true,
                 "title": "Dodaj",
                 "data": null,
-<<<<<<< HEAD
-                "defaultContent": "<button type= 'addbtn'>Dodaj</button>"
-=======
-                "defaultContent": "<a href='/order/DetailOrder' class='btn darkgreen'>Dodaj</a>"
->>>>>>> 3bc39936ecac3cee1a8480283f1159de78d30155
+                "defaultContent": "<button class='btn btn-primary add-to-order btn darkgreen'>Dodaj</button>"
+
             },
             {
                 "orderable": false,
                 "searchable": true,
                 "title": "Usuń",
                 "data": null,
-<<<<<<< HEAD
-                "defaultContent": "<butto type= 'rmvbtn'>Usuń</button>"
-=======
-                "defaultContent": "<a href='/order/DetailOrder' class='btn darkred'>Usuń</a>"
->>>>>>> 3bc39936ecac3cee1a8480283f1159de78d30155
+                "defaultContent": "<button class='btn btn-primary delete-from-order btn darkred'>Usuń</button>"
             }
         ]
     });
 
 
+    $('#add-to-order').on('click', function () {
+        var data = table.row($(this).parents('tr')).data();
+        swal({
+            title: "Dodano!",
+            text: `Zamówienie od kontrahenta zostało dodane`,
+            buttonsStyling: false,
+            confirmButtonClass: "btn btn-success",
+            type: "success"
+        }).catch(swal.noop)
+    });
 
+    $('#datatables tbody').on('click', '.delete-from-order', function () {
+        var data = table.row($(this).parents('tr')).data();
+        swal({
+            title: "Usunięto!",
+            text: `Usunięto Zamówienie od kontrahenta ${data[1]}`,
+            buttonsStyling: false,
+            confirmButtonClass: "btn btn-success",
+            type: "success"
+        }).catch(swal.noop)
+    });
 
 
     // Edit record
@@ -97,10 +110,6 @@
         alert('You clicked on Like button');
     });
 
-    $('#datatables tbody').on('click', '.rmvbtn', function () {
-        var data = table.row($tr).data();
-        table.row($tr).remove().draw();
-        alert('Dodano do zlecenia');
-    });
+
 });
 
