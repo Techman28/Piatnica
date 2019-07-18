@@ -100,7 +100,7 @@
                 "searchable": true,
                 "title": "Szczegóły", 
                 "data": null,
-                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary'>Szczegóły</a>"
+                "defaultContent": "<a href='/order/DetailOrder' class='btn darkblue'> Szczegóły</a>"
             }
         ]
     });
