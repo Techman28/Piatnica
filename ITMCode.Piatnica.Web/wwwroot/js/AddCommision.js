@@ -54,14 +54,22 @@
                 "searchable": true,
                 "title": "Dodaj",
                 "data": null,
-                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-success'>Dodaj</a>"
+<<<<<<< HEAD
+                "defaultContent": "<button type= 'addbtn'>Dodaj</button>"
+=======
+                "defaultContent": "<a href='/order/DetailOrder' class='btn darkgreen'>Dodaj</a>"
+>>>>>>> 3bc39936ecac3cee1a8480283f1159de78d30155
             },
             {
                 "orderable": false,
                 "searchable": true,
                 "title": "Usuń",
                 "data": null,
-                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-danger'>Usuń</a>"
+<<<<<<< HEAD
+                "defaultContent": "<butto type= 'rmvbtn'>Usuń</button>"
+=======
+                "defaultContent": "<a href='/order/DetailOrder' class='btn darkred'>Usuń</a>"
+>>>>>>> 3bc39936ecac3cee1a8480283f1159de78d30155
             }
         ]
     });
@@ -88,4 +96,11 @@
     table.on('click', '.like', function () {
         alert('You clicked on Like button');
     });
+
+    $('#datatables tbody').on('click', '.rmvbtn', function () {
+        var data = table.row($tr).data();
+        table.row($tr).remove().draw();
+        alert('Dodano do zlecenia');
+    });
 });
+
