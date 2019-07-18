@@ -100,14 +100,15 @@
                 "searchable": true,
                 "title": "Szczegóły", 
                 "data": null,
-                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary'>Szczegóły</a>"
+
+                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary darkblue'>Szczegóły</a>"
             },
             {
                 "orderable": false,
                 "searchable": true,
                 "title": "Dodaj do zlecenia",
                 "data": null,
-                "defaultContent": "<button class='btn btn-primary add-to-order'>Dodaj do zlecenia</button>"
+                "defaultContent": "<a class='btn text-white btn-primary add-to-order darkgreen'>Dodaj do zlecenia</a>"
 
             }
         ]

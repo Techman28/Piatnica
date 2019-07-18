@@ -2,12 +2,12 @@
 
 
 
-    var dataSet2 = [["1", "Fresh world", "Jan Kowalski", "Żywność", "Karton", "Raškovice", "4350.32 zł", "",""],
-    ["2", "Fresh", "Jan Nowak", "Żywność", "Karton","Kraków", "4220.22 zł", ""],
-        ["3", "Weber LLC", "Maighdiln Bembridge", "Coffee - Dark Roast", "Mecamylamine Hydrochloride", "Jiangqiao", "3139.34 zł", "", ""],
-        ["4", "Okuneva LLC", "Benjy Shuttle", "Pasta - Spaghetti, Dry", "CARE ONE", "Baimajing", "3160.62 zł", "", ""],
-        ["5", "Murphy-Kub", "Derwin Girdwood", "Chicken - Wieners", "AMBROSIA TRIFIDA POLLEN", "Kopychyntsi", "4846.75 zł", "", ""],
-   
+    var dataSet2 = [["1", "Fresh world", "Jan Kowalski", "Żywność", "Karton", "Raškovice", "4350.32 zł"],
+    ["2", "Fresh", "Jan Nowak", "Żywność", "Karton", "Kraków", "4220.22 zł"],
+    ["3", "Weber LLC", "Maighdiln Bembridge", "Coffee - Dark Roast", "Mecamylamine Hydrochloride", "Jiangqiao", "3139.34 zł"],
+    ["4", "Okuneva LLC", "Benjy Shuttle", "Pasta - Spaghetti, Dry", "CARE ONE", "Baimajing", "3160.62 zł"],
+    ["5", "Murphy-Kub", "Derwin Girdwood", "Chicken - Wieners", "AMBROSIA TRIFIDA POLLEN", "Kopychyntsi", "4846.75 zł", ""],
+
 
     ];
 
@@ -49,46 +49,42 @@
                 "searchable": true,
                 "title": "Kwota netto"
             },
-            {
-                "orderable": false,
-                "searchable": true,
-                "title": "Dodaj",
-                "data": null,
-                "defaultContent": "<button class='btn btn-primary add-to-order btn darkgreen'>Dodaj</button>"
 
-            },
             {
                 "orderable": false,
                 "searchable": true,
                 "title": "Usuń",
                 "data": null,
-                "defaultContent": "<button class='btn btn-primary delete-from-order btn darkred'>Usuń</button>"
+
+                "defaultContent": "<a class='btn text-white btn-primary darkred delete-from-order'>Usuń</a>"
+
             }
         ]
     });
 
-
-    $('#add-to-order').on('click', function () {
-        var data = table.row($(this).parents('tr')).data();
-        swal({
-            title: "Dodano!",
-            text: `Zamówienie od kontrahenta zostało dodane`,
-            buttonsStyling: false,
-            confirmButtonClass: "btn btn-success",
-            type: "success"
-        }).catch(swal.noop)
-    });
-
     $('#datatables tbody').on('click', '.delete-from-order', function () {
-        var data = table.row($(this).parents('tr')).data();
-        swal({
-            title: "Usunięto!",
-            text: `Usunięto Zamówienie od kontrahenta ${data[1]}`,
-            buttonsStyling: false,
+        swal.fire({
+            title: 'Na pewno chcesz usunąć zamówienie?',
+            text: ' Nie będziesz mógł powrócić do poprzedniego stanu!',
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonText: 'Tak, usuń!',
+            cancelButtonText: 'Nie usuwaj',
             confirmButtonClass: "btn btn-success",
-            type: "success"
-        }).catch(swal.noop)
+            cancelButtonClass: "btn btn-danger",
+            buttonsStyling: false
+        }).then((result) => {
+            if (result.value) {
+                Swal.fire(
+                    'Usunięto!',
+                    '',
+                    'success'
+                )
+            }
+        })
+
     });
+
 
 
     // Edit record
