@@ -4849,7 +4849,7 @@ tbody.collapse.show {
     .page-link:hover {
         color: #0a6ebd;
         text-decoration: none;
-        background-color: #201559;
+        background-color: #02458E;
         border-color: #dee2e6;
     }
 
@@ -13485,10 +13485,10 @@ fieldset[disabled] .form-group .form-control {
     .pagination > .page-item.active > span,
     .pagination > .page-item.active > span:focus,
     .pagination > .page-item.active > span:hover {
-        background-color: #201559;
-        border-color: #9c27b0;
+        background-color: #02458E;
+        border-color: #02458E;
         color: #fff;
-        box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(156, 39, 176, 0.2);
+        box-shadow: 0 4px 5px 0 rgba(156, 39, 176, 0.14), 0 1px 10px 0 rgba(156, 39, 176, 0.12), 0 2px 4px -1px rgba(2, 69, 142, 0.2);
     }
 
 .pagination.pagination-info > .page-item.active > a,
@@ -15652,7 +15652,7 @@ thead.thead-inverse th,
 .card.bg-primary,
 .card.card-rotate.bg-primary .front,
 .card.card-rotate.bg-primary .back {
-    background: #006e41 !important;
+    background: #02458E !important;
 }
 
 .card .card-header-info .card-icon,
@@ -16455,9 +16455,9 @@ thead.thead-inverse th,
   color: #3C4858;
 }
 
-.card-pricing .card-icon.icon-primary i {
-  color: #9c27b0;
-}
+    .card-pricing .card-icon.icon-primary i {
+        color: #02458E;
+    }
 
 .card-pricing .card-icon.icon-info i {
   color: #00bcd4;
@@ -18399,7 +18399,7 @@ a .material-icons {
   position: absolute;
   right: 10px !important;
 }
-
+   
 .fixed-plugin .dropdown .dropdown-menu .adjustments-line label {
   margin-bottom: .1rem !important;
 }
@@ -26847,10 +26847,10 @@ be a descendant of the grid when it is being dragged.
   font-weight: 500;
 }
 
-.card-wizard[data-color="purple"] .moving-tab {
-  background-color: #9c27b0;
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
-}
+    .card-wizard[data-color="purple"] .moving-tab {
+        background-color: #0A9E47;
+        box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+    }
 
 .card-wizard[data-color="purple"] .picture:hover {
   border-color: #9c27b0;
@@ -26874,10 +26874,10 @@ be a descendant of the grid when it is being dragged.
   border-color: #9c27b0;
 }
 
-.card-wizard[data-color="green"] .moving-tab {
-  background-color: #4caf50;
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
-}
+    .card-wizard[data-color="green"] .moving-tab {
+        background-color: #0A9E47 !important;
+        box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(76, 175, 80, 0.4);
+    }
 
 .card-wizard[data-color="green"] .picture:hover {
   border-color: #4caf50;
