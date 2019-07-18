@@ -60,3 +60,18 @@ body {
     box-shadow: none;
     background-color: #4caf50;
 }
+
+.bootstrap-select > .dopdown-toggle.btn-link, .bootstrap-select > .dopdown-toggle.btn-link:active
+{
+    background-color: #4caf50;
+}
+
+.bootstrap-select .dropdown-item.active {
+    background-color: #4caf50;
+}
+
+.btn, .btn:hover, .btn:active, btn:visited, btn:focus, btn:checked, btn:enabled {
+    background-color: #201559;
+}
+
+
