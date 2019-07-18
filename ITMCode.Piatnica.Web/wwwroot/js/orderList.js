@@ -108,7 +108,7 @@
                 "searchable": true,
                 "title": "Dodaj do zlecenia",
                 "data": null,
-                "defaultContent": "<button class='btn btn-primary add-to-order darkgreen'>Dodaj do zlecenia</button>"
+                "defaultContent": "<a class='btn text-white btn-primary add-to-order darkgreen'>Dodaj do zlecenia</a>"
 
             }
         ]
