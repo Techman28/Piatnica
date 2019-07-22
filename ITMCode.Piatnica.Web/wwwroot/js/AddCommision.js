@@ -1,53 +1,71 @@
-﻿$(document).ready(function () {
+﻿function allStorage() {
 
+    var values = [],
+        keys = Object.keys(localStorage),
+        i = keys.length;
 
+    while (i--) {
+        values.push(JSON.parse(localStorage.getItem(keys[i])));
+    }
 
-    var dataSet2 = [["1", "Fresh world", "Jan Kowalski", "Żywność", "Karton", "Raškovice", "4350.32 zł"],
-    ["2", "Fresh", "Jan Nowak", "Żywność", "Karton", "Kraków", "4220.22 zł"],
-    ["3", "Weber LLC", "Maighdiln Bembridge", "Coffee - Dark Roast", "Mecamylamine Hydrochloride", "Jiangqiao", "3139.34 zł"],
-    ["4", "Okuneva LLC", "Benjy Shuttle", "Pasta - Spaghetti, Dry", "CARE ONE", "Baimajing", "3160.62 zł"],
-    ["5", "Murphy-Kub", "Derwin Girdwood", "Chicken - Wieners", "AMBROSIA TRIFIDA POLLEN", "Kopychyntsi", "4846.75 zł", ""],
+    return values;
+}
+var table;
+var dataSet2;
+function CreateDatatables() {
 
-
-    ];
-
-    var table = $('#datatables').DataTable({
+    dataSet2 = allStorage();
+    table = $('#datatables').DataTable({
         data: dataSet2,
         columns: [
             {
                 "orderable": false,
                 "searchable": false,
-                "title": ""
+                "title": "",
+                data : "id"
             },
             {
                 "orderable": false,
                 "searchable": true,
-                "title": "Kontrahent"
+                "title": "Kontrahent",
+                data: "contractor"
+
             },
             {
                 "orderable": false,
                 "searchable": true,
-                "title": "Handlowiec"
+                "title": "Handlowiec",
+                data: "trader"
+
             },
             {
                 "orderable": false,
                 "searchable": true,
-                "title": "Nazwa towaru"
+                "title": "Nazwa towaru",
+                data: "commodityName"
             },
             {
                 "orderable": false,
                 "searchable": true,
-                "title": "Rodzaj opakowania"
+                "title": "Rodzaj opakowania",
+                data: "packageType"
+
+
+
             },
             {
                 "orderable": false,
                 "searchable": true,
-                "title": "Miejsce docelowe"
+                "title": "Miejsce docelowe",
+                data: "place"
+
             },
             {
                 "orderable": false,
                 "searchable": true,
-                "title": "Kwota netto"
+                "title": "Kwota netto",
+                data: "price"
+
             },
 
             {
@@ -59,7 +77,116 @@
                 "defaultContent": "<a class='btn text-white btn-primary darkred delete-from-order'>Usuń</a>"
 
             }
-        ]
+        ],
+
+        language: {
+            processing: "Przetwarzanie...",
+            search: "Szukaj:",
+            lengthMenu: "Pokaż _MENU_ pozycji",
+            info: "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+            infoEmpty: "Pozycji 0 z 0 dostępnych",
+            infoFiltered: "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+            infoPostFix: "",
+            loadingRecords: "Wczytywanie...",
+            zeroRecords: "Nie znaleziono pasujących pozycji",
+            emptyTable: "Brak danych",
+            paginate: {
+                first: "Pierwsza",
+                previous: "Poprzednia",
+                next: "Następna",
+                last: "Ostatnia"
+            },
+            aria: {
+                sortAscending: ": aktywuj, by posortować kolumnę rosnąco",
+                sortDescending: ": aktywuj, by posortować kolumnę malejąco"
+            }
+        }
+    });
+}
+$(document).ready(function () {
+
+
+    CreateDatatables();
+
+    var summaryTable = $('#summary-table').DataTable({
+        data: dataSet2,
+        columns: [
+            {
+                "orderable": false,
+                "searchable": false,
+                "title": "",
+                data: "id"
+            },
+            {
+                "orderable": false,
+                "searchable": true,
+                "title": "Kontrahent",
+                data: "contractor"
+
+            },
+            {
+                "orderable": false,
+                "searchable": true,
+                "title": "Handlowiec",
+                data: "trader"
+
+            },
+            {
+                "orderable": false,
+                "searchable": true,
+                "title": "Nazwa towaru",
+                data: "commodityName"
+            },
+            {
+                "orderable": false,
+                "searchable": true,
+                "title": "Rodzaj opakowania",
+                data: "packageType"
+
+
+
+            },
+            {
+                "orderable": false,
+                "searchable": true,
+                "title": "Miejsce docelowe",
+                data: "place"
+
+            },
+            {
+                "orderable": false,
+                "searchable": true,
+                "title": "Kwota netto",
+                data: "price"
+
+            },
+
+        ],
+
+        language: {
+            processing: "Przetwarzanie...",
+            search: "Szukaj:",
+            lengthMenu: "Pokaż _MENU_ pozycji",
+            info: "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+            infoEmpty: "Pozycji 0 z 0 dostępnych",
+            infoFiltered: "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+            infoPostFix: "",
+            loadingRecords: "Wczytywanie...",
+            zeroRecords: "Nie znaleziono pasujących pozycji",
+            emptyTable: "Brak danych",
+            paginate: {
+                first: "Pierwsza",
+                previous: "Poprzednia",
+                next: "Następna",
+                last: "Ostatnia"
+            },
+            aria: {
+                sortAscending: ": aktywuj, by posortować kolumnę rosnąco",
+                sortDescending: ": aktywuj, by posortować kolumnę malejąco"
+            }
+        }
+
+
     });
 
     $('#datatables tbody').on('click', '.delete-from-order', function () {
@@ -75,6 +202,10 @@
             buttonsStyling: false
         }).then((result) => {
             if (result.value) {
+                var data = table.row($(this).parents('tr')).data();
+                localStorage.removeItem(data['id']);
+                //CreateDatatables();
+                table.draw();
                 Swal.fire(
                     'Usunięto!',
                     '',
@@ -84,6 +215,7 @@
         })
 
     });
+
 
 
 
@@ -106,6 +238,21 @@
         alert('You clicked on Like button');
     });
 
+    $('#finish-order').on('click', function () {
+        swal({
+            title: "Utworzono!",
+            text: `Zlecenie zostało utworzone`,
+            timer: 3000,
+            showConfirmButton: false,
+            buttonsStyling: false,
+            confirmButtonClass: "btn btn-success",
+            type: "success"
+        }).then(function () {
+            window.location.href = "https://localhost:44350/order/orderList"
+        })
+
+
+    });
 
 });
 

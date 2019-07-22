@@ -1,4 +1,17 @@
-﻿$(document).ready(function () {
+﻿class Orders {
+    constructor(id, contractor, trader, commodityName, packageType, place, price) {
+        this.id = id;
+        this.contractor = contractor;
+        this.trader = trader;
+        this.commodityName = commodityName;
+        this.packageType = packageType;
+        this.place = place;
+        this.price = price;
+
+    }
+}
+
+$(document).ready(function () {
 
      
 
@@ -74,6 +87,7 @@
                 "orderable": false,
                 "searchable": true,
                 "title": "Lokalizacja rozładunku"
+                
             },
             {
                 "orderable": false,
@@ -117,6 +131,9 @@
 
     $('#datatables tbody').on('click', '.add-to-order', function () {
         var data = table.row($(this).parents('tr')).data();
+        const obj = new Orders(data[0], data[1], data[2], data[3], data[4], data[9], data[10]);
+        localStorage.setItem(data[0], JSON.stringify(obj));
+        console.log(localStorage.getItem(obj));
         swal({
             title: "Dodano!",
             text: `Zamówienie od kontrahenta ${data[1]} zostało dodane`,
@@ -134,6 +151,8 @@
         var data = table.row($tr).data();
         alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
     });
+
+
 
     // Delete a record
     table.on('click', '.remove', function (e) {

@@ -31,60 +31,56 @@
                 Tip 2: you can also add an image using data-image tag
             -->
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text logo-mini">
-                    P
-                </a>
-                <a href="http://www.creative-tim.com" class="simple-text logo-normal">
-                    Piątnica
-                </a>
+                <img src= "Logo/piatnicaLogo.png"/>
             </div>
             <div class="sidebar-wrapper">
                 <ul class="nav">
                     <li class="nav-item">
                         <a class="nav-link">
-                            <i class="material-icons">dashboard</i>
-                            <p>Panel główny</p>
+                            <img src="~/dashboard/assets/img/icons8-top-menu-50.png" height="24" width="24">
+                            Panel główny
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Order" asp-action="OrderList">
-                            <i class="material-icons">dashboard</i>
-                            <p>Zamówienia</p>
+                            <img src="~/dashboard/assets/img/icons8-purchase-order-50.png" height="24" width="24">
+                            Zamówienia
                         </a>
                     </li>
                     <li class="nav-item"  >
                         <a class="nav-link" asp-controller="Employees" asp-action="EmployeeList">
-                            <i class="material-icons">dashboard</i>
-                            <p>Pracownicy</p>
+                            <img src="~/dashboard/assets/img/icons8-worker-50.png" height="24" width="24">
+                            Pracownicy
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" asp-controller="Vechicle" asp-action="vechicleList" >
-                            <i class="material-icons">dashboard</i>
-                            <p>Samochody</p>
+                            <img src="~/dashboard/assets/img/icons8-truck-50.png" height="24" width="24">
+                            Samochody
                         </a>
                     </li>
 
                     <li class="nav-item ">
                         <a class="nav-link" data-toggle="collapse" href="#pagesExamples">
-                            <i class="material-icons">image</i>
-                            <p>
+                            <img src="~/dashboard/assets/img/icons8-list-view-50.png" height="24" width="24">
                                 Zlecenia
                                 <b class="caret"></b>
-                            </p>
+                            
                         </a>
                         <div class="collapse" id="pagesExamples">
                             <ul class="nav">
                                 <li class="nav-item ">
                                     <a class="nav-link">
                                         <span class="sidebar-mini">   </span>
-                                        <span class="sidebar-normal"> Wszystkie zlecenia </span>
+                                        <img src="~/dashboard/assets/img/icons8-list-50.png" height="24" width="24">
+                                         Wszystkie zlecenia 
                                     </a>
                                 </li>
                                 <li class="nav-item ">
                                     <a asp-controller="Commision" asp-action="AddCommision" class="nav-link">
                                         <span class="sidebar-mini">   </span>
-                                        <span class="sidebar-normal"> Dodaj zlecenie </span>
+                                        <img src="~/dashboard/assets/img/icons8-add-property-50.png" height="24" width="24">
+                                         Dodaj zlecenie 
                                     </a>
                                 </li>
                             </ul>
@@ -120,7 +116,7 @@
                             <div class="input-group no-border">
                                 <input type="text" value="" class="form-control" placeholder="Search...">
                                 <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                                    <i class="material-icons">search</i>
+                                    <i class="material-icons">Szukaj</i>
                                     <div class="ripple-container"></div>
                                 </button>
                             </div>
