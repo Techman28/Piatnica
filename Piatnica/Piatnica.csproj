@@ -150,17 +150,19 @@
     </AndroidResource>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\delayActivity.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\toolbar.axml">
-      <SubType>Designer</SubType>
-    </AndroidResource>
+    <AndroidResource Include="Resources\layout\delayActivity.axml" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\layout\eventTypeActivity.axml">
+    <AndroidResource Include="Resources\layout\eventTypeActivity.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\toolbar.axml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\addingDelay.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
