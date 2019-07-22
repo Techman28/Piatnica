@@ -23,6 +23,8 @@ namespace ITMCode.Piatnica.Infrastucture.Mapping
             CreateMap<OrderEntry, OrderEntryBllModel>().ReverseMap();
             CreateMap<Delay, DelayBllModel>().ReverseMap();
             CreateMap<EventHistory, EventHistoryBllModel>().ReverseMap();
+            CreateMap<Vechicle, VechicleBllModel>().ReverseMap();
+            CreateMap<Driver, DriverBllModel>().ReverseMap();
 
 
             #endregion
@@ -35,14 +37,16 @@ namespace ITMCode.Piatnica.Infrastucture.Mapping
             CreateMap<OrderStateBllModel, OrderStateApiModel>().ReverseMap();
             CreateMap<DelayBllModel, DelayApiModel>().ReverseMap();
             CreateMap<EventHistoryBllModel, EventHistoryApiModel>().ReverseMap();
+            CreateMap<VechicleBllModel, VechicleApiModel >().ReverseMap();
+            CreateMap<DriverBllModel, DriverApiModel>().ReverseMap();
 
             CreateMap<UpdateDelayDto, OrderBllModel>().ReverseMap();
             CreateMap<OrderEntryDto, OrderEntryBllModel>().ReverseMap();
             CreateMap<OrderStateDto, OrderStateBllModel>().ReverseMap();
             CreateMap<LocationHistoryDto, LocationHistoryBllModel>().ReverseMap();
             CreateMap<DelayDto, DelayBllModel>().ReverseMap();
-
-           
+            CreateMap<VechicleDto, VechicleBllModel>().ReverseMap();
+            CreateMap<DriverDto, DriverBllModel>().ReverseMap();
             CreateMap<EventHistoryDto, EventHistoryBllModel>().ReverseMap();
 
 

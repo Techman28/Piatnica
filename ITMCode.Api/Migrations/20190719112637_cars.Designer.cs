@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace ITMCode.Piatnica.Api.Migrations
 {
     [DbContext(typeof(PiatnicaContext))]
-    [Migration("20190716135338_changed")]
-    partial class changed
+    [Migration("20190719112637_cars")]
+    partial class cars
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,6 +40,27 @@ namespace ITMCode.Piatnica.Api.Migrations
                     b.ToTable("DelaysContext");
                 });
 
+            modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.Driver", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("Age");
+
+                    b.Property<string>("DriverLicense");
+
+                    b.Property<DateTime>("HiringDate");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("Surname");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("DriversContext");
+                });
+
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.EventHistory", b =>
                 {
                     b.Property<int>("Id")
@@ -48,7 +69,7 @@ namespace ITMCode.Piatnica.Api.Migrations
 
                     b.Property<DateTime>("Date");
 
-                    b.Property<float>("Distance");
+                    b.Property<double>("Distance");
 
                     b.Property<string>("Name");
 
@@ -88,9 +109,17 @@ namespace ITMCode.Piatnica.Api.Migrations
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+                    b.Property<int?>("DriverId");
+
                     b.Property<string>("Number");
 
+                    b.Property<int?>("VechicleId");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("DriverId");
+
+                    b.HasIndex("VechicleId");
 
                     b.ToTable("OrdersContext");
                 });
@@ -145,6 +174,25 @@ namespace ITMCode.Piatnica.Api.Migrations
                     b.ToTable("OrdersStatesContext");
                 });
 
+            modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.Vechicle", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Brand");
+
+                    b.Property<int>("Capacity");
+
+                    b.Property<int>("Mileage");
+
+                    b.Property<string>("Registration");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("VechiclesContext");
+                });
+
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.Delay", b =>
                 {
                     b.HasOne("ITMCode.Piatnica.Dal.Models.OrderEntry", "OrderEntry")
@@ -164,6 +212,17 @@ namespace ITMCode.Piatnica.Api.Migrations
                     b.HasOne("ITMCode.Piatnica.Dal.Models.Order", "Order")
                         .WithMany("LocationHistories")
                         .HasForeignKey("OrderId");
+                });
+
+            modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.Order", b =>
+                {
+                    b.HasOne("ITMCode.Piatnica.Dal.Models.Driver", "Driver")
+                        .WithMany("Orders")
+                        .HasForeignKey("DriverId");
+
+                    b.HasOne("ITMCode.Piatnica.Dal.Models.Vechicle", "Vechicle")
+                        .WithMany("Orders")
+                        .HasForeignKey("VechicleId");
                 });
 
             modelBuilder.Entity("ITMCode.Piatnica.Dal.Models.OrderEntry", b =>

@@ -114,9 +114,25 @@
         ]
     });
 
-
+    var orderNumber = 1;
     $('#datatables tbody').on('click', '.add-to-order', function () {
         var data = table.row($(this).parents('tr')).data();
+        var newOrder = new Object();
+
+        newOrder.id = orderNumber + table.rows[$(this).parents('tr')].cells[0].innerHTML;
+        newOrder.contrahent = orderNumber + table.rows[$(this).parents('tr')].cells[1].innerHTML;
+        newOrder.merchendise = orderNumber + table.rows[$(this).parents('tr')].cells[2].innerHTML;
+
+        if (sessionStorage.order) {
+            order = JSON.parse(sessionStorage.getItem('order'));
+        } else {
+            order = [];
+        }
+        order.push(newOrder);
+        
+        console.log('1' + order);
+        orderNumber++;
+        sessionStorage.setItem('order', JSON.stringify(order));
         swal({
             title: "Dodano!",
             text: `Zamówienie od kontrahenta ${data[1]} zostało dodane`,

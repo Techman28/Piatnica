@@ -14,7 +14,8 @@ namespace ITMCode.Piatnica.Dal
         public DbSet<Order> OrdersContext { get; set; }
         public DbSet<OrderEntry> OrdersEntriesContext { get; set; }
         public DbSet<OrderState> OrdersStatesContext { get; set; }
-
+        public DbSet<Vechicle> VechiclesContext { get; set; }
+        public DbSet<Driver> DriversContext { get; set; }
         private string DatabasePath { get; set; }
 
         public PiatnicaContext()
@@ -61,6 +62,14 @@ namespace ITMCode.Piatnica.Dal
             modelBuilder.Entity<OrderEntry>()
               .HasOne<Order>(s => s.Order)
               .WithMany(s => s.OrderEntries);
+
+            modelBuilder.Entity<Order>()
+                .HasOne<Vechicle>(s => s.Vechicle)
+                .WithMany(s => s.Orders);
+
+            modelBuilder.Entity<Order>()
+              .HasOne<Driver>(s => s.Driver)
+              .WithMany(s => s.Orders);
 
 
 

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/content_main" />
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    
+
+
+    <Button
+        android:text="Cel"
+        android:layout_width="match_parent"
+        android:layout_height="100.0dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/destination"
+        android:layout_marginRight="50.0dp"
+        android:layout_marginLeft="50.0dp"
+        android:layout_marginTop="140.0dp"
+        android:background="#ff009688"
+        android:textColor="#ffffffff"
+        android:textStyle="normal|bold" />
+        <Button
+        android:text="Pzerwa"
+        android:layout_width="match_parent"
+        android:layout_height="100.0dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/break"
+        android:layout_marginRight="50.0dp"
+        android:layout_marginLeft="50.0dp"
+        android:layout_marginTop="50.0dp"
+        android:background="#ff009688"
+        android:textColor="#ffffffff"
+        android:textStyle="normal|bold" />
+        <Button
+        android:text="Tankowanie"
+        android:layout_width="match_parent"
+        android:layout_height="100.0dp"
+        android:minWidth="25px"
+        android:minHeight="25px"
+        android:id="@+id/fueling"
+        android:layout_marginRight="50.0dp"
+        android:layout_marginLeft="50.0dp"
+        android:layout_marginTop="50.0dp"
+        android:background="#ff009688"
+        android:textColor="#ffffffff"
+        android:textStyle="normal|bold" />
+    
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

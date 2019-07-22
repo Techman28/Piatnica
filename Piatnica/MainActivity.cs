@@ -35,7 +35,7 @@ namespace Piatnica
             var _dbFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var _fileName = "Piatnica.db";
             var _dbFullPath = Path.Combine(_dbFolder, _fileName);
-            GenericUnitOfWork Uof;
+            //GenericUnitOfWork Uof;
             //var db = new PiatnicaContext(_dbFullPath);
             try
             {
@@ -44,7 +44,7 @@ namespace Piatnica
 
 
                     await db.Database.MigrateAsync(); //We need to ensure the latest Migration was added. This is different than EnsureDatabaseCreated.
-                    Uof = new GenericUnitOfWork(db);
+                    //Uof = new GenericUnitOfWork(db);
                     //await Initialize(Uof);
 
                     //var check = await db.Set<Order>().ToListAsync();

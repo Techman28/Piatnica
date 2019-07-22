@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/toolbar"
+    android:layout_width="match_parent"
+    android:layout_height="100"
+    android:minHeight="?android:attr/actionBarSize"
+    android:background="#ff009688"
+    android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar">
+    <Button
+        android:text="Powót"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/back"/>
+    <TextView
+        android:text="Zlecenie spedycyjne:"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:textColor="#ffffffff"
+        android:textStyle="normal"
+        android:textSize="18" />
+
+</Toolbar>
