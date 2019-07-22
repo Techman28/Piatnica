@@ -38,6 +38,7 @@
     <AotAssemblies>false</AotAssemblies>
     <EnableLLVM>false</EnableLLVM>
     <BundleAssemblies>false</BundleAssemblies>
+    <MandroidI18n />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>PdbOnly</DebugType>
@@ -160,6 +161,11 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\eventTypeActivity.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\layout\detailsActivity.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

@@ -18,7 +18,6 @@
     >
 
     <android.support.v7.widget.CardView
-            
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
@@ -30,7 +29,7 @@
         app:cardCornerRadius="10dp"
         app:cardBackgroundColor= "ff000000"
         app:contentPadding="5dp"
-        android:id="@+id/cardVewqriew1"
+        android:id="@+id/cardView1"
         app:cardBackgroundColor="#ff000000"
         android:backgroundTint="#ffffffff"
         android:background="#ff000000">
@@ -40,7 +39,7 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/dfg"
+            android:id="@+id/linearLayout1"
             <TextView
                 android:text="Podaj aktualną liczbę kilometrów:"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -49,7 +48,7 @@
                 android:layout_marginRight="50.0dp"
                 android:layout_marginLeft="50.0dp"
                 android:layout_marginTop="30.0dp"
-                android:id="@+id/dfg" />
+                android:id="@+id/text1" />
             <EditText
                 android:inputType="number"
                 android:layout_width="match_parent"
@@ -57,7 +56,7 @@
                 android:layout_marginRight="50.0dp"
                 android:layout_marginLeft="50.0dp"
                 android:layout_marginTop="20.0dp"
-                android:id="@+id/gfdsg" />
+                android:id="@+id/kilometers" />
             <TextView
                 android:text="Zrób zdjęcie licznika"
                 android:textAppearance="?android:attr/textAppearanceMedium"
@@ -66,7 +65,7 @@
                 android:layout_marginRight="50.0dp"
                 android:layout_marginLeft="50.0dp"
                 android:layout_marginTop="20.0dp"
-                android:id="@+id/ass" />
+                android:id="@+id/text2" />
             <ImageButton
                 android:src="@android:drawable/ic_menu_camera"
                 android:layout_width="match_parent"
@@ -75,7 +74,7 @@
                 android:layout_marginLeft="130.0dp"
                 android:layout_marginTop="15.0dp"
                 android:layout_marginBottom="15.0dp"
-                android:id="@+id/sad"
+                android:id="@+id/camera"
                 android:background="#ff009688" />
 
 
@@ -84,12 +83,12 @@
 
 
     <Button
-        android:text="Zatwierdź"
+        android:text="Stop"
         android:layout_width="match_parent"
         android:layout_height="100.0dp"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/sadsa"
+        android:id="@+id/stop"
         android:layout_marginRight="50.0dp"
         android:layout_marginLeft="50.0dp"
         android:layout_marginTop="20.0dp"
