@@ -18,20 +18,25 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Piatnica
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
 
         protected override async void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.activity_main);
+            SetContentView(Resource.Layout.login);
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
 
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            Button login = FindViewById<Button>(Resource.Id.loginButton);
+            login.Click += delegate
+            {
+                loginClicked();
+            };
+            //FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
+            //fab.Click += FabOnClick;
             var _dbFolder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             var _fileName = "Piatnica.db";
             var _dbFullPath = Path.Combine(_dbFolder, _fileName);
@@ -84,7 +89,10 @@ namespace Piatnica
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
-
+        private void loginClicked()
+        {
+            StartActivity(typeof(orderListActivity));
+        }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
             int id = item.ItemId;
