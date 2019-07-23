@@ -14,8 +14,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    >
+    android:layout_height="match_parent">
+    
 
     <android.support.v7.widget.CardView
             
@@ -28,11 +28,11 @@
         android:layout_marginTop="120.0dp"
         app:cardElevation="10dp"
         app:cardCornerRadius="10dp"
-        app:cardBackgroundColor= "ff000000"
+        app:cardBackgroundColor= "#ff000000"
         app:contentPadding="5dp"
         android:id="@+id/cardVewqriew1"
-        app:cardBackgroundColor="#ff000000"
-        android:backgroundTint="#ffffffff"
+        
+        
         android:background="#ff000000">
         <LinearLayout
             android:orientation="vertical"
@@ -40,9 +40,9 @@
             android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/dfg"
+            android:id="@+id/dfg">
             <TextView
-                android:text="Podaj aktualną liczbę kilometrów:"
+                android:text="Podaj aktualną liczbę kilometrów"
                 android:textAppearance="?android:attr/textAppearanceMedium"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
