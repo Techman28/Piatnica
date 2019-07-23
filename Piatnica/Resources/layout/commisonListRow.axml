@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>    
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+<LinearLayout
+            
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:text="Rodzaj:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10.0dp"
+            android:textAppearance = "?android:attr/textAppearanceSmall"
+            android:id="@+id/type"
+            android:textColor="#ff000000"
+            android:textSize="18.0dp"
+            android:layout_gravity="center_horizontal" />
+        <TextView
+            android:text="Lokalizacja:"
+            android:layout_width="match_parent"
+            android:textAppearance = "?android:attr/textAppearanceSmall"
+            android:layout_height="wrap_content"
+            android:id="@+id/location"
+            android:textColor="#ff000000"
+            android:textSize="18.0dp"
+            android:layout_gravity="center_horizontal" />
+
+
+</LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

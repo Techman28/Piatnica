@@ -6,27 +6,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-        <include
+    <include
         layout="@layout/content_main" />
-        <LinearLayout
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:orientation="vertical"
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_marginTop="70.0dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <ListView
+            android:minWidth="25px"
+            android:minHeight="25px"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-            <TextView
-                android:text="Rodzaj:"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance = "?android:attr/textAppearanceSmall"
-        
-                android:id="@+id/rodzaj" />
-            <TextView
-                android:text="Lokalizacja:"
-                android:layout_width="match_parent"
-                android:textAppearance = "?android:attr/textAppearanceSmall"
-                android:layout_height="wrap_content"
-                android:id="@+id/lokalizacja" />
+            android:layout_height="match_parent"
+            android:id="@+id/commisionList"
+            android:divider="#ff000000" />
 
 
-        </LinearLayout>
+
+    </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>

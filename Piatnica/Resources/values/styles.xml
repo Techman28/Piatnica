@@ -3,6 +3,6 @@
   <style name="MyTheme" parent="Theme.AppCompat">
     <item name="android:windowNoTitle">true</item>
     <item name="android:windowActionBar">false</item>
-    
+    <item name="android:colorPrimary">#E2E4E6</item>
   </style>
 </resources>

@@ -10,21 +10,27 @@ using Android.Runtime;
 using Android.Support.V7.App;
 using Android.Views;
 using Android.Widget;
+using ITMCode.Piatnica.Dal.Models;
+using Piatnica.Activities;
+using static Android.Widget.AdapterView;
 
-namespace Piatnica
+namespace Piatnica.Activities
 {
     [Activity]
-    public class orderListActivity :  Activity
+    public class detailsActivity : Activity
     {
+        
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.commissions);
+            SetContentView(Resource.Layout.delayActivity);
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
 
 
         }
+
+
     }
 }

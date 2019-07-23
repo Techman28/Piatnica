@@ -14,11 +14,13 @@ using ITMCode.Piatnica.Dal.UnitOfWork;
 //using ITMCode.Piatnica.Dal.Controllers;
 using ITMCode.Piatnica.Dal.Models;
 using Microsoft.EntityFrameworkCore;
+using Piatnica.Activities;
+using Android.Content;
 //using System.Threading.Tasks;
 
 namespace Piatnica
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/MyTheme", MainLauncher = true)]
+    [Activity( Theme = "@style/MyTheme", MainLauncher = true)]
     public class MainActivity : AppCompatActivity
     {
 
@@ -31,7 +33,7 @@ namespace Piatnica
             SetActionBar(toolbar);
 
             Button login = FindViewById<Button>(Resource.Id.loginButton);
-            login.Click += delegate
+            login.Click += (object sender, EventArgs e) =>
             {
                 loginClicked();
             };
@@ -91,7 +93,8 @@ namespace Piatnica
         }
         private void loginClicked()
         {
-            StartActivity(typeof(orderListActivity));
+            var intent = new Intent(this, typeof(orderListActivity));
+            StartActivity(intent);
         }
         public override bool OnOptionsItemSelected(IMenuItem item)
         {
