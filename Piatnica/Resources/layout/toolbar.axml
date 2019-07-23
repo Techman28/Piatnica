@@ -7,12 +7,12 @@
     android:minHeight="?android:attr/actionBarSize"
     android:background="#ff009688"
     android:theme="@android:style/ThemeOverlay.Material.Dark.ActionBar">
-        <ImageButton
+        <!--<ImageButton
         android:layout_width="24.0dp"
         android:layout_height="24.0dp"
-        android:src ="@drawable/left_back"
+    android:src ="@drawable/left_back"
         android:background = "#009688"
-        android:id="@+id/imageButton1" />
+        android:id="@+id/imageButton1" />-->
     <TextView
         android:text="Zlecenie spedycyjne:"
         android:textAppearance="?android:attr/textAppearanceSmall"
