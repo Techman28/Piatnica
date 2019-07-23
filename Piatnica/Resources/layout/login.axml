@@ -60,7 +60,7 @@
         android:layout_height = "wrap_content"
         android:text = "Zaloguj"
         android:textColor = "#ffffff"
-        android:background = "#009688" />
+        android:background = "@drawable/buttonborderradius" />
 
     <CheckBox
         android:id="@+id/rememberMe"

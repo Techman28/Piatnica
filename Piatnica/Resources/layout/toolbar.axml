@@ -9,19 +9,17 @@
     
     android:background="#ff009688"
     >
-    <Button
-        android:text="Powót"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/back"/>
+  
     <TextView
         android:text="Zlecenie spedycyjne:"
         android:textAppearance="?android:attr/textAppearanceSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft = "30.0dp"
         android:id="@+id/textView1"
         android:textColor="#ffffffff"
         android:textStyle="normal"
         android:textSize="18.0dp" />
+    
 
 </Toolbar>
