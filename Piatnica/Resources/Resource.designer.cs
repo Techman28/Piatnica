@@ -1133,44 +1133,44 @@ namespace Piatnica
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f0a004f
-			public const int abc_background_cache_hint_selector_material_dark = 2131361871;
-			
 			// aapt resource value: 0x7f0a0050
-			public const int abc_background_cache_hint_selector_material_light = 2131361872;
+			public const int abc_background_cache_hint_selector_material_dark = 2131361872;
 			
 			// aapt resource value: 0x7f0a0051
-			public const int abc_btn_colored_borderless_text_material = 2131361873;
+			public const int abc_background_cache_hint_selector_material_light = 2131361873;
 			
 			// aapt resource value: 0x7f0a0052
-			public const int abc_btn_colored_text_material = 2131361874;
+			public const int abc_btn_colored_borderless_text_material = 2131361874;
 			
 			// aapt resource value: 0x7f0a0053
-			public const int abc_color_highlight_material = 2131361875;
+			public const int abc_btn_colored_text_material = 2131361875;
 			
 			// aapt resource value: 0x7f0a0054
-			public const int abc_hint_foreground_material_dark = 2131361876;
+			public const int abc_color_highlight_material = 2131361876;
 			
 			// aapt resource value: 0x7f0a0055
-			public const int abc_hint_foreground_material_light = 2131361877;
+			public const int abc_hint_foreground_material_dark = 2131361877;
+			
+			// aapt resource value: 0x7f0a0056
+			public const int abc_hint_foreground_material_light = 2131361878;
 			
 			// aapt resource value: 0x7f0a0005
 			public const int abc_input_method_navigation_guard = 2131361797;
 			
-			// aapt resource value: 0x7f0a0056
-			public const int abc_primary_text_disable_only_material_dark = 2131361878;
-			
 			// aapt resource value: 0x7f0a0057
-			public const int abc_primary_text_disable_only_material_light = 2131361879;
+			public const int abc_primary_text_disable_only_material_dark = 2131361879;
 			
 			// aapt resource value: 0x7f0a0058
-			public const int abc_primary_text_material_dark = 2131361880;
+			public const int abc_primary_text_disable_only_material_light = 2131361880;
 			
 			// aapt resource value: 0x7f0a0059
-			public const int abc_primary_text_material_light = 2131361881;
+			public const int abc_primary_text_material_dark = 2131361881;
 			
 			// aapt resource value: 0x7f0a005a
-			public const int abc_search_url_text = 2131361882;
+			public const int abc_primary_text_material_light = 2131361882;
+			
+			// aapt resource value: 0x7f0a005b
+			public const int abc_search_url_text = 2131361883;
 			
 			// aapt resource value: 0x7f0a0006
 			public const int abc_search_url_text_normal = 2131361798;
@@ -1181,32 +1181,32 @@ namespace Piatnica
 			// aapt resource value: 0x7f0a0008
 			public const int abc_search_url_text_selected = 2131361800;
 			
-			// aapt resource value: 0x7f0a005b
-			public const int abc_secondary_text_material_dark = 2131361883;
-			
 			// aapt resource value: 0x7f0a005c
-			public const int abc_secondary_text_material_light = 2131361884;
+			public const int abc_secondary_text_material_dark = 2131361884;
 			
 			// aapt resource value: 0x7f0a005d
-			public const int abc_tint_btn_checkable = 2131361885;
+			public const int abc_secondary_text_material_light = 2131361885;
 			
 			// aapt resource value: 0x7f0a005e
-			public const int abc_tint_default = 2131361886;
+			public const int abc_tint_btn_checkable = 2131361886;
 			
 			// aapt resource value: 0x7f0a005f
-			public const int abc_tint_edittext = 2131361887;
+			public const int abc_tint_default = 2131361887;
 			
 			// aapt resource value: 0x7f0a0060
-			public const int abc_tint_seek_thumb = 2131361888;
+			public const int abc_tint_edittext = 2131361888;
 			
 			// aapt resource value: 0x7f0a0061
-			public const int abc_tint_spinner = 2131361889;
+			public const int abc_tint_seek_thumb = 2131361889;
 			
 			// aapt resource value: 0x7f0a0062
-			public const int abc_tint_switch_thumb = 2131361890;
+			public const int abc_tint_spinner = 2131361890;
 			
 			// aapt resource value: 0x7f0a0063
-			public const int abc_tint_switch_track = 2131361891;
+			public const int abc_tint_switch_thumb = 2131361891;
+			
+			// aapt resource value: 0x7f0a0064
+			public const int abc_tint_switch_track = 2131361892;
 			
 			// aapt resource value: 0x7f0a0009
 			public const int accent_material_dark = 2131361801;
@@ -1277,8 +1277,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f0a003f
 			public const int design_bottom_navigation_shadow_color = 2131361855;
 			
-			// aapt resource value: 0x7f0a0064
-			public const int design_error = 2131361892;
+			// aapt resource value: 0x7f0a0065
+			public const int design_error = 2131361893;
 			
 			// aapt resource value: 0x7f0a0040
 			public const int design_fab_shadow_end_color = 2131361856;
@@ -1310,8 +1310,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f0a0049
 			public const int design_textinput_error_color_light = 2131361865;
 			
-			// aapt resource value: 0x7f0a0065
-			public const int design_tint_password_toggle = 2131361893;
+			// aapt resource value: 0x7f0a0066
+			public const int design_tint_password_toggle = 2131361894;
 			
 			// aapt resource value: 0x7f0a0017
 			public const int dim_foreground_disabled_material_dark = 2131361815;
@@ -1331,14 +1331,17 @@ namespace Piatnica
 			// aapt resource value: 0x7f0a001c
 			public const int foreground_material_light = 2131361820;
 			
+			// aapt resource value: 0x7f0a004e
+			public const int green = 2131361870;
+			
 			// aapt resource value: 0x7f0a001d
 			public const int highlighted_text_material_dark = 2131361821;
 			
 			// aapt resource value: 0x7f0a001e
 			public const int highlighted_text_material_light = 2131361822;
 			
-			// aapt resource value: 0x7f0a004e
-			public const int ic_launcher_background = 2131361870;
+			// aapt resource value: 0x7f0a004f
+			public const int ic_launcher_background = 2131361871;
 			
 			// aapt resource value: 0x7f0a001f
 			public const int material_blue_grey_800 = 2131361823;
@@ -1433,11 +1436,11 @@ namespace Piatnica
 			// aapt resource value: 0x7f0a003c
 			public const int switch_thumb_disabled_material_light = 2131361852;
 			
-			// aapt resource value: 0x7f0a0066
-			public const int switch_thumb_material_dark = 2131361894;
-			
 			// aapt resource value: 0x7f0a0067
-			public const int switch_thumb_material_light = 2131361895;
+			public const int switch_thumb_material_dark = 2131361895;
+			
+			// aapt resource value: 0x7f0a0068
+			public const int switch_thumb_material_light = 2131361896;
 			
 			// aapt resource value: 0x7f0a003d
 			public const int switch_thumb_normal_material_dark = 2131361853;
@@ -2152,86 +2155,89 @@ namespace Piatnica
 			// aapt resource value: 0x7f020053
 			public const int avd_hide_password = 2130837587;
 			
-			// aapt resource value: 0x7f020069
-			public const int avd_hide_password_1 = 2130837609;
-			
 			// aapt resource value: 0x7f02006a
-			public const int avd_hide_password_2 = 2130837610;
+			public const int avd_hide_password_1 = 2130837610;
 			
 			// aapt resource value: 0x7f02006b
-			public const int avd_hide_password_3 = 2130837611;
+			public const int avd_hide_password_2 = 2130837611;
+			
+			// aapt resource value: 0x7f02006c
+			public const int avd_hide_password_3 = 2130837612;
 			
 			// aapt resource value: 0x7f020054
 			public const int avd_show_password = 2130837588;
 			
-			// aapt resource value: 0x7f02006c
-			public const int avd_show_password_1 = 2130837612;
-			
 			// aapt resource value: 0x7f02006d
-			public const int avd_show_password_2 = 2130837613;
+			public const int avd_show_password_1 = 2130837613;
 			
 			// aapt resource value: 0x7f02006e
-			public const int avd_show_password_3 = 2130837614;
+			public const int avd_show_password_2 = 2130837614;
+			
+			// aapt resource value: 0x7f02006f
+			public const int avd_show_password_3 = 2130837615;
 			
 			// aapt resource value: 0x7f020055
-			public const int design_bottom_navigation_item_background = 2130837589;
+			public const int buttonBorderRadius = 2130837589;
 			
 			// aapt resource value: 0x7f020056
-			public const int design_fab_background = 2130837590;
+			public const int design_bottom_navigation_item_background = 2130837590;
 			
 			// aapt resource value: 0x7f020057
-			public const int design_ic_visibility = 2130837591;
+			public const int design_fab_background = 2130837591;
 			
 			// aapt resource value: 0x7f020058
-			public const int design_ic_visibility_off = 2130837592;
+			public const int design_ic_visibility = 2130837592;
 			
 			// aapt resource value: 0x7f020059
-			public const int design_password_eye = 2130837593;
+			public const int design_ic_visibility_off = 2130837593;
 			
 			// aapt resource value: 0x7f02005a
-			public const int design_snackbar_background = 2130837594;
+			public const int design_password_eye = 2130837594;
 			
 			// aapt resource value: 0x7f02005b
-			public const int navigation_empty_icon = 2130837595;
+			public const int design_snackbar_background = 2130837595;
 			
 			// aapt resource value: 0x7f02005c
-			public const int notification_action_background = 2130837596;
+			public const int navigation_empty_icon = 2130837596;
 			
 			// aapt resource value: 0x7f02005d
-			public const int notification_bg = 2130837597;
+			public const int notification_action_background = 2130837597;
 			
 			// aapt resource value: 0x7f02005e
-			public const int notification_bg_low = 2130837598;
+			public const int notification_bg = 2130837598;
 			
 			// aapt resource value: 0x7f02005f
-			public const int notification_bg_low_normal = 2130837599;
+			public const int notification_bg_low = 2130837599;
 			
 			// aapt resource value: 0x7f020060
-			public const int notification_bg_low_pressed = 2130837600;
+			public const int notification_bg_low_normal = 2130837600;
 			
 			// aapt resource value: 0x7f020061
-			public const int notification_bg_normal = 2130837601;
+			public const int notification_bg_low_pressed = 2130837601;
 			
 			// aapt resource value: 0x7f020062
-			public const int notification_bg_normal_pressed = 2130837602;
+			public const int notification_bg_normal = 2130837602;
 			
 			// aapt resource value: 0x7f020063
-			public const int notification_icon_background = 2130837603;
-			
-			// aapt resource value: 0x7f020067
-			public const int notification_template_icon_bg = 2130837607;
-			
-			// aapt resource value: 0x7f020068
-			public const int notification_template_icon_low_bg = 2130837608;
+			public const int notification_bg_normal_pressed = 2130837603;
 			
 			// aapt resource value: 0x7f020064
-			public const int notification_tile_bg = 2130837604;
+			public const int notification_icon_background = 2130837604;
+			
+			// aapt resource value: 0x7f020068
+			public const int notification_template_icon_bg = 2130837608;
+			
+			// aapt resource value: 0x7f020069
+			public const int notification_template_icon_low_bg = 2130837609;
 			
 			// aapt resource value: 0x7f020065
-			public const int notify_panel_notification_icon_bg = 2130837605;
+			public const int notification_tile_bg = 2130837605;
 			
 			// aapt resource value: 0x7f020066
-			public const int truck = 2130837606;
+			public const int notify_panel_notification_icon_bg = 2130837606;
+			
+			// aapt resource value: 0x7f020067
+			public const int truck = 2130837607;
 			
 			static Drawable()
 			{
@@ -2246,8 +2252,8 @@ namespace Piatnica
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f0800a5
-			public const int action0 = 2131230885;
+			// aapt resource value: 0x7f0800ac
+			public const int action0 = 2131230892;
 			
 			// aapt resource value: 0x7f080064
 			public const int action_bar = 2131230820;
@@ -2270,17 +2276,17 @@ namespace Piatnica
 			// aapt resource value: 0x7f080041
 			public const int action_bar_title = 2131230785;
 			
-			// aapt resource value: 0x7f0800a2
-			public const int action_container = 2131230882;
+			// aapt resource value: 0x7f0800a9
+			public const int action_container = 2131230889;
 			
 			// aapt resource value: 0x7f080065
 			public const int action_context_bar = 2131230821;
 			
-			// aapt resource value: 0x7f0800a9
-			public const int action_divider = 2131230889;
+			// aapt resource value: 0x7f0800b0
+			public const int action_divider = 2131230896;
 			
-			// aapt resource value: 0x7f0800a3
-			public const int action_image = 2131230883;
+			// aapt resource value: 0x7f0800aa
+			public const int action_image = 2131230890;
 			
 			// aapt resource value: 0x7f080003
 			public const int action_menu_divider = 2131230723;
@@ -2297,14 +2303,14 @@ namespace Piatnica
 			// aapt resource value: 0x7f080043
 			public const int action_mode_close_button = 2131230787;
 			
-			// aapt resource value: 0x7f0800bd
-			public const int action_settings = 2131230909;
+			// aapt resource value: 0x7f0800c4
+			public const int action_settings = 2131230916;
 			
-			// aapt resource value: 0x7f0800a4
-			public const int action_text = 2131230884;
+			// aapt resource value: 0x7f0800ab
+			public const int action_text = 2131230891;
 			
-			// aapt resource value: 0x7f0800b2
-			public const int actions = 2131230898;
+			// aapt resource value: 0x7f0800b9
+			public const int actions = 2131230905;
 			
 			// aapt resource value: 0x7f080044
 			public const int activity_chooser_view_content = 2131230788;
@@ -2357,8 +2363,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f080028
 			public const int bottom = 2131230760;
 			
-			// aapt resource value: 0x7f08009a
-			public const int breakBtn = 2131230874;
+			// aapt resource value: 0x7f0800a1
+			public const int breakBtn = 2131230881;
 			
 			// aapt resource value: 0x7f08004b
 			public const int buttonPanel = 2131230795;
@@ -2366,11 +2372,14 @@ namespace Piatnica
 			// aapt resource value: 0x7f080089
 			public const int camera = 2131230857;
 			
-			// aapt resource value: 0x7f0800a6
-			public const int cancel_action = 2131230886;
+			// aapt resource value: 0x7f0800ad
+			public const int cancel_action = 2131230893;
 			
 			// aapt resource value: 0x7f080074
 			public const int cardView1 = 2131230836;
+			
+			// aapt resource value: 0x7f08009d
+			public const int cargoType = 2131230877;
 			
 			// aapt resource value: 0x7f080030
 			public const int center = 2131230768;
@@ -2384,8 +2393,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f08005b
 			public const int checkbox = 2131230811;
 			
-			// aapt resource value: 0x7f0800ae
-			public const int chronometer = 2131230894;
+			// aapt resource value: 0x7f0800b5
+			public const int chronometer = 2131230901;
 			
 			// aapt resource value: 0x7f080039
 			public const int clip_horizontal = 2131230777;
@@ -2438,26 +2447,26 @@ namespace Piatnica
 			// aapt resource value: 0x7f080093
 			public const int design_navigation_view = 2131230867;
 			
-			// aapt resource value: 0x7f080099
-			public const int destination = 2131230873;
+			// aapt resource value: 0x7f0800a0
+			public const int destination = 2131230880;
 			
 			// aapt resource value: 0x7f080012
 			public const int disableHome = 2131230738;
 			
-			// aapt resource value: 0x7f08009e
-			public const int editText1 = 2131230878;
+			// aapt resource value: 0x7f0800a5
+			public const int editText1 = 2131230885;
 			
 			// aapt resource value: 0x7f080066
 			public const int edit_query = 2131230822;
 			
-			// aapt resource value: 0x7f0800b8
-			public const int email = 2131230904;
+			// aapt resource value: 0x7f0800bf
+			public const int email = 2131230911;
 			
 			// aapt resource value: 0x7f080021
 			public const int end = 2131230753;
 			
-			// aapt resource value: 0x7f0800b7
-			public const int end_padder = 2131230903;
+			// aapt resource value: 0x7f0800be
+			public const int end_padder = 2131230910;
 			
 			// aapt resource value: 0x7f08002a
 			public const int enterAlways = 2131230762;
@@ -2489,11 +2498,11 @@ namespace Piatnica
 			// aapt resource value: 0x7f08003f
 			public const int @fixed = 2131230783;
 			
-			// aapt resource value: 0x7f08009f
-			public const int forgotPass = 2131230879;
+			// aapt resource value: 0x7f0800a6
+			public const int forgotPass = 2131230886;
 			
-			// aapt resource value: 0x7f08009b
-			public const int fueling = 2131230875;
+			// aapt resource value: 0x7f0800a2
+			public const int fueling = 2131230882;
 			
 			// aapt resource value: 0x7f080078
 			public const int gridLayout1 = 2131230840;
@@ -2507,8 +2516,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f080049
 			public const int icon = 2131230793;
 			
-			// aapt resource value: 0x7f0800b3
-			public const int icon_group = 2131230899;
+			// aapt resource value: 0x7f0800ba
+			public const int icon_group = 2131230906;
 			
 			// aapt resource value: 0x7f080025
 			public const int ifRoom = 2131230757;
@@ -2516,8 +2525,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f080046
 			public const int image = 2131230790;
 			
-			// aapt resource value: 0x7f0800af
-			public const int info = 2131230895;
+			// aapt resource value: 0x7f0800b6
+			public const int info = 2131230902;
 			
 			// aapt resource value: 0x7f080000
 			public const int item_touch_helper_previous_elevation = 2131230720;
@@ -2531,11 +2540,11 @@ namespace Piatnica
 			// aapt resource value: 0x7f080034
 			public const int left = 2131230772;
 			
-			// aapt resource value: 0x7f0800b4
-			public const int line1 = 2131230900;
+			// aapt resource value: 0x7f0800bb
+			public const int line1 = 2131230907;
 			
-			// aapt resource value: 0x7f0800b5
-			public const int line3 = 2131230901;
+			// aapt resource value: 0x7f0800bc
+			public const int line3 = 2131230908;
 			
 			// aapt resource value: 0x7f080075
 			public const int linearLayout1 = 2131230837;
@@ -2546,20 +2555,20 @@ namespace Piatnica
 			// aapt resource value: 0x7f080048
 			public const int list_item = 2131230792;
 			
-			// aapt resource value: 0x7f0800a0
-			public const int loginButton = 2131230880;
+			// aapt resource value: 0x7f0800a7
+			public const int loginButton = 2131230887;
 			
-			// aapt resource value: 0x7f08009c
-			public const int loginImage = 2131230876;
+			// aapt resource value: 0x7f0800a3
+			public const int loginImage = 2131230883;
 			
 			// aapt resource value: 0x7f080085
 			public const int lokalizacja = 2131230853;
 			
-			// aapt resource value: 0x7f0800bc
-			public const int masked = 2131230908;
+			// aapt resource value: 0x7f0800c3
+			public const int masked = 2131230915;
 			
-			// aapt resource value: 0x7f0800a8
-			public const int media_actions = 2131230888;
+			// aapt resource value: 0x7f0800af
+			public const int media_actions = 2131230895;
 			
 			// aapt resource value: 0x7f080022
 			public const int middle = 2131230754;
@@ -2570,8 +2579,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f080019
 			public const int multiply = 2131230745;
 			
-			// aapt resource value: 0x7f08009d
-			public const int name = 2131230877;
+			// aapt resource value: 0x7f0800a4
+			public const int name = 2131230884;
 			
 			// aapt resource value: 0x7f080092
 			public const int navigation_header_container = 2131230866;
@@ -2585,14 +2594,29 @@ namespace Piatnica
 			// aapt resource value: 0x7f080010
 			public const int normal = 2131230736;
 			
+			// aapt resource value: 0x7f0800b8
+			public const int notification_background = 2131230904;
+			
+			// aapt resource value: 0x7f0800b2
+			public const int notification_main_column = 2131230898;
+			
 			// aapt resource value: 0x7f0800b1
-			public const int notification_background = 2131230897;
+			public const int notification_main_column_container = 2131230897;
 			
-			// aapt resource value: 0x7f0800ab
-			public const int notification_main_column = 2131230891;
+			// aapt resource value: 0x7f08009e
+			public const int orderComments = 2131230878;
 			
-			// aapt resource value: 0x7f0800aa
-			public const int notification_main_column_container = 2131230890;
+			// aapt resource value: 0x7f08009a
+			public const int orderLocalization = 2131230874;
+			
+			// aapt resource value: 0x7f080099
+			public const int orderState = 2131230873;
+			
+			// aapt resource value: 0x7f08009c
+			public const int orderTime = 2131230876;
+			
+			// aapt resource value: 0x7f080098
+			public const int ordertype = 2131230872;
 			
 			// aapt resource value: 0x7f080037
 			public const int parallax = 2131230775;
@@ -2612,8 +2636,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f08005d
 			public const int radio = 2131230813;
 			
-			// aapt resource value: 0x7f0800a1
-			public const int rememberMe = 2131230881;
+			// aapt resource value: 0x7f0800a8
+			public const int rememberMe = 2131230888;
 			
 			// aapt resource value: 0x7f080082
 			public const int resetBtn = 2131230850;
@@ -2621,11 +2645,11 @@ namespace Piatnica
 			// aapt resource value: 0x7f080035
 			public const int right = 2131230773;
 			
-			// aapt resource value: 0x7f0800b0
-			public const int right_icon = 2131230896;
+			// aapt resource value: 0x7f0800b7
+			public const int right_icon = 2131230903;
 			
-			// aapt resource value: 0x7f0800ac
-			public const int right_side = 2131230892;
+			// aapt resource value: 0x7f0800b3
+			public const int right_side = 2131230899;
 			
 			// aapt resource value: 0x7f080084
 			public const int rodzaj = 2131230852;
@@ -2681,8 +2705,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f080072
 			public const int select_dialog_listview = 2131230834;
 			
-			// aapt resource value: 0x7f0800b9
-			public const int sendButton = 2131230905;
+			// aapt resource value: 0x7f0800c0
+			public const int sendButton = 2131230912;
 			
 			// aapt resource value: 0x7f08005c
 			public const int shortcut = 2131230812;
@@ -2726,11 +2750,11 @@ namespace Piatnica
 			// aapt resource value: 0x7f080036
 			public const int start = 2131230774;
 			
-			// aapt resource value: 0x7f0800a7
-			public const int status_bar_latest_event_content = 2131230887;
+			// aapt resource value: 0x7f0800ae
+			public const int status_bar_latest_event_content = 2131230894;
 			
-			// aapt resource value: 0x7f080098
-			public const int stop = 2131230872;
+			// aapt resource value: 0x7f08009f
+			public const int stop = 2131230879;
 			
 			// aapt resource value: 0x7f08005e
 			public const int submenuarrow = 2131230814;
@@ -2741,8 +2765,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f080011
 			public const int tabMode = 2131230737;
 			
-			// aapt resource value: 0x7f0800b6
-			public const int text = 2131230902;
+			// aapt resource value: 0x7f0800bd
+			public const int text = 2131230909;
 			
 			// aapt resource value: 0x7f080076
 			public const int text1 = 2131230838;
@@ -2756,8 +2780,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f080051
 			public const int textSpacerNoTitle = 2131230801;
 			
-			// aapt resource value: 0x7f0800ba
-			public const int textView1 = 2131230906;
+			// aapt resource value: 0x7f0800c1
+			public const int textView1 = 2131230913;
 			
 			// aapt resource value: 0x7f080097
 			public const int text_input_password_toggle = 2131230871;
@@ -2768,8 +2792,8 @@ namespace Piatnica
 			// aapt resource value: 0x7f08000d
 			public const int textinput_error = 2131230733;
 			
-			// aapt resource value: 0x7f0800ad
-			public const int time = 2131230893;
+			// aapt resource value: 0x7f0800b4
+			public const int time = 2131230900;
 			
 			// aapt resource value: 0x7f08004a
 			public const int title = 2131230794;
@@ -2807,8 +2831,11 @@ namespace Piatnica
 			// aapt resource value: 0x7f08000e
 			public const int view_offset_helper = 2131230734;
 			
-			// aapt resource value: 0x7f0800bb
-			public const int visible = 2131230907;
+			// aapt resource value: 0x7f0800c2
+			public const int visible = 2131230914;
+			
+			// aapt resource value: 0x7f08009b
+			public const int whenOrder = 2131230875;
 			
 			// aapt resource value: 0x7f080027
 			public const int withText = 2131230759;
