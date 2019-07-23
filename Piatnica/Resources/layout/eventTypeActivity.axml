@@ -9,7 +9,7 @@
     <include
         layout="@layout/content_main" />
 
-<LinearLayout
+  <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
@@ -33,20 +33,20 @@
         android:background="#ff009688"
         android:textColor="#ffffffff"
         android:textStyle="normal|bold" />
-        <Button
+    <Button
         android:text="Pzerwa"
         android:layout_width="match_parent"
         android:layout_height="100.0dp"
         android:minWidth="25px"
         android:minHeight="25px"
-        android:id="@+id/break"
+        android:id="@+id/breakBtn"
         android:layout_marginRight="50.0dp"
         android:layout_marginLeft="50.0dp"
         android:layout_marginTop="50.0dp"
         android:background="#ff009688"
         android:textColor="#ffffffff"
         android:textStyle="normal|bold" />
-        <Button
+    <Button
         android:text="Tankowanie"
         android:layout_width="match_parent"
         android:layout_height="100.0dp"
@@ -61,5 +61,5 @@
         android:textStyle="normal|bold" />
     
 
-    </LinearLayout>
+   </LinearLayout>
 </android.support.design.widget.CoordinatorLayout>
