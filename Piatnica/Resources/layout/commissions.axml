@@ -20,8 +20,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/commisionList"
-            android:divider="#ff000000"          
-            android:dividerHeight="4px"/>
+            android:divider="#ff000000"
+            android:dividerHeight = "4px"/>
 
 
 
