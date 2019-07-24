@@ -29,10 +29,17 @@ namespace Piatnica.Activities
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
 
+            var loc = "Lokazliacja: ";
             _commisions = new List<OrderEntry>();
             _list = FindViewById<ListView>(Resource.Id.commisionList);
-            _commisions.Add(new OrderEntry() { OrderType = "Zaladunek", Location = "dupa" });
-            _commisions.Add(new OrderEntry() { OrderType = "hehe", Location = "Dom Piotrka" });
+            _commisions.Add(new OrderEntry() { OrderType = "Załadunek", Location = loc + "Kielce,Karola Olszewskiego 6" });
+            _commisions.Add(new OrderEntry() { OrderType = "Rozładunek", Location = loc + "Kielce,Karola Olszewskiego 6" });
+            _commisions.Add(new OrderEntry() { OrderType = "Załadunek", Location = loc + "Warszawska 26" });
+            _commisions.Add(new OrderEntry() { OrderType = "Rozładunek", Location = loc + "Warszawska 26" });
+            _commisions.Add(new OrderEntry() { OrderType = "Załadunek", Location = loc + "Żniwna 14" });
+            _commisions.Add(new OrderEntry() { OrderType = "Rozładunek", Location = loc + "Żniwna 14" });
+            _commisions.Add(new OrderEntry() { OrderType = "Załadunek", Location = loc + "Chęcińska 38" });
+            _commisions.Add(new OrderEntry() { OrderType = "Rozładunek", Location = loc + "Chęcińska 38" });
 
             commisionsListAdapter adapter = new commisionsListAdapter(this, _commisions);
             _list.Adapter= adapter;

@@ -23,7 +23,7 @@ namespace Piatnica.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.delayActivity);
+            SetContentView(Resource.Layout.detailsActivity);
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);

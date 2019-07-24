@@ -28,8 +28,8 @@
             app:contentPadding="5dp"
             android:id="@+id/cardView1"
             app:cardBackgroundColor="#000000"
-            android:backgroundTint="#ffffff"
-            android:background="#ff000000">
+            android:backgroundTint="#8BD900"
+            android:background="@drawable/cardBorder">
 
         
 
@@ -39,6 +39,7 @@
                 android:minHeight="25px"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:background = "#ffffff"
                 android:id="@+id/linearLayout1" >
                 <TextView
                     android:text="Załadunek"
