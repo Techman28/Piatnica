@@ -20,7 +20,7 @@ using Android.Content;
 
 namespace Piatnica
 {
-    [Activity( Theme = "@style/MyTheme", MainLauncher = true)]
+    [Activity( Theme = "@style/MyTheme", MainLauncher = true, NoHistory = true)]
     public class MainActivity : AppCompatActivity
     {
 

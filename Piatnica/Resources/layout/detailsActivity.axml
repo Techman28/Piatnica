@@ -117,7 +117,7 @@
             android:layout_height="70.0dp"
             android:minWidth="25px"
             android:minHeight="25px"
-            android:id="@+id/stop"
+            android:id="@+id/delayBtn"
             android:layout_marginRight="50.0dp"
             android:layout_marginLeft="50.0dp"
             android:layout_marginTop="50.0dp"

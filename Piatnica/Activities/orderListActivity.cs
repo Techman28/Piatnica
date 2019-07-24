@@ -38,6 +38,7 @@ namespace Piatnica.Activities
             _list.Adapter= adapter;
             _list.ItemClick += listItemClicked;
             
+            
         }
         private void listItemClicked(object sender, ItemClickEventArgs e)
         {

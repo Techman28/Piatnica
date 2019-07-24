@@ -23,12 +23,25 @@ namespace Piatnica.Activities
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.delayActivity);
+            SetContentView(Resource.Layout.detailsActivity);
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
 
+            Button delay = FindViewById<Button>(Resource.Id.delayBtn);
+            delay.Click += (object sender, EventArgs e) =>
+            {
+                var intent = new Intent(this, typeof(addDelayTime));
 
+                StartActivity(intent);
+            };
+            Button stop = FindViewById<Button>(Resource.Id.stop);
+            stop.Click += (object sender, EventArgs e) =>
+            {
+                var intent = new Intent(this, typeof(stopActivity));
+
+                StartActivity(intent);
+            };
         }
 
 
