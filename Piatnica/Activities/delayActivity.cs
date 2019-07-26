@@ -22,6 +22,19 @@ namespace Piatnica.Activities
 
             Android.Widget.Toolbar toolbar = FindViewById<Android.Widget.Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
+            this.ActionBar.Title = "";
+            Button confirm = FindViewById<Button>(Resource.Id.confirmDelay);           
+            confirm.Click += (object sender, EventArgs e) =>
+            {
+                var intent = new Intent(this, typeof(detailsActivity));
+                StartActivity(intent);
+                Finish();
+            };
+            ImageButton cameraBtn = FindViewById<ImageButton>(Resource.Id.camera);
+            cameraBtn.Click += (object sender, EventArgs e) =>
+            {
+
+            };
 
 
 

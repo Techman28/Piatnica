@@ -22,6 +22,7 @@ namespace Piatnica.Activities
 
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
+            this.ActionBar.Title = "";
 
             Button destination = FindViewById<Button>(Resource.Id.destination);
             destination.Click += (object sender, EventArgs e) =>

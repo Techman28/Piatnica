@@ -25,15 +25,18 @@ namespace Piatnica.Activities
 
             Android.Widget.Toolbar toolbar = FindViewById<Android.Widget.Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
-
-            Button confirm = FindViewById<Button>(Resource.Id.confirm);
+            this.ActionBar.Title = "";
+            Button confirm = FindViewById<Button>(Resource.Id.confirmTime);
             CardView cardView = FindViewById<CardView>(Resource.Id.cardView1);
             confirm.Click += (object sender, EventArgs e) =>
             {
                 var intent = new Intent(this, typeof(detailsActivity));
                 StartActivity(intent);
                 var color = "#F28C00";
-                cardView.SetBackgroundColor(Android.Graphics.Color.ParseColor(color));
+                Button delay = FindViewById<Button>(Resource.Id.delayBtn);
+
+                // cardView.SetBackgroundColor(Android.Graphics.Color.ParseColor("#F28C00"));
+                cardView.SetCardBackgroundColor(Android.Graphics.Color.ParseColor("#F28C00"));
                 Finish();
             };
             calculatorLogic();

@@ -25,9 +25,10 @@ namespace Piatnica.Activities
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.commissions);
-
             Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
             SetActionBar(toolbar);
+            this.ActionBar.Title = "";
+
 
             var loc = "Lokazliacja: ";
             _commisions = new List<OrderEntry>();

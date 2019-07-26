@@ -29,8 +29,9 @@ namespace Piatnica
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.login);
 
-            Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
-            SetActionBar(toolbar);
+            //Toolbar toolbar = FindViewById<Toolbar>(Resource.Id.toolbar);
+            //SetActionBar(toolbar);
+            // this.ActionBar.Hide(); 
 
             Button login = FindViewById<Button>(Resource.Id.loginButton);
             login.Click += (object sender, EventArgs e) =>

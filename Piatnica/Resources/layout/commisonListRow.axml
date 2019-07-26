@@ -13,12 +13,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10.0dp"
-            android:layout_marginLeft = "20.0dp"
+            android:layout_marginLeft = "100.0dp"
             android:textAppearance = "?android:attr/textAppearanceSmall"
             android:id="@+id/type"
             android:textColor="#ff000000"
             android:textSize="18.0dp"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textAlignment="center"/>
         <TextView
             android:text="Lokalizacja:"
             android:layout_width="match_parent"
@@ -27,7 +28,7 @@
             android:id="@+id/location"
             android:textColor="#ff000000"
             android:layout_marginLeft = "20.0dp"
-            android:textSize="18.0dp"
+            android:textSize="14.0dp"
             android:layout_gravity="center_horizontal" />
 
 
