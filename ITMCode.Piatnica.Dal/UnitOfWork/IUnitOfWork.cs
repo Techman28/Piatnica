@@ -7,6 +7,8 @@ using ITMCode.Piatnica.Dal.Repository.LocationHistoryRepository;
 using ITMCode.Piatnica.Dal.Repository.OrderEntryRepository;
 using ITMCode.Piatnica.Dal.Repository.OrderStateRepository;
 using ITMCode.Piatnica.Dal.Repository.OrderRepository;
+using ITMCode.Piatnica.Dal.Repository.VechicleRepository;
+using ITMCode.Piatnica.Dal.Repository.DriverRepository;
 
 
 namespace ITMCode.Piatnica.Dal.UnitOfWork
@@ -40,7 +42,14 @@ namespace ITMCode.Piatnica.Dal.UnitOfWork
         {
             get;
         }
-
+        IVechicleRepository VechicleRepository
+        {
+            get;
+        }
+        IDriverRepository DriverRepository
+        {
+            get;
+        }
 
 
 

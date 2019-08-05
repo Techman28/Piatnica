@@ -18,8 +18,9 @@ html {
   }
 }
 
+
 .border-top {
-  border-top: 1px solid #e5e5e5;
+    border-top: 1px solid #e5e5e5;
 }
 .border-bottom {
   border-bottom: 1px solid #e5e5e5;
@@ -41,6 +42,20 @@ html {
   min-height: 100%;
 }
 
+.darkblue {
+    background-color: #02458E !important;
+}
+
+.darkgreen {
+    background-color: #0A9E47 !important;
+}
+
+.darkred {
+    background-color: #F01123 !important;
+}
+
+
+
 body {
   /* Margin bottom by footer height */
   margin-bottom: 60px;
@@ -54,3 +69,22 @@ body {
   height: 60px;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.bootstrap-select .dropdown-item:hover,
+.bootstrap-select .dropdown-item:active {
+    box-shadow: none;
+    background-color: #006e41;
+}
+
+.bootstrap-select > .dopdown-toggle.btn-link, .bootstrap-select > .dopdown-toggle.btn-link:active {
+    background-color: #006e41;
+}
+
+.bootstrap-select .dropdown-item.active {
+    background-color: #4caf50;
+}
+.moving-tab {
+    background-color: #006e41 !important;
+}
+
+

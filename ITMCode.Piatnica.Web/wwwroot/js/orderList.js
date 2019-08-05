@@ -1,4 +1,17 @@
-﻿$(document).ready(function () {
+﻿class Orders {
+    constructor(id, contractor, trader, commodityName, packageType, place, price) {
+        this.id = id;
+        this.contractor = contractor;
+        this.trader = trader;
+        this.commodityName = commodityName;
+        this.packageType = packageType;
+        this.place = place;
+        this.price = price;
+
+    }
+}
+
+$(document).ready(function () {
 
      
 
@@ -37,6 +50,8 @@
 
     ];
 
+    
+
     var table = $('#datatables').DataTable({
         data: dataSet2,
         columns: [
@@ -74,6 +89,7 @@
                 "orderable": false,
                 "searchable": true,
                 "title": "Lokalizacja rozładunku"
+                
             },
             {
                 "orderable": false,
@@ -100,12 +116,57 @@
                 "searchable": true,
                 "title": "Szczegóły", 
                 "data": null,
-                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary'>Szczegóły</a>"
+
+                "defaultContent": "<a href='/order/DetailOrder' class='btn btn-primary darkblue'>Szczegóły</a>"
+            },
+            {
+                "orderable": false,
+                "searchable": true,
+                "title": "Dodaj do zlecenia",
+                "data": null,
+                "defaultContent": "<a class='btn text-white btn-primary add-to-order darkgreen'>Dodaj do zlecenia</a>"
+
             }
-        ]
+        ],
+
+           language: {
+            processing: "Przetwarzanie...",
+            search: "Szukaj:",
+            lengthMenu: "Pokaż _MENU_ pozycji",
+            info: "Pozycje od _START_ do _END_ z _TOTAL_ łącznie",
+            infoEmpty: "Pozycji 0 z 0 dostępnych",
+            infoFiltered: "(filtrowanie spośród _MAX_ dostępnych pozycji)",
+            infoPostFix: "",
+            loadingRecords: "Wczytywanie...",
+            zeroRecords: "Nie znaleziono pasujących pozycji",
+            emptyTable: "Brak danych",
+            paginate: {
+                first: "Pierwsza",
+                previous: "Poprzednia",
+                next: "Następna",
+                last: "Ostatnia"
+            },
+            aria: {
+                sortAscending: ": aktywuj, by posortować kolumnę rosnąco",
+                sortDescending: ": aktywuj, by posortować kolumnę malejąco"
+            }
+        }
     });
 
-     
+    var orderNumber = 1;
+    $('#datatables tbody').on('click', '.add-to-order', function () {
+        var data = table.row($(this).parents('tr')).data();
+        const obj = new Orders(data[0], data[1], data[2], data[3], data[4], data[9], data[10]);
+        localStorage.setItem(data[0], JSON.stringify(obj));
+        console.log(localStorage.getItem(obj));
+        swal({
+            title: "Dodano!",
+            text: `Zamówienie od kontrahenta ${data[1]} zostało dodane`,
+            buttonsStyling: false,
+            confirmButtonClass: "btn btn-success",
+            type: "success"
+        }).catch(swal.noop)
+    });
 
 
 
@@ -115,6 +176,8 @@
         var data = table.row($tr).data();
         alert('You press on Row: ' + data[0] + ' ' + data[1] + ' ' + data[2] + '\'s row.');
     });
+
+
 
     // Delete a record
     table.on('click', '.remove', function (e) {

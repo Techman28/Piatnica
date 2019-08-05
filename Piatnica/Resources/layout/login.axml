@@ -1,0 +1,77 @@
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation = "vertical"
+    android:layout_width = "fill_parent"
+    android:layout_height = "fill_parent"
+    android:background = "#09293a"
+    android:minWidth = "25px"
+    android:minHeight = "25px">
+
+    <ImageView 
+        android:id="@+id/loginImage"
+        android:src ="@drawable/truck"
+
+        android:layout_marginTop = "50.0dp"
+        android:layout_marginLeft = "160.0dp"
+        android:layout_marginRight = "160.0dp"
+        android:layout_width="100.0dp"
+        android:layout_height="100.0dp"
+
+        android:scaleType="fitCenter" />
+
+    <EditText
+        android:id = "@+id/name"
+        android:inputType="text"
+        android:layout_width = "match_parent"
+        android:layout_height = "wrap_content"
+        android:hint = "Login"
+        android:layout_marginTop = "100.0dp"
+        android:textColorHint = "#666666"
+        android:textColor = "#FFFFFF"
+      
+        />
+    <EditText
+        android:id="@+id/editText1"
+        android:inputType="textPassword"
+        android:hint = "Hasło"
+        android:layout_marginTop = "20.0dp"
+        android:textColorHint = "#666666"
+        android:textColor = "#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+         />
+    <TextView
+        android:id="@+id/forgotPass"
+        android:text="Zapomniałeś hasła?"
+        android:layout_marginTop = "20.0dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor = "#009688"
+         />
+
+
+    <Button
+        android:id = "@+id/loginButton"
+        android:layout_width = "fill_parent"
+        android:layout_marginTop = "40.0dp"
+        android:layout_marginLeft = "80.0dp"
+        android:layout_marginRight = "80.0dp"
+        android:layout_height = "wrap_content"
+        android:text = "Zaloguj"
+        android:textColor = "#ffffff"
+        android:background = "@drawable/buttonborderradius" />
+
+    <CheckBox
+        android:id="@+id/rememberMe"
+        android:text="Zapamiętaj mnie"
+        android:layout_width="match_parent"
+        android:layout_marginTop = "20.0dp"
+        android:layout_marginLeft = "120.0dp"
+        android:layout_marginRight = "120.0dp"
+        android:layout_height="wrap_content"
+        
+        android:textColor = "#009688"
+        android:checked="true" /> 
+
+</LinearLayout>

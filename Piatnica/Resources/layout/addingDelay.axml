@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        layout="@layout/content_main" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+    >
+
+        <android.support.v7.widget.CardView
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:layout_width="match_parent"
+            android:layout_height="380.0dp"
+            android:layout_marginRight="20.0dp"
+            android:layout_marginLeft="20.0dp"
+            android:layout_marginTop="120.0dp"
+            app:cardElevation="10dp"
+            app:cardCornerRadius="10dp"
+            app:contentPadding="5.0dp"
+            android:id="@+id/cardView1"
+            app:cardBackgroundColor="#000000"
+            android:backgroundTint="#F28C00"
+            android:background="#000000">
+            <LinearLayout
+                android:orientation="vertical"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background = "#ffffff"
+                android:id="@+id/linearLayout1">
+                <TextView
+                    android:text="Przybliżony czas opóźnienia"
+                    android:textAppearance="?android:attr/textAppearanceMedium"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50.0dp"
+                    android:layout_marginLeft="50.0dp"
+                    android:layout_marginTop="10.0dp"
+                    android:id="@+id/text1"
+                    android:textColor="#ff000000" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="50.0dp"
+                    android:layout_marginLeft="50.0dp"
+                    android:layout_marginTop="10.0dp"
+                    android:id="@+id/delayText"
+                    android:textColor="#ff000000"
+                    android:textSize = "24.0dp"
+                    android:textAlignment = "center"    
+                />
+                <GridLayout
+                    android:minWidth="25px"
+                    android:minHeight="25px"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:rowCount = "3"
+                    android:columnCount = "3"
+                    android:id="@+id/gridLayout1">
+                    <Button
+                        android:text="+10"
+                        android:id="@+id/add10"
+                        android:layout_marginLeft = "20.0dp"
+                        android:layout_marginRight = "10.0dp"
+                        android:layout_marginBottom = "10.dp"
+                        android:layout_height = "40.0dp"
+                        android:background = "@drawable/buttonborderradius"
+                        android:layout_marginTop = "30.0dp"/>
+                    <Button
+                        android:text="+20"
+                        android:layout_marginTop = "30.0dp"
+                        android:layout_marginRight = "10.0dp"
+                        android:layout_height = "40.0dp"
+                        android:background = "@drawable/buttonborderradius"
+                        android:id="@+id/add20"
+                        />
+                    <Button
+                        android:text="+30"
+                        android:layout_marginTop = "30.0dp"
+                        android:layout_height = "40.0dp"
+                        android:layout_marginRight = "30.0dp"
+                        android:background = "@drawable/buttonborderradius"
+                        android:id="@+id/add30" />
+                    <Button
+                        android:text="+40"
+                        android:id="@+id/add40"
+                        android:layout_height = "40.0dp"
+                        android:layout_marginTop = "10.0dp"
+                        android:layout_marginRight = "10.0dp"
+                        android:background = "@drawable/buttonborderradius"
+                        android:layout_marginLeft = "20.0dp"/>
+                    <Button
+                        android:text="+50"
+                        android:id="@+id/add50"
+                        android:layout_height = "40.0dp"
+                        android:layout_marginTop = "10.0dp"
+                        android:layout_marginRight = "10.0dp"
+                        android:background = "@drawable/buttonborderradius"/>
+                    <Button
+                        android:text="+60"
+                        android:id="@+id/add60"
+                        android:layout_height = "40.0dp"
+                        android:layout_marginTop = "10.0dp"
+                        android:layout_marginRight = "30.0dp"
+                        android:background = "@drawable/buttonborderradius"/>
+                    <Button
+                        android:text="+70"
+                        android:id="@+id/add70"
+                        android:layout_marginLeft = "20.0dp"
+                        android:layout_marginTop = "10.0dp"
+                        android:layout_marginRight = "10.0dp"
+                        android:layout_height = "40.0dp"
+                        android:background = "@drawable/buttonborderradius"
+                        />
+                    <Button
+                        android:text="+80"
+                        android:id="@+id/add80"
+                        android:layout_height = "40.0dp"
+                        android:layout_marginTop = "10.0dp"
+                        android:layout_marginRight = "10.0dp"
+                        android:background = "@drawable/buttonborderradius"/>
+                    <Button
+                        android:text="+90"
+                        android:id="@+id/add90"
+                        android:layout_height = "40.0dp"
+                        android:layout_marginTop = "10.0dp"
+                        android:layout_marginRight = "30.0dp"
+                        android:background = "@drawable/buttonborderradius"/>
+                    <Button
+                        android:text="C"
+                        android:id="@+id/resetBtn"
+                        android:layout_height = "40.0dp"
+                        android:layout_marginTop = "20.0dp"
+                        android:layout_marginRight = "10.0dp"
+                        android:background = "@drawable/buttonborderradius"
+                        android:layout_column = "1"/>
+                    
+                </GridLayout>
+                
+
+
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+
+        <Button
+            android:text="Zatwierdź"
+            android:layout_width="match_parent"
+            android:layout_height="70.0dp"
+            android:minWidth="25px"
+            android:minHeight="25px"
+            android:id="@+id/confirmTime"
+            android:layout_marginRight="50.0dp"
+            android:layout_marginLeft="50.0dp"
+            android:layout_marginTop="20.0dp"
+            android:background="@drawable/buttonborderradius"
+            android:textColor="#ffffff"
+            android:textStyle="normal|bold" />
+
+
+    </LinearLayout>
+</android.support.design.widget.CoordinatorLayout>

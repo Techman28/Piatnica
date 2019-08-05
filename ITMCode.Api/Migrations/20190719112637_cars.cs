@@ -4,21 +4,68 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace ITMCode.Piatnica.Api.Migrations
 {
-    public partial class changed : Migration
+    public partial class cars : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "DriversContext",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(nullable: true),
+                    Surname = table.Column<string>(nullable: true),
+                    Age = table.Column<int>(nullable: false),
+                    DriverLicense = table.Column<string>(nullable: true),
+                    HiringDate = table.Column<DateTime>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_DriversContext", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "VechiclesContext",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Brand = table.Column<string>(nullable: true),
+                    Registration = table.Column<string>(nullable: true),
+                    Mileage = table.Column<int>(nullable: false),
+                    Capacity = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_VechiclesContext", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "OrdersContext",
                 columns: table => new
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Number = table.Column<string>(nullable: true)
+                    Number = table.Column<string>(nullable: true),
+                    VechicleId = table.Column<int>(nullable: true),
+                    DriverId = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_OrdersContext", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_OrdersContext_DriversContext_DriverId",
+                        column: x => x.DriverId,
+                        principalTable: "DriversContext",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_OrdersContext_VechiclesContext_VechicleId",
+                        column: x => x.VechicleId,
+                        principalTable: "VechiclesContext",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -119,7 +166,7 @@ namespace ITMCode.Piatnica.Api.Migrations
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
                     Date = table.Column<DateTime>(nullable: false),
-                    Distance = table.Column<float>(nullable: false),
+                    Distance = table.Column<double>(nullable: false),
                     Name = table.Column<string>(nullable: true),
                     OrderEntryId = table.Column<int>(nullable: true)
                 },
@@ -148,6 +195,16 @@ namespace ITMCode.Piatnica.Api.Migrations
                 name: "IX_LocationsHistoriesContext_OrderId",
                 table: "LocationsHistoriesContext",
                 column: "OrderId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrdersContext_DriverId",
+                table: "OrdersContext",
+                column: "DriverId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_OrdersContext_VechicleId",
+                table: "OrdersContext",
+                column: "VechicleId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_OrdersEntriesContext_OrderId",
@@ -179,6 +236,12 @@ namespace ITMCode.Piatnica.Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "OrdersContext");
+
+            migrationBuilder.DropTable(
+                name: "DriversContext");
+
+            migrationBuilder.DropTable(
+                name: "VechiclesContext");
         }
     }
 }
